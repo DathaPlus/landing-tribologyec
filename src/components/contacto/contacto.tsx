@@ -4,7 +4,7 @@ export default function ContactoComponent() {
     return (
         <Container>
             <div className='d-none d-md-block'>
-                <Container styles={{ background: 'url("/background-contacto-desktop.png")', height: '492px', overflow: 'hidden', color: '#FFFFFF', width: '100%', display: 'flex' }}>
+                <Container styles={{ background: 'url("/background-contacto-desktop.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '492px', overflow: 'hidden', color: '#FFFFFF', width: '100%', display: 'flex' }}>
                     <Container styles={{ background: 'rgba(75, 79, 88, 1)', width: '100%', height: '492px', overflow: 'hidden', mixBlendMode: 'multiply', position: 'absolute' }}>
                     </Container>
                     <Container styles={{ zIndex: 1, width: '50%', float: 'left', marginTop: '13%', paddingLeft: '160px', position: 'relative' }}>
@@ -20,7 +20,7 @@ export default function ContactoComponent() {
                 </Container>
             </div>
             <div className='d-block d-md-none'>
-                <Container styles={{ background: 'url("/background-contacto-mobile.png")', height: '510px', overflow: 'hidden', color: '#FFFFFF', mixBlendMode: 'multiply' }}>
+                <Container styles={{ background: 'url("/background-contacto-mobile.png")', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '510px', overflow: 'hidden', color: '#FFFFFF', mixBlendMode: 'multiply' }}>
                     <Container styles={{ background: 'rgba(75, 79, 88, 1)', overflow: 'hidden', mixBlendMode: 'multiply', width: '100%', height: '510px', position: 'absolute' }}>
                     </Container>
                     <Container styles={{ zIndex: 1, marginTop: '8%', position: 'relative', marginLeft: '44px', marginRight: '44px' }}>

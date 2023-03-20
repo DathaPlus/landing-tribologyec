@@ -1,0 +1,4 @@
+@import 'mixin';
+@import 'theme';
+
+@include switch-theme('tribologyec', $tribologyec);

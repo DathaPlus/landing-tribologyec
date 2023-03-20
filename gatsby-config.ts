@@ -27,6 +27,14 @@ const config: GatsbyConfig = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+        theme: 'tribologyec',
+        font: 'Montserrat',
+      },
+    },
   ],
 };
 

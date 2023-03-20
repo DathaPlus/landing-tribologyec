@@ -1,12 +1,7 @@
-import TrayectoriaComponent from '@components/trayectoria';
-
 import React from 'react';
-const IndexPage = () => {  
-  return (
-    <>
-      <TrayectoriaComponent/>
-    </>
-  );
+
+const IndexPage = () => {
+  return <>sdaf</>;
 };
 
 export default IndexPage;

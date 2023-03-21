@@ -43,3 +43,16 @@
     }
   }
 }
+
+@mixin flex($gap, $justify: null, $align: null) {
+  display: flex;
+  gap: $gap;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+}

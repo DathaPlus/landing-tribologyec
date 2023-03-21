@@ -1,7 +1,15 @@
+import { Hero, OurProjects, Products, Services } from '@components/home';
 import React from 'react';
 
-const IndexPage = () => {
-  return <>sdaf</>;
+const HomePage = () => {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <OurProjects />
+      <Products />
+    </>
+  );
 };
 
-export default IndexPage;
+export default HomePage;

@@ -17,17 +17,17 @@ $tribologyec: (
     //default bg hover (nf)
     'main-hover': 219 14.085% 22.275%,
     //primary bg (p)
-    'primary': 2 90% 50%,
+    'primary': 3 83% 27%,
     //primary text (pc)
     'primary-text': 0 0% 100%,
     //primary bg hover (pf)
-    'primary-hover': 2 90% 80%,
+    'primary-hover': 3 83% 57%,
     //secondary bg (s)
-    'secondary': 208 53% 70%,
+    'secondary': 3 31% 71%,
     //secondary text (sc)
     'secondary-text': 0 0% 100%,
     //secondary bg hover (sf)
-    'secondary-hover': 208 53% 90.4%,
+    'secondary-hover': 3 31% 81%,
     //ascend bg (a)
     'ascend': 35 20% 42%,
     //ascend text (ac)
@@ -70,3 +70,5 @@ $tribologyec: (
     'border': 2px,
   ),
 );
+
+@include switch-theme('tribologyec', $tribologyec);

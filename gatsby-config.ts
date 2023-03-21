@@ -23,8 +23,18 @@ const config: GatsbyConfig = {
           '@hooks': resolve(__src, 'hooks'),
           '@interfaces': resolve(__src, 'interfaces'),
           '@styles': resolve(__src, 'styles'),
+          '@data': resolve(__src, 'data'),
+          '@assets': resolve(__src, '..', 'static'),
         },
         extensions: ['js', 'jsx', 'ts', 'tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+        theme: 'tribologyec',
+        font: 'Montserrat',
       },
     },
   ],

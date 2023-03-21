@@ -6,9 +6,11 @@ import FooterComponent from '@components/footer/footer';
 import '../css/styles.css';
 
 import React from 'react';
+import {NavbarMenu} from "@components/navbar";
 const IndexPage = () => {
   return (
     <>
+      <NavbarMenu/>
       <BannerHeroComponent />
       {/* <TrayectoriaComponent /> */}
       <ContactoComponent />

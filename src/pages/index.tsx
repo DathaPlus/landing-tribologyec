@@ -12,7 +12,6 @@ const IndexPage = () => {
     <>
       <NavbarMenu/>
       <BannerHeroComponent />
-      {/* <TrayectoriaComponent /> */}
       <ContactoComponent />
       <FooterComponent />
     </>

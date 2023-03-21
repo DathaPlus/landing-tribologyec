@@ -6,14 +6,6 @@ export const containerMain: IContainer = {
     flexDirection: 'column',
     alignContent: 'center',
     width: '287px',
-    mediaQueryBreakPoints: {
-      920: {
-        //flexDirection: 'row',
-      },
-      1200: {
-        //paddingRight: '10px',
-      },
-    },
   },
 };
 

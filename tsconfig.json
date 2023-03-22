@@ -5,14 +5,16 @@
     "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@utils/*": ["utils/*"],
-      "@helpers/*": ["helpers/*"],
-      "@hooks/*": ["hooks/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@styles/*": ["styles/*"]
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@data/*": ["src/data/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@styles/*": ["src/styles/*"],
+      "@assets/*": ["static/*"]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

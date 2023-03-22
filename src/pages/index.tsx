@@ -1,12 +1,15 @@
-import TrayectoriaComponent from '@components/trayectoria';
-
+import { Hero, OurProjects, Products, Services } from '@components/home';
 import React from 'react';
-const IndexPage = () => {  
+
+const HomePage = () => {
   return (
     <>
-      <TrayectoriaComponent/>
+      <Hero />
+      <Services />
+      <OurProjects />
+      <Products />
     </>
   );
 };
 
-export default IndexPage;
+export default HomePage;

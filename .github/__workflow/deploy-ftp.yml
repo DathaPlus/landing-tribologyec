@@ -1,0 +1,53 @@
+name: Deploy ftp - PROD
+
+on:
+  push:
+    branches:
+      - release/*
+
+env:
+  FTP_ACCESS_SERVER_NAME: ${{secrets.FTP_SERVER}}
+  FTP_ACCESS_USER: ${{secrets.FTP_USER}}
+  FTP_ACCESS_PASSWORD: ${{secrets.FTP_PASS}}
+
+jobs:
+  git-event:
+    name: Print git environment
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Printenv
+        run: printenv
+
+  publish-spa:
+    name: publish site
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - name: Deploy Action FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{env.FTP_ACCESS_SERVER_NAME}}
+          username: ${{env.FTP_ACCESS_USER}}
+          password: ${{env.FTP_ACCESS_PASSWORD}}
+          local-dir: ./public/
+          server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.idea/**
+            **/.vscode/**
+            **/.github/**
+            .gitignore
+            README.md

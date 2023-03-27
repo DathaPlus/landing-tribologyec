@@ -1,4 +1,4 @@
-import { IServiceTestimonial } from '@interfaces/services';
+import { IServiceTestimonial } from '@interfaces/home';
 import React, { FC } from 'react';
 
 export const TestimonialService: FC<IServiceTestimonial> = ({ message, name }) => {

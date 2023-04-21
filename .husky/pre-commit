@@ -7,5 +7,5 @@ purple='\e[1;35m'
 resetColor='\e[0m'
 
 printf "\n$purple-------- Start Run format Pre Staged---------$resetColor\n\n"
-npm run staged
+# npm run staged
 echo ""

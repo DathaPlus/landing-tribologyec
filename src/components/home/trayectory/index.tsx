@@ -1,6 +1,6 @@
-import React from "react";
-import { useLayoutWidth } from "@dathaplus/storybook";
-import { trayectoryLogos } from "@data/home/trayectory";
+import { trayectoryLogos } from '@data/home/trayectory';
+import { useLayoutWidth } from '@dathaplus/storybook';
+import React from 'react';
 
 const Trayectory = () => {
   const screenWidth = useLayoutWidth();
@@ -17,24 +17,27 @@ const Trayectory = () => {
           </div>
           <div className="description__trayectory">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consectetur totam rerum commodi officiis, minus distinctio
-              pariatur nostrum mollitia sint iure voluptate saepe laudantium,
-              autem quod aspernatur illo praesentium numquam hic.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur totam rerum
+              commodi officiis, minus distinctio pariatur nostrum mollitia sint iure voluptate saepe
+              laudantium, autem quod aspernatur illo praesentium numquam hic.
             </p>
           </div>
         </div>
-        {screenWidth>900&&<div className="client-logos">
-          {trayectoryLogos.map((img, index) => (
-            <img key={index} src={img.src} alt={img.alt}/>
-          ))}
-        </div>}
+        {screenWidth > 900 && (
+          <div className="client-logos">
+            {trayectoryLogos.map((img, index) => (
+              <img key={index} src={img.src} alt={img.alt} />
+            ))}
+          </div>
+        )}
       </div>
-      {screenWidth<=900&&<div className="client-logos">
-        {trayectoryLogos.map((img, index) => (
-          <img key={index} src={img.src} alt={img.alt}/>
-        ))}
-      </div>}
+      {screenWidth <= 900 && (
+        <div className="client-logos">
+          {trayectoryLogos.map((img, index) => (
+            <img key={index} src={img.src} alt={img.alt} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

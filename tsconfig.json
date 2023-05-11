@@ -14,7 +14,8 @@
       "@data/*": ["src/data/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@styles/*": ["src/styles/*"],
-      "@assets/*": ["static/*"]
+      "@assets/*": ["static/*"],
+      "@validation/*": ["src/validation/*"]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

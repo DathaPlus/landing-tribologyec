@@ -1,4 +1,4 @@
-.home__trayectory{
+.home__trayectory {
   background-color: hsl(var(--b1));
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   font-family: Antonio;
-  .information__container{
+  .information__container {
     background: hsl(var(--b2));
     max-width: 900px;
     padding: 3em 0.5em;
@@ -14,23 +14,23 @@
     flex-direction: column;
     align-items: center;
     gap: 4em;
-    .title__trayectory{
+    .title__trayectory {
       position: relative;
       z-index: 1;
       align-self: end;
       text-align: right;
-      h2{
+      h2 {
         letter-spacing: 19.76px;
-        font-size:28px;
+        font-size: 28px;
       }
     }
-    .content__trayectory{
+    .content__trayectory {
       display: flex;
       flex-direction: column;
       align-items: stretch;
 
       row-gap: 2em;
-      .years__trayectory{
+      .years__trayectory {
         background-color: hsl(var(--p));
         display: flex;
         flex-direction: column;
@@ -38,7 +38,7 @@
         justify-content: center;
         padding: 1em 3em;
         transform: translate(-30%, 0%);
-        h2{
+        h2 {
           text-align: center;
           font-weight: 400;
           line-height: 0.7em;
@@ -46,7 +46,7 @@
           max-width: 100%;
           transform: translate(0%, -35%);
         }
-        h3{
+        h3 {
           text-align: center;
           max-width: 100%;
           font-weight: 400;
@@ -55,62 +55,62 @@
           font-size: 20px;
         }
       }
-      .description__trayectory{
+      .description__trayectory {
         display: flex;
         align-items: center;
         padding: 0 1em;
-        p{
-          font-family: "Monserrat", serif;
+        p {
+          font-family: 'Monserrat', serif;
           text-align: justify;
         }
       }
     }
   }
 }
-.client-logos{
+.client-logos {
   display: flex;
   padding-top: 2em;
   flex-wrap: wrap;
   justify-content: center;
 }
 @media screen and (min-width: 1150px) {
-  .home__trayectory{
-    .information__container{
-      .title__trayectory{
-        transform: translate(45%,0%);
+  .home__trayectory {
+    .information__container {
+      .title__trayectory {
+        transform: translate(45%, 0%);
       }
     }
   }
-}@media screen and (min-width: 750px) {
-  .home__trayectory{
-    .information__container{
+}
+@media screen and (min-width: 750px) {
+  .home__trayectory {
+    .information__container {
       padding: 3em;
       gap: 0;
-      .title__trayectory{
-        h2{
+      .title__trayectory {
+        h2 {
           font-size: 40px;
           letter-spacing: 25.3623px;
         }
       }
-      .content__trayectory{
+      .content__trayectory {
         flex-direction: row;
-        .years__trayectory{
-          h2{
+        .years__trayectory {
+          h2 {
             font-size: 290px;
           }
-          h3{
+          h3 {
             font-size: 20px;
             letter-spacing: 25.3623px;
           }
         }
-        .description__trayectory{
+        .description__trayectory {
           padding: 2em 2em 2em 1em;
         }
       }
     }
-
   }
-  .client-logos{
+  .client-logos {
     flex-wrap: nowrap;
   }
 }

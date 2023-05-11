@@ -3,7 +3,9 @@ import { useLayoutWidth } from '@dathaplus/storybook';
 import React from 'react';
 
 const Trayectory = () => {
+
   const screenWidth = useLayoutWidth();
+
   return (
     <div className="home__trayectory">
       <div className="information__container">

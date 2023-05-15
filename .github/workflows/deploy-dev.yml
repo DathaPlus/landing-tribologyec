@@ -41,7 +41,7 @@ jobs:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
       - name: registry npm add file
-        run: printf "registry=https://${{ NPM_REGISTRY }}\n//${{ NPM_REGISTRY }}:_authToken=${{ NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
+        run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
       - name: yarn install
         run: yarn --frozen-lockfile
       - name: build

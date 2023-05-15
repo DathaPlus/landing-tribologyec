@@ -9,8 +9,10 @@ env:
   REGION: us-east-1
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  S3_BUCKET: ${{ secrets.S3_BUCKET}}
-  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID}}
+  S3_BUCKET: ${{ secrets.S3_BUCKET }}
+  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
+  NPM_REGISTRY: ${{ NPM_REGISTRY }}
+  NPM_REGISTRY_TOKEN: ${{ NPM_REGISTRY_TOKEN }}
 
 jobs:
   git-event:
@@ -38,6 +40,8 @@ jobs:
           aws-region: ${{ env.REGION }}
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+      - name: registry npm add file
+        run: printf "registry=https://${{ NPM_REGISTRY }}\n//${{ NPM_REGISTRY }}:_authToken=${{ NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
       - name: yarn install
         run: yarn --frozen-lockfile
       - name: build

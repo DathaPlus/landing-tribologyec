@@ -49,6 +49,6 @@ jobs:
       - name: Clear all files in S3 Bucket
         run: aws s3 rm ${{ env.S3_BUCKET }} --recursive
       - name: Upload public to S3 Bucket
-        run: aws s3 cp build ${{ env.S3_BUCKET }} --recursive
+        run: aws s3 cp public ${{ env.S3_BUCKET }} --recursive
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --distribution-id ${{env.CLOUDFRONT_DISTRIBUTION_ID}} --paths "/*"

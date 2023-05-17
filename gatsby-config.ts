@@ -25,6 +25,7 @@ const config: GatsbyConfig = {
           '@styles': resolve(__src, 'styles'),
           '@data': resolve(__src, 'data'),
           '@assets': resolve(__src, '..', 'static'),
+          '@validation': resolve(__src, 'validation')
         },
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },

@@ -1,6 +1,6 @@
 import React from 'react';
-import project5 from '../../../../static/img/projects/project_5.png';
-import project5Mobile from '../../../../static/img/projects/project_5_mobile.png';
+import project5 from '@assets/img/projects/project_5.png';
+import project5Mobile from '@assets/img/projects/project_5_mobile.png';
 
 export const SolutionsCenter = () => {
   return (

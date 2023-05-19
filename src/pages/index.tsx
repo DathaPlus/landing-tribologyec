@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, OurProjects, Products, Services, SolutionsCenter } from '@components/home';
+import { Hero, OurProjects, Products, Services } from '@components/home';
 import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
 import Trayectory from '@components/home/trayectory';
@@ -11,7 +11,6 @@ const HomePage = () => {
       <Bar />
       <Navbar />
       <Hero />
-      <SolutionsCenter/>
       <Services />
       <OurProjects />
       <Products />

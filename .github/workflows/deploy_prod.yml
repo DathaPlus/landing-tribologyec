@@ -1,4 +1,4 @@
-me: Deploy FTP - PROD
+name: Deploy FTP - PROD
 
 on:
   push:

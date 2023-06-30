@@ -38,7 +38,7 @@ export const listCardsProject: ICardProject[] = [
     },
   },
   {
-    img: '/img/projects/project_1.png',
+    img: '/img/projects/project_4.png',
     title: 'nombre proyecto',
     link: {
       href: 'https://www.google.com.ec',
@@ -50,7 +50,7 @@ export const listCardsProject: ICardProject[] = [
     },
   },
   {
-    img: '/img/projects/project_4.png',
+    img: '/img/projects/project_5.png',
     title: 'nombre proyecto',
     link: {
       href: 'https://www.google.com.ec',

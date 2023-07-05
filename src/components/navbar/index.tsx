@@ -42,7 +42,7 @@ export const Navbar = () => {
       <nav ref={refNavbar} className="main-navbar">
         <ul>
           <li>
-            <a href="#">Inicio</a>
+            <a href="/">Inicio</a>
           </li>
           <li>
             <a href="#">Nosotros</a>

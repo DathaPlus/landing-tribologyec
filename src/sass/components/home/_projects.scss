@@ -8,7 +8,7 @@
 
       & > * {
         display: block;
-        font-family: Antonio;
+        font-family: Antonio, serif;
         font-weight: 400;
         font-size: 28px;
         line-height: 36px;
@@ -33,7 +33,7 @@
         object-fit: fill;
       }
 
-      & > a > div {
+      .projects__card__gradient {
         position: absolute;
         top: 0;
         width: 137px;
@@ -43,9 +43,41 @@
         mix-blend-mode: multiply;
       }
 
+      .projects__card__information {
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 5rem;
+        text-align: center;
+        padding: 0 2rem;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 400ms ease-out;
+
+        .projects__card__title{
+          font-family: 'Antonio', serif;
+          font-size: 16px;
+          line-height: 45px;
+          letter-spacing: 15px;
+          text-transform: uppercase;
+          color: white;
+        }
+
+        .projects__card__description{
+          font-family: 'Ubuntu', serif;
+          font-size: 14px;
+          color: white;
+        }
+      }
+
       span {
         display: block;
-        font-family: 'Antonio';
+        font-family: 'Antonio', serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -64,6 +96,21 @@
       }
     }
 
+    &__card:hover{
+      span{
+        opacity: 0;
+        visibility: hidden;
+        transition: all 400ms ease-out;
+      }
+
+      .projects__card__information{
+        opacity: 1;
+        visibility: visible;
+        transition: all 400ms ease-out;
+      }
+
+    }
+
     &__view-all {
       display: flex;
       gap: 1em;
@@ -73,7 +120,7 @@
 
       a {
         text-decoration: none;
-        font-family: 'Antonio';
+        font-family: 'Antonio', serif;
         font-weight: 400;
         font-size: 24px;
         line-height: initial;

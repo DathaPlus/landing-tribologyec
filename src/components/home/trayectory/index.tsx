@@ -14,7 +14,7 @@ const Trayectory = () => {
         </div>
         <div className="content__trayectory">
           <div className="years__trayectory">
-            <h2>12</h2>
+            <h2>05</h2>
             <h3>AÑOS</h3>
           </div>
           <div className="description__trayectory">

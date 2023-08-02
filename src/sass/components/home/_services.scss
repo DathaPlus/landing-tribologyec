@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Antonio;
+    font-family: Antonio, sans-serif;
 
     & * {
       font-weight: 400;
@@ -42,17 +42,33 @@
 
     li {
       display: flex;
-      max-width: 275px;
+      max-width: 250px;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       gap: 0.5rem;
-      & > strong,
-      & > span {
+      padding: 1em;
+      & > strong {
         display: block;
         text-align: center;
       }
+      & > span {
+        display: block;
+        text-align: start;
+      }
     }
+  }
+
+  .services__wrapper_testimonial__mission{
+    font-size: 24px;
+    font-family: Antonio, sans-serif;
+    letter-spacing: 12px;
+  }
+
+  .services__wrapper_testimonial__mission-description {
+    font-size: 18px;
+    font-family: var(--font);
+    margin-top: 15px;
   }
 
   .services__wrapper_testimonial {
@@ -61,6 +77,8 @@
     left: 0;
     right: 0;
     margin-top: 1rem;
+    padding: 2rem;
+    text-align: center;
 
     & > div {
       position: relative;
@@ -107,7 +125,7 @@
 
     & strong {
       margin-top: 1rem;
-      font-family: Antonio;
+      font-family: Antonio, sans-serif;
       font-size: 18px;
       line-height: 23px;
       letter-spacing: 12px;
@@ -131,6 +149,7 @@
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-evenly;
+      align-items: start;
       margin: 4rem auto 2rem auto;
     }
   }
@@ -140,7 +159,6 @@
   .home_services {
     position: relative;
     border: solid transparent 1px;
-    position: relative;
     img {
       display: block;
       position: absolute;
@@ -152,7 +170,6 @@
 
     .services__title {
       position: absolute;
-      right: 0;
       width: fit-content;
       align-items: flex-end;
       right: -87px;
@@ -176,7 +193,7 @@
 
     .services__wrapper_testimonial {
       max-width: 418px;
-      bottom: 3rem;
+      bottom: 10rem;
       left: unset;
       right: -4rem;
     }

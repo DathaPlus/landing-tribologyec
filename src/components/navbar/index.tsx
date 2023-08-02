@@ -42,13 +42,13 @@ export const Navbar = () => {
       <nav ref={refNavbar} className="main-navbar">
         <ul>
           <li>
-            <a href="#">Inicio</a>
+            <a href="/">Inicio</a>
           </li>
           <li>
             <a href="#">Nosotros</a>
           </li>
           <li>
-            <a href="#">Servicios</a>
+            <a href="/servicios">Servicios</a>
           </li>
           <li>
             <a href="#">Productos</a>

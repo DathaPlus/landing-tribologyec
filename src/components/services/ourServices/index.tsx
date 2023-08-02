@@ -1,5 +1,5 @@
-import { Carousel, Icon } from '@dathaplus/storybook';
-import { CarouselPropsServices, viewAllProps } from '@helpers/services';
+import { Carousel } from '@dathaplus/storybook';
+import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
 import { Pagination } from 'swiper';
 import { Card } from './card';

@@ -3,7 +3,6 @@ import { Carousel, Icon } from '@dathaplus/storybook';
 import { CarouselProps, viewAllProps } from '@helpers/home';
 import React from 'react';
 import { Pagination } from 'swiper';
-
 import { Card } from './card';
 
 export const OurProjects = () => (

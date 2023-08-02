@@ -10,7 +10,7 @@ export const listServices: IHomeServices[] = [
       },
     },
     title: 'Servicios Post: Venta',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: 'Mantenimiento y reparaciones para todas las herramientas de par torsional de las marcas que representamos. Alquiler de herramientas de torque desde 500 – 700.',
   },
   {
     icon: {
@@ -21,7 +21,7 @@ export const listServices: IHomeServices[] = [
       },
     },
     title: 'Servicio de Medición de Longación en pernos',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: 'Herramientas de torque desde 500 hasta 20000.',
   },
   {
     icon: {
@@ -32,7 +32,7 @@ export const listServices: IHomeServices[] = [
       },
     },
     title: 'Entrenamiento',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: 'Para pernos desde 6 [mm] de diámetro y hasta 15 [m] de largo',
   },
   {
     icon: {
@@ -43,7 +43,7 @@ export const listServices: IHomeServices[] = [
       },
     },
     title: 'Servicios de aplicación de torque',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    desc: 'Diseño y fabricación de herramientas, accesorios, reacciones especiales.',
   },
 ];
 

@@ -16,6 +16,7 @@ export interface IServiceTestimonial {
 export interface ICardProject {
   img?: string;
   title?: string;
+  description?: string;
   link?: ILink;
 }
 

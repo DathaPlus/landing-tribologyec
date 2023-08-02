@@ -3,7 +3,8 @@ name: Deploy FTP - PROD
 on:
   push:
     branches:
-      - feature/updateHome
+      - release/*
+      - main
 
 env:
   FTP_ACCESS_SERVER_NAME: ${{secrets.FTP_SERVER}}

@@ -46,17 +46,17 @@
     signedsource "^1.0.0"
     yargs "^15.3.1"
 
-"@aws-cdk/asset-awscli-v1@^2.2.177":
+"@aws-cdk/asset-awscli-v1@^2.2.177", "@aws-cdk/asset-awscli-v1@^2.2.200":
   version "2.2.200"
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@aws-cdk%2Fasset-awscli-v1/2.2.200#6ead533f73f705ad7350eb46955e2538e50cd013"
   integrity sha512-Kf5J8DfJK4wZFWT2Myca0lhwke7LwHcHBo+4TvWOGJrFVVKVuuiLCkzPPRBQQVDj0Vtn2NBokZAz8pfMpAqAKg==
 
-"@aws-cdk/asset-kubectl-v20@^2.1.1":
+"@aws-cdk/asset-kubectl-v20@^2.1.1", "@aws-cdk/asset-kubectl-v20@^2.1.2":
   version "2.1.2"
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@aws-cdk%2Fasset-kubectl-v20/2.1.2#d8e20b5f5dc20128ea2000dc479ca3c7ddc27248"
   integrity sha512-3M2tELJOxQv0apCIiuKQ4pAbncz9GuLwnKFqxifWfe77wuMxyTRPmxssYHs42ePqzap1LT6GDcPygGs+hHstLg==
 
-"@aws-cdk/asset-node-proxy-agent-v5@^2.0.148":
+"@aws-cdk/asset-node-proxy-agent-v5@^2.0.148", "@aws-cdk/asset-node-proxy-agent-v5@^2.0.166":
   version "2.0.166"
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@aws-cdk%2Fasset-node-proxy-agent-v5/2.0.166#467507db141cd829ff8aa9d6ea5519310a4276b8"
   integrity sha512-j0xnccpUQHXJKPgCwQcGGNu4lRiC1PptYfdxBIH1L4dRK91iBxtSQHESRQX+yB47oGLaF/WfNN/aF3WXwlhikg==
@@ -4395,10 +4395,10 @@
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@tsconfig%2Fnode16/1.0.4#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@tsconfig/node16@^16.1.0":
-  version "16.1.0"
-  resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@tsconfig%2Fnode16/16.1.0#50bf40941c073fb56e4190ff4a3bf28259983770"
-  integrity sha512-cfwhqrdZEKS+Iqu1OPDwmKsOV/eo7q4sPhWzOXc1rU77nnPFV3+77yPg8uKQ2e8eir6mERCvrKnd+EGa4qo4bQ==
+"@tsconfig/node18@^18.2.0":
+  version "18.2.0"
+  resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@tsconfig%2Fnode18/18.2.0#d6b5358b3fa85fe89b13b46cb1e996e4d79d6a07"
+  integrity sha512-yhxwIlFVSVcMym3O31HoMnRXpoenmpIxcj4Yoes2DUpe+xCJnA7ECQP1Vw889V0jTt/2nzvpLQ/UuMYCd3JPIg==
 
 "@turist/fetch@^7.2.0":
   version "7.2.0"
@@ -5480,6 +5480,25 @@ aws-cdk-lib@2.84.0:
     minimatch "^3.1.2"
     punycode "^2.3.0"
     semver "^7.5.1"
+    table "^6.8.1"
+    yaml "1.10.2"
+
+aws-cdk-lib@2.90.0:
+  version "2.90.0"
+  resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/aws-cdk-lib/2.90.0#0c2018b869991fec95cb79eb5cd5a6103f46ad62"
+  integrity sha512-7v2qgbut9HX1kuqYKiLWT0MQU7JAu2464cMVP+xsj8omnMBnbAkMDpxeRD5XMor1wM4K3ImIZeacp5WID1Mpdg==
+  dependencies:
+    "@aws-cdk/asset-awscli-v1" "^2.2.200"
+    "@aws-cdk/asset-kubectl-v20" "^2.1.2"
+    "@aws-cdk/asset-node-proxy-agent-v5" "^2.0.166"
+    "@balena/dockerignore" "^1.0.2"
+    case "1.6.3"
+    fs-extra "^11.1.1"
+    ignore "^5.2.4"
+    jsonschema "^1.4.1"
+    minimatch "^3.1.2"
+    punycode "^2.3.0"
+    semver "^7.5.4"
     table "^6.8.1"
     yaml "1.10.2"
 
@@ -6623,6 +6642,11 @@ constructs@10.1.156:
   version "10.1.156"
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/constructs/10.1.156#3ccd82b7f07e8921d015f1ae9317f851ff6b87d4"
   integrity sha512-BTZ3Kyt++/YFlph/ioqbDhzSKVMqHRHvc99FxU4b705ZP6s2IkDxMLCMinC70USMTJWFbO1p02Egux7sk4q07A==
+
+constructs@10.2.69:
+  version "10.2.69"
+  resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/constructs/10.2.69#5bb06693b317140fe310797ffd52c0d6cc595913"
+  integrity sha512-0AiM/uQe5Uk6JVe/62oolmSN2MjbFQkOlYrM3fFGZLKuT+g7xlAI10EebFhyCcZwI2JAcWuWCmmCAyCothxjuw==
 
 content-disposition@0.5.4:
   version "0.5.4"
@@ -13358,7 +13382,7 @@ sst-aws-cdk@2.84.0:
   optionalDependencies:
     fsevents "2.3.2"
 
-sst@^2.22.11, sst@^2.23.2:
+sst@^2.22.11, sst@^2.23.6:
   version "2.23.6"
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/sst/2.23.6#1a49f6f0c342f5e20e9c8ab35c1f16988b5407e8"
   integrity sha512-0LXHA3GSwGfhMiTAIAkEPe1raNkZrorzwVexGh3lTGJwceIVTh+sTQKQRIOcsdnMcS+r2DQod23viXWF/M2zPA==

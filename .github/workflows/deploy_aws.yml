@@ -41,8 +41,8 @@ jobs:
       - name: registry npm add file
         run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
       - name: install dependencies
-        run: npm ci
+        run: yarn --frozen-lockfile
       - name: build
-        run: npm run build
+        run: yarn build
       - name: deploy
         run: npx sst deploy --stage prod

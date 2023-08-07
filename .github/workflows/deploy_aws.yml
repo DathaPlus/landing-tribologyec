@@ -42,7 +42,7 @@ jobs:
         run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
       - name: install dependencies
         run: npm ci
-#      - name: Build
-#        run: npm run build
+      - name: build
+        run: npm run build
 #      - name: Deploy
 #        uses: npm run deploy

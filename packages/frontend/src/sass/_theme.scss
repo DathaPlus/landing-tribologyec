@@ -1,0 +1,74 @@
+$tribologyec: (
+  general: (
+    // general bg 1 (b1)
+    'background-1': 221 15.647% 25%,
+    //general bg 2 (b2)
+    'background-2': 221 14.241% 34.059%,
+    // general bg 3 (b3)
+    'background-3': 218.57 17.949% 15.294%,
+    // general bg text color (bc)
+    'background-text': 0 0% 90%,
+  ),
+  solid: (
+    //default bg (n)
+    'main': 219 14.085% 27.843%,
+    //default text (nc)
+    'main-text': 0 0% 100%,
+    //default bg hover (nf)
+    'main-hover': 219 14.085% 22.275%,
+    //primary bg (p)
+    'primary': 3 83% 27%,
+    //primary text (pc)
+    'primary-text': 0 0% 100%,
+    //primary bg hover (pf)
+    'primary-hover': 3 83% 57%,
+    //secondary bg (s)
+    'secondary': 3 31% 71%,
+    //secondary text (sc)
+    'secondary-text': 0 0% 100%,
+    //secondary bg hover (sf)
+    'secondary-hover': 3 31% 81%,
+    //ascend bg (a)
+    'ascend': 35 20% 42%,
+    //ascend text (ac)
+    'ascend-text': 0 0% 100%,
+    // ascend bg hover (af),
+    'ascend-hover': 35 20% 82%,
+  ),
+  state: (
+    //info bg (in)
+    'info': 198 93% 60%,
+    //info text color (inc)
+    'info-text': 0 0% 100%,
+    //success bg (su)
+    'success': 158 64% 52%,
+    //success text color (suc)
+    'success-text': 0 0% 100%,
+    //warning bg (wa)
+    'warning': 43 96% 56%,
+    //warning text color (wac)
+    'warning-text': 0 0% 100%,
+    //error bg (er)
+    'error': 0 91% 71%,
+    //error text color (erc)
+    'error-text': 0 0% 100%,
+  ),
+
+  button: (
+    //default rounded buttons (rounded-btn)
+    'rounded': 2.5rem,
+    // size border (border-btn)
+    'border': 2px,
+    // animation default time button (animation-btn)
+    'animation-time': 0.25s,
+  ),
+
+  form: (
+    // default outline (out)
+    'outline': none,
+    // size border (border-form)
+    'border': 2px,
+  ),
+);
+
+@include switch-theme('tribologyec', $tribologyec);

@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const SSRPage = ({ serverData }) => (
+const SSRPage = ({ serverData }: any) => (
     <main>
         <h1>SSR Page with Dogs</h1>
         <img alt="Happy dog" src={serverData.message} />

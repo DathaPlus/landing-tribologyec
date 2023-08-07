@@ -5,7 +5,7 @@ export function TrybologyStack({ stack }: StackContext) {
         path: "packages/frontend",
         buildOutput: "public",
         buildCommand: "npm run build",
-        errorPage: "redirect_to_index_page",
+        errorPage: "404.html",
         environment: {
             TEST: "HELLO_WORLD"
         },

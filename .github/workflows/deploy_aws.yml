@@ -44,5 +44,5 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
-#      - name: Deploy
-#        uses: npm run deploy
+      - name: deploy
+        run: npm run deploy

@@ -45,4 +45,4 @@ jobs:
       - name: build
         run: npm run build
       - name: deploy
-        run: npm run deploy
+        run: npx sst deploy --stage prod

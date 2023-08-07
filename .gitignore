@@ -1,8 +1,20 @@
-node_modules/
-.cache/
-public
-src/gatsby-types.d.ts
-.idea/
-.vscode/
+# dependencies
+node_modules
 .npmrc
-yarn-error.log
+
+# sst
+.sst
+.build
+
+# opennext
+.open-next
+
+# misc
+.DS_Store
+
+# local env files
+.env*.loca
+
+#editor
+.idea
+.vscode

@@ -1,9 +1,10 @@
 name: Deploy Prod
 
 on:
-  push:
+  pull_request:
     branches:
-      - feature/*
+      - main
+      - release/*
 
 env:
   REGION: us-east-2

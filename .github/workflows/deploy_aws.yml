@@ -7,6 +7,7 @@ on:
 
 env:
   REGION: us-east-2
+  STAGE: prod
   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
   NPM_REGISTRY: ${{ secrets.NPM_REGISTRY }}
@@ -45,4 +46,4 @@ jobs:
       - name: build
         run: npm run build
       - name: deploy
-        run: npx sst deploy --region ${{ env.REGION }} --stage prod
+        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }}

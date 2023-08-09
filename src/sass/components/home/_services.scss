@@ -1,0 +1,209 @@
+.home_services {
+  img {
+    display: none;
+    object-fit: cover;
+  }
+
+  .services__wrapper {
+    margin: 1rem 1rem 0 1rem;
+    padding: 1rem;
+    background-color: hsl(var(--b2));
+    max-width: 983px;
+  }
+
+  .services__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Antonio, sans-serif;
+
+    & * {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 36px;
+      text-align: center;
+      letter-spacing: 18px;
+      text-transform: uppercase;
+    }
+
+    & > span:last-child {
+      color: hsl(var(--a));
+    }
+  }
+
+  .services__list-services {
+    margin: 2rem 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    li {
+      display: flex;
+      max-width: 250px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1em;
+      & > strong {
+        display: block;
+        text-align: center;
+      }
+      & > span {
+        display: block;
+        text-align: start;
+      }
+    }
+  }
+
+  .services__wrapper_testimonial__mission{
+    font-size: 24px;
+    font-family: Antonio, sans-serif;
+    letter-spacing: 12px;
+  }
+
+  .services__wrapper_testimonial__mission-description {
+    font-size: 18px;
+    font-family: var(--font);
+    margin-top: 15px;
+  }
+
+  .services__wrapper_testimonial {
+    background-color: hsl(var(--p));
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 1rem;
+    padding: 2rem;
+    text-align: center;
+
+    & > div {
+      position: relative;
+
+      &::before,
+      &::after {
+        font-weight: bold;
+        font-size: 150px;
+        z-index: 10;
+      }
+
+      &::before {
+        content: open-quote;
+        position: absolute;
+        top: -35%;
+      }
+
+      &::after {
+        content: close-quote;
+        position: absolute;
+        bottom: -63%;
+        right: 20px;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: hsl(var(--s));
+      }
+    }
+  }
+
+  .services__testimonial {
+    padding: 3rem 2rem;
+    display: grid;
+    place-content: center;
+
+    & q {
+      max-width: 311px;
+      text-align: justify;
+      line-height: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      display: block;
+    }
+
+    & strong {
+      margin-top: 1rem;
+      font-family: Antonio, sans-serif;
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: 12px;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home_services {
+    .services__wrapper {
+      position: relative;
+      padding-top: 4rem;
+      max-width: 983px;
+      margin: 6rem auto 0;
+    }
+
+    .services__list-services {
+      max-width: 750px;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: start;
+      margin: 4rem auto 2rem auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .home_services {
+    position: relative;
+    border: solid transparent 1px;
+    img {
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: 20;
+      width: 50%;
+      height: 376px;
+    }
+
+    .services__title {
+      position: absolute;
+      width: fit-content;
+      align-items: flex-end;
+      right: -87px;
+
+      & * {
+        font-size: 40px;
+        line-height: 52px;
+        letter-spacing: 25px;
+      }
+    }
+
+    .services__wrapper {
+      margin: 15rem auto 6rem auto;
+      padding-top: 6rem;
+    }
+
+    .services__list-services {
+      margin: 7rem 0 2rem 0;
+      justify-content: flex-start;
+    }
+
+    .services__wrapper_testimonial {
+      max-width: 418px;
+      bottom: 10rem;
+      left: unset;
+      right: -4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1370px) {
+  .home_services {
+    .services__wrapper_testimonial {
+      right: -10rem;
+    }
+  }
+}

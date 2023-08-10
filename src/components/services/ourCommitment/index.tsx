@@ -10,15 +10,21 @@ export const OurCommitment = () => {
     <div className="services__ourCommitment">
       <div className="content">
         <div className="list_image">
-          <Image className='image' src={commitment1} alt="image"/>
-          <Image className='image' src={commitment2} alt="image"/>
-          <Image className='image' src={commitment3} alt="image"/>
+          <Image className="image" src={commitment1} alt="image" />
+          <Image className="image" src={commitment2} alt="image" />
+          <Image className="image" src={commitment3} alt="image" />
         </div>
-        <p className="title">NUESTRO <span>COMPROMISO</span></p>
-        <p className="description">Somos profesionales experimentados dispuestos a generar soluciones eficientes de torque, cualquiera que sea el rubro de la industria. Te ayudamos a seleccionar la mejor herramienta para tu propósito, en rendimiento, presión, calidad y economía.</p>
+        <p className="title">
+          NUESTRO <span>COMPROMISO</span>
+        </p>
+        <p className="description">
+          Somos profesionales experimentados dispuestos a generar soluciones eficientes de torque,
+          cualquiera que sea el rubro de la industria. Te ayudamos a seleccionar la mejor
+          herramienta para tu propósito, en rendimiento, presión, calidad y economía.
+        </p>
       </div>
     </div>
   );
-}
+};
 
 export default OurCommitment;

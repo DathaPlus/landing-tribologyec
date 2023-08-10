@@ -94,7 +94,7 @@
       border-bottom: solid #fff 1px;
 
       a {
-        font-family: 'Montserrat';
+        font-family: var(--font-montserrat), sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 12px;

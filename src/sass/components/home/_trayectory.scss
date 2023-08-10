@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Antonio, serif;
+  font-family: var(--font-antonio), serif;
   margin-top: 2em;
   margin-bottom: 4em;
 
@@ -68,7 +68,7 @@
         align-items: center;
         padding: 0 1em;
         p {
-          font-family: var(--font);
+          font-family: var(--font-montserrat), serif;
           text-align: justify;
           font-size: 20px;
           line-height: 34.38px;

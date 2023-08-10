@@ -10,7 +10,7 @@
 
       & > * {
         display: block;
-        font-family: Antonio;
+        font-family: var(--font-antonio), sans-serif;
         font-weight: 400;
         font-size: 28px;
         line-height: 36px;
@@ -68,7 +68,7 @@
         transition: all 400ms ease-out;
 
         .title{
-          font-family: 'Antonio';
+          font-family: var(--font-antonio), sans-serif;
           font-size: 16px;
           line-height: 45px;
           letter-spacing: 15px;
@@ -76,13 +76,13 @@
         }
 
         .description{
-          font-family: 'Ubuntu';
+          font-family: var(--font-ubuntu), sans-serif;
           font-size: 14px;
         }
       }
 
       span {
-        font-family: 'Antonio';
+        font-family: var(--font-antonio), sans-serif;
         display: block;
         font-size: 15px;
         line-height: 19px;

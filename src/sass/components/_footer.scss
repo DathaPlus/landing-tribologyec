@@ -48,7 +48,7 @@ footer {
     }
 
     p {
-      font-family: 'Ubuntu';
+      font-family: var(--font-ubuntu), sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -69,7 +69,7 @@ footer {
         display: block;
         text-align: center;
         color: #505d68;
-        font-family: 'Ubuntu';
+        font-family: var(--font-ubuntu), sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -85,7 +85,7 @@ footer {
       gap: 0.5em;
       li > a,
       span {
-        font-family: 'Ubuntu';
+        font-family: var(--font-ubuntu), sans-serif;
         font-size: 14px;
         line-height: 21px;
         color: #a1aeb7;
@@ -100,7 +100,7 @@ footer {
   .footer__copyright {
     display: block;
     text-align: center;
-    font-family: 'Ubuntu';
+    font-family: var(--font-ubuntu), sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

@@ -12,11 +12,9 @@ export const OurServices = () => (
       <strong>SERVICIOS</strong>
     </h3>
     <div className="services__list">
-      <ul >
+      <ul>
         <Carousel {...CarouselPropsServices} Element={Card} modules={[Pagination]} />
       </ul>
     </div>
-
-
   </div>
 );

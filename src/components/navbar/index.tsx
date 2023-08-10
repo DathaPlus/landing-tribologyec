@@ -36,7 +36,6 @@ export const Navbar = () => {
 
   return (
     <>
-
       <div ref={refMenuIcon} className="main-navbar__icon">
         <Icon name="menu" />
       </div>

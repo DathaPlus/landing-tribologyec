@@ -11,9 +11,9 @@ export const LinkCustom: FC<ILink> = ({
 }) => (
   <>
     {type === 'internal' ? (
-        <a href={href} {...internalProps}>
-          {children}
-        </a>
+      <a href={href} {...internalProps}>
+        {children}
+      </a>
     ) : (
       <a href={href} {...externalProps}>
         {children}

@@ -4,7 +4,6 @@ import { useLayoutWidth } from '@dathaplus/storybook';
 import React from 'react';
 
 const Trayectory = () => {
-
   const screenWidth = useLayoutWidth();
 
   return (
@@ -20,7 +19,10 @@ const Trayectory = () => {
           </div>
           <div className="description__trayectory">
             <p>
-              Somos una empresa que se adapta a las necesidades de cada cliente, integramos varios fabricantes para obtener el mejor producto dentro de la relación beneficio / costo, nuestro personal es entrenado y calificado para recomendar y solucionar problemas de empernado
+              Somos una empresa que se adapta a las necesidades de cada cliente, integramos varios
+              fabricantes para obtener el mejor producto dentro de la relación beneficio / costo,
+              nuestro personal es entrenado y calificado para recomendar y solucionar problemas de
+              empernado
             </p>
           </div>
         </div>

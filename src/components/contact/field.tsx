@@ -10,12 +10,12 @@ export const FieldCustom: FC<ICustomField> = ({ name, placeholder, type = 'input
         {type === 'input' ? (
           <div className="wrapper_input">
             <input placeholder={placeholder} {...field} />
-            {icon && <Icon name={icon}/>}
+            {icon && <Icon name={icon} />}
           </div>
         ) : (
           <div className="wrapper_input">
             <textarea placeholder={placeholder} {...field} />
-            {icon && <Icon name={icon}/>}
+            {icon && <Icon name={icon} />}
           </div>
         )}
       </>

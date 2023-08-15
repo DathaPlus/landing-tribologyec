@@ -45,4 +45,4 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: deploy
-        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }
+        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }}

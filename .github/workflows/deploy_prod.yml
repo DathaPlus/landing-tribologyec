@@ -44,5 +44,7 @@ jobs:
         run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
       - name: install dependencies
         run: npm ci
-      - name: deploy
-        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }}
+      - name: remove
+        run: npx sst remove --region ${{ env.REGION }} --stage ${{ env.STAGE }}
+#      - name: deploy
+#        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }

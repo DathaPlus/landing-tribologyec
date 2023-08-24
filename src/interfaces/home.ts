@@ -2,10 +2,37 @@ import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
 
 import { ILink } from './link';
 
+export interface IHomeData {
+  heroBanner: IHeroBannerHome;
+  ourServices: IServicesHomeSection;
+  trayectory: ITrajectoryHomeSection;
+}
+
+export interface IHeroBannerHome {
+  title?: string;
+  subtitle?: string;
+  welcome?: string;
+  description?: string;
+}
+
+export interface IServicesHomeSection {
+  mision?: {
+    title: string;
+    description: string;
+  },
+  carrousel?: IHomeServices[];
+}
+
+export interface ITrajectoryHomeSection {
+  title?: string;
+  description?: string;
+  years?: string;
+}
+
 export interface IHomeServices {
   icon?: IIcon;
   title?: string;
-  desc?: string;
+  description?: string[];
 }
 
 export interface IServiceTestimonial {

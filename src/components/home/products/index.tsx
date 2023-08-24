@@ -4,10 +4,11 @@ import { Carousel, Icon } from '@dathaplus/storybook';
 import { CarouselProductsProps, viewAllProductsProps } from '@helpers/home';
 import React, { FC } from 'react';
 import { Navigation, Pagination } from 'swiper';
-
 import { Card } from './card';
+import {ICardProduct} from "@interfaces/home";
 
-export const Products: FC = () => {
+export const Products: FC<{products: ICardProduct[]}> =  ({products  }) => {
+
   return (
     <div className="home__products">
       <div className="home__products_wrapper">
@@ -17,6 +18,7 @@ export const Products: FC = () => {
           <ul>
             <Carousel
               {...CarouselProductsProps}
+              data={products}
               Element={Card}
               modules={[Pagination, Navigation]}
             />

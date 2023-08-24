@@ -8,6 +8,9 @@ export const getHomePage = async ():  Promise<IHomeData  | undefined> => {
             headers: {
                 'Authorization': "Basic YmFja2VuZE1hbmFnZXI6MExXQiBybWU4IFgyTWcgYktRbyB6dU5FIHB1SjQ=",
                 'Accept': '*/*',
+            },
+            next: {
+                revalidate: 25
             }
         });
 

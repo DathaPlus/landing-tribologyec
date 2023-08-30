@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React, { FC } from 'react';
 
 import { ILink } from '../interfaces/link';
@@ -12,9 +11,9 @@ export const LinkCustom: FC<ILink> = ({
 }) => (
   <>
     {type === 'internal' ? (
-      <Link to={href ?? ''} {...internalProps}>
+      <a href={href} {...internalProps}>
         {children}
-      </Link>
+      </a>
     ) : (
       <a href={href} {...externalProps}>
         {children}

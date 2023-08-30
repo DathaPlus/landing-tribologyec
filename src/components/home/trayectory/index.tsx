@@ -1,25 +1,26 @@
+'use client';
 import { trayectoryLogos } from '@data/home/trayectory';
 import { useLayoutWidth } from '@dathaplus/storybook';
 import React from 'react';
+import {ITrajectoryHomeSection} from "@interfaces/home";
 
-const Trayectory = () => {
-
+const Trayectory = (params: ITrajectoryHomeSection) => {
   const screenWidth = useLayoutWidth();
 
   return (
     <div className="home__trayectory">
       <div className="information__container">
         <div className="title__trayectory">
-          <h2>TRAYECTORIA</h2>
+          <h2>{params?.title}</h2>
         </div>
         <div className="content__trayectory">
           <div className="years__trayectory">
-            <h2>05</h2>
+            <h2>{params?.years}</h2>
             <h3>AÑOS</h3>
           </div>
           <div className="description__trayectory">
             <p>
-              Somos una empresa que se adapta a las necesidades de cada cliente, integramos varios fabricantes para obtener el mejor producto dentro de la relación beneficio / costo, nuestro personal es entrenado y calificado para recomendar y solucionar problemas de empernado
+              {params?.description}
             </p>
           </div>
         </div>

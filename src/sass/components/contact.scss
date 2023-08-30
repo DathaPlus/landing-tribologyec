@@ -22,7 +22,7 @@
     padding: 1rem;
 
     p:first-child {
-      font-family: 'Antonio';
+      font-family: var(--font-antonio), sans-serif;
       padding: 1rem 0;
       font-style: normal;
       font-weight: 400;
@@ -59,11 +59,10 @@
         width: inherit;
         padding: 15px 35px 15px 15px;
         background-color: transparent;
-        border: none;
         outline: none;
         border: solid 1px #fff;
         border-radius: 4px;
-        font-family: 'Montserrat';
+        font-family: var(--font-montserrat), sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;

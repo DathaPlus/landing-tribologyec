@@ -1,3 +1,4 @@
+'use client';
 import { LinkCustom } from '@components/link';
 import { Carousel, Icon } from '@dathaplus/storybook';
 import { CarouselProps, viewAllProps } from '@helpers/home';

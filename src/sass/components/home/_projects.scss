@@ -8,7 +8,7 @@
 
       & > * {
         display: block;
-        font-family: Antonio, serif;
+        font-family: var(--font-antonio), serif;
         font-weight: 400;
         font-size: 28px;
         line-height: 36px;
@@ -60,7 +60,7 @@
         transition: all 400ms ease-out;
 
         .projects__card__title{
-          font-family: 'Antonio', serif;
+          font-family: var(--font-antonio), serif;
           font-size: 16px;
           line-height: 45px;
           letter-spacing: 15px;
@@ -69,7 +69,7 @@
         }
 
         .projects__card__description{
-          font-family: 'Ubuntu', serif;
+          font-family: var(--font-ubuntu), serif;
           font-size: 14px;
           color: white;
         }
@@ -77,7 +77,7 @@
 
       span {
         display: block;
-        font-family: 'Antonio', serif;
+        font-family: var(--font-antonio), serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -120,7 +120,7 @@
 
       a {
         text-decoration: none;
-        font-family: 'Antonio', serif;
+        font-family: var(--font-antonio), serif;
         font-weight: 400;
         font-size: 24px;
         line-height: initial;

@@ -1,15 +1,16 @@
-name: Deploy FTP - PROD
+name: Deploy Prod
 
 on:
-  push:
+  pull_request:
     branches:
-      - release/*
       - main
+      - release/*
 
 env:
-  FTP_ACCESS_SERVER_NAME: ${{secrets.FTP_SERVER}}
-  FTP_ACCESS_USER: ${{secrets.FTP_USER}}
-  FTP_ACCESS_PASSWORD: ${{secrets.FTP_PASSWORD}}
+  REGION: us-east-2
+  STAGE: prod
+  AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+  AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
   NPM_REGISTRY: ${{ secrets.NPM_REGISTRY }}
   NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
 
@@ -28,39 +29,20 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-region: ${{ env.REGION }}
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
       - name: registry npm add file
         run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
-      - name: yarn install
-        run: yarn --frozen-lockfile
-      - name: Build
-        run: yarn build
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-      - name: Deploy Action FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.2.0
-        with:
-          server: ${{env.FTP_ACCESS_SERVER_NAME}}
-          username: ${{env.FTP_ACCESS_USER}}
-          password: ${{env.FTP_ACCESS_PASSWORD}}
-          local-dir: ./public/
-          server-dir: /
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.idea/**
-            **/.vscode/**
-            **/.github/**
-            **/.cache/**
-            **/.husky/**
-            **/src/**
-            **/static/**
-            **/sistema/**
-            **/back/**
-            **/demo/**
-            **/front/**
-            .gitignore
-            README.md
+      - name: install dependencies
+        run: npm ci
+      - name: deploy
+        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }}

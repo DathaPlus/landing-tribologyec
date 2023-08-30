@@ -1,3 +1,4 @@
+'use client';
 import { Icon } from '@dathaplus/storybook';
 import React, { useEffect, useRef } from 'react';
 
@@ -35,7 +36,6 @@ export const Navbar = () => {
 
   return (
     <>
-
       <div ref={refMenuIcon} className="main-navbar__icon">
         <Icon name="menu" />
       </div>

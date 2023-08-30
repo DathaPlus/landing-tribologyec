@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import { AnchorHTMLAttributes, DOMAttributes } from 'react';
 
 type DOM = DOMAttributes<AnchorHTMLAttributes<HTMLAnchorElement>> &
@@ -6,6 +5,6 @@ type DOM = DOMAttributes<AnchorHTMLAttributes<HTMLAnchorElement>> &
 
 export interface ILink extends Partial<Pick<DOM, 'href' | 'children'>> {
   type?: 'internal' | 'external';
-  internalProps?: Omit<typeof Link, 'to' | 'href' | 'children'>;
+  internalProps?: Omit<DOM, 'href' | 'href' | 'children'>;
   externalProps?: Omit<DOM, 'href' | 'href' | 'children'>;
 }

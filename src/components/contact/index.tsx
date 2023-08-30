@@ -1,3 +1,4 @@
+'use client';
 import { initialValuesContact } from '@data/contact';
 import { Button, useLayoutWidth } from '@dathaplus/storybook';
 import { ContactSchema } from '@validation/index';
@@ -30,7 +31,7 @@ export const Contacts = () => {
         <Formik
           initialValues={initialValuesContact}
           validationSchema={ContactSchema}
-          onSubmit={console.log}
+          onSubmit={() => {}}
         >
           <Form className="contact__form">
             <div className="contact__wrapper-input">

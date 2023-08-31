@@ -4,7 +4,7 @@ import { Hero } from '@components/base';
 import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
 import { Navbar } from '@components/index';
-import servicesHeroBanner from '@assets/img/hero_bg.png';
+import servicesHeroBanner from '@assets/img/services_hero_bg.png';
 
 const ServicesPage = () => {
   return (

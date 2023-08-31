@@ -2,7 +2,10 @@ import { ICarousel } from '@dathaplus/storybook';
 import { ICardProduct } from '@interfaces/home';
 import { ILink } from '@interfaces/link';
 
-export const CarouselProductsProps: Omit<ICarousel<ICardProduct>, 'Element' | 'modules' | 'data'> = {
+export const CarouselProductsProps: Omit<
+  ICarousel<ICardProduct>,
+  'Element' | 'modules' | 'data'
+> = {
   slidesPerView: 1,
   spaceBetween: 10,
   slidesPerGroup: 1,

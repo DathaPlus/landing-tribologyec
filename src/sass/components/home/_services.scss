@@ -39,6 +39,7 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    border: 1px solid red;
 
     li {
       display: flex;
@@ -189,6 +190,9 @@
     .services__list-services {
       margin: 7rem 0 2rem 0;
       justify-content: flex-start;
+      border: 1px solid green;
+      width: 800px;
+      flex-basis: auto;
     }
 
     .services__wrapper_testimonial {
@@ -206,4 +210,8 @@
       right: -10rem;
     }
   }
+}
+
+.servicesContent {
+
 }

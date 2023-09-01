@@ -51,3 +51,13 @@ export interface ICardProduct extends Omit<ICardProject, 'title'> {
   category: string;
   description: string;
 }
+
+export interface IHomeServicesProd {
+  product: ICardServiceProd[];
+}
+
+export interface ICardServiceProd {
+  icon?: IIcon;
+  title?: string;
+  desc?: string;
+}

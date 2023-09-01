@@ -11,6 +11,7 @@ export const Contacts = () => {
 
   return (
     <section
+      id="form-contact-us-section"
       className="contact"
       style={{
         backgroundImage: `url('/img/${width < 500 ? 'contact_bg-mobile.png' : 'contact_bg.png'}')`,

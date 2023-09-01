@@ -151,6 +151,16 @@ export const  listServices: ICardServiceProd[] = [
 
 ];
 
+export const allServices: IHomeServicesProd[] = [
+  {
+    product: listServices
+  },
+  {
+    product: listServices
+  }
+];
+
+
 export const serviceTestimonial: IServiceTestimonial[] = [
   {
     name: 'juan perez',

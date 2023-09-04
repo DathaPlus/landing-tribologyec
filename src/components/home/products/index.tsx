@@ -1,9 +1,8 @@
 'use client';
 import { LinkCustom } from '@components/link';
-import { Carousel, Icon } from '@dathaplus/storybook';
+import { Carousel, Icon, SwiperModules } from '@dathaplus/storybook';
 import { CarouselProductsProps, viewAllProductsProps } from '@helpers/home';
 import React, { FC } from 'react';
-import { Navigation, Pagination } from 'swiper';
 import { Card } from './card';
 import {ICardProduct} from "@interfaces/home";
 
@@ -20,7 +19,7 @@ export const Products: FC<{products: ICardProduct[]}> =  ({products  }) => {
               {...CarouselProductsProps}
               data={products}
               Element={Card}
-              modules={[Pagination, Navigation]}
+              modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
             />
 
             <div className="products__arrow_wrapper_left" id="product_arrow_left">

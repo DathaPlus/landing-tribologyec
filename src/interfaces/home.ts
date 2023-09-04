@@ -1,18 +1,12 @@
 import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
 
 import { ILink } from './link';
+import { IHeroBanner } from './common/index';
 
 export interface IHomeData {
-  heroBanner: IHeroBannerHome;
+  heroBanner: IHeroBanner;
   ourServices: IServicesHomeSection;
   trayectory: ITrajectoryHomeSection;
-}
-
-export interface IHeroBannerHome {
-  title?: string;
-  subtitle?: string;
-  welcome?: string;
-  description?: string;
 }
 
 export interface IServicesHomeSection {

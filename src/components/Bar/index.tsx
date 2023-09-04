@@ -2,7 +2,7 @@
 import { Icon } from '@dathaplus/storybook';
 import React from 'react';
 
-function Bar() {
+export const Bar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__wrapper">
@@ -22,6 +22,6 @@ function Bar() {
       </div>
     </nav>
   );
-}
+};
 
 export default Bar;

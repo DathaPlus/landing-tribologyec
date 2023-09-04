@@ -1,0 +1,22 @@
+.arrow_carousel {
+  &_left,
+  &_right {
+    width: fit-content;
+    position: absolute;
+    z-index: 55555;
+    top: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &_left {
+    left: 30px;
+  }
+
+  &_right {
+    right: 30px;
+  }
+}

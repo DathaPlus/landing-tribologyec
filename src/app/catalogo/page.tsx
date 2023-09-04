@@ -1,9 +1,8 @@
 import React from 'react'
 import {Bar, Navbar, Hero, CatalogueList, ProductList, Contacts, Footer} from '@components/index';
-import type {NextPage} from 'next'
 import { getCataloguePage } from '@server/catalogue/getCataloguePage';
 
-export const CataloguePage:NextPage = async () => {
+export default async function CataloguePage(){
 
   const data = await getCataloguePage();
 
@@ -19,5 +18,3 @@ export const CataloguePage:NextPage = async () => {
     </main>
   )
 }
-
-export default CataloguePage;

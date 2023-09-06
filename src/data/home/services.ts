@@ -1,4 +1,5 @@
 import {ICardServiceProd, IHomeServices, IHomeServicesProd, IServiceTestimonial} from '@interfaces/home';
+import {IArrowsCarousel} from "@interfaces/common";
 
 export const  listServices: ICardServiceProd[] = [
 
@@ -151,12 +152,26 @@ export const  listServices: ICardServiceProd[] = [
 
 ];
 
-export const allServices: IHomeServicesProd[] = [
+export const allServices = ({className}: {className?: IHomeServicesProd["className"]}): IHomeServicesProd[] => [
   {
-    product: listServices
+    product: listServices,
+    className
   },
   {
-    product: listServices
+    product: listServices,
+    className
+  },
+  {
+    product: listServices,
+    className
+  },
+  {
+    product: listServices,
+    className
+  },
+  {
+    product: listServices,
+    className
   }
 ];
 

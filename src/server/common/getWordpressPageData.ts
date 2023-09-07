@@ -10,13 +10,13 @@ export const getWordpressPageData = async <ACF = object>(
     const { searchParams } = params;
 
     const response = await fetch(
-      `${process.env.TRIBOLOGY_BACKEND_URL}/wp-json/wp/v2/pages?status=private${
+      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wp/v2/pages?status=private${
         searchParams?.namePage ? `&search=${searchParams?.namePage}` : ''
       }`,
       {
         method: 'GET',
         headers: {
-          Authorization: process.env.TOKEN_BACKEND_PRIVATE_PAGES || '',
+          Authorization: `${process.env.TOKEN_WORDPRESS_BACKEND}`,
           Accept: '*/*',
         },
         next: {

@@ -9,11 +9,10 @@ const nextConfig = {
     serverActions: true,
   },
   env: {
-    TRIBOLOGY_BACKEND_URL: 'https://adminwp.tribologyec.com',
-    TOKEN_BACKEND_PRODUCTS:
+    BASE_PATH_WORDPRESS_BACKEND: 'https://adminwp.tribologyec.com',
+    TOKEN_WOOCOMMERCE_BACKEND:
       'Basic Y2tfMzQ0ZGEwMDM4YzVmMzkyZjJmMGEzNjViM2M5ZWVjYmI3ODc1MmE0Zjpjc19iNDkwNDYxYjY1MDA0Yjg1Nzk2NThlNDkwMzM1OTU0M2FmZmM3MzY4',
-    TOKEN_BACKEND_PRIVATE_PAGES:
-      'Basic YmFja2VuZE1hbmFnZXI6MExXQiBybWU4IFgyTWcgYktRbyB6dU5FIHB1SjQ=',
+    TOKEN_WORDPRESS_BACKEND: 'Basic YmFja2VuZE1hbmFnZXI6MExXQiBybWU4IFgyTWcgYktRbyB6dU5FIHB1SjQ=',
   },
 };
 

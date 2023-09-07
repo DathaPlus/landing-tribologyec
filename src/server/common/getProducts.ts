@@ -11,14 +11,14 @@ export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]
 
     const response = await fetch(
       `${
-        process.env.TRIBOLOGY_BACKEND_URL
+        process.env.BASE_PATH_WORDPRESS_BACKEND
       }/wp-json/wc/v3/products?per_page=${perPage}&page=${page}${
         category ? `&category=${category.id}` : ''
       }`,
       {
         method: 'GET',
         headers: {
-          Authorization: process.env.TOKEN_BACKEND_PRODUCTS || '',
+          Authorization: process.env.TOKEN_WOOCOMMERCE_BACKEND || '',
           Accept: '*/*',
         },
         next,

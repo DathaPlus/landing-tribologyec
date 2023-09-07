@@ -12,7 +12,6 @@ export const Services = (params: IServicesHomeSection) => {
     quantitySlide: 0,
 
   });
-  console.log('activeslide: ',activeSlide)
   return (
     <section className="home_services">
       <img src="/img/services_bg.png" alt="services" />

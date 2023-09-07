@@ -10,7 +10,9 @@ export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]
     const category = await getCategoryFromName(filter?.category);
 
     const response = await fetch(
-      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wc/v3/products?per_page=${perPage}&page=${page}${
+      `${
+        process.env.BASE_PATH_WORDPRESS_BACKEND
+      }/wp-json/wc/v3/products?per_page=${perPage}&page=${page}${
         category ? `&category=${category.id}` : ''
       }`,
       {

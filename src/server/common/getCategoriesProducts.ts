@@ -3,11 +3,11 @@ import { ICategory } from '@interfaces/server/common/IGetCategoriesProducts';
 export const getCategoriesProducts = async (): Promise<ICategory[]> => {
   try {
     const response = await fetch(
-      `${process.env.TRIBOLOGY_BACKEND}/wp-json/wc/v3/products/categories`,
+      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wc/v3/products/categories`,
       {
         method: 'GET',
         headers: {
-          Authorization: process.env.TOKEN_BACKEND || '',
+          Authorization: process.env.TOKEN_WOOCOMMERCE_BACKEND || '',
           Accept: '*/*',
         },
       },

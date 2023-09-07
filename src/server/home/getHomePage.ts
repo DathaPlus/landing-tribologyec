@@ -3,11 +3,11 @@ import { IHomeData } from '@interfaces/home';
 export const getHomePage = async (): Promise<IHomeData | undefined> => {
   try {
     const response = await fetch(
-      `${process.env.TRIBOLOGY_BACKEND}/wp-json/wp/v2/pages?status=private`,
+      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wp/v2/pages?status=private`,
       {
         method: 'GET',
         headers: {
-          Authorization: 'Basic YmFja2VuZE1hbmFnZXI6MExXQiBybWU4IFgyTWcgYktRbyB6dU5FIHB1SjQ=',
+          Authorization: `${process.env.TOKEN_WORDPRESS_BACKEND}`,
           Accept: '*/*',
         },
         next: {

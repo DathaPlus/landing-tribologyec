@@ -9,7 +9,7 @@ import { getWordpressPageData } from '@server/common/getWordpressPageData';
 
 export default async function Home() {
   const products = await getProducts({ filter: { category: 'Herramientas' } });
-  //TDOD: get home data
+  //TODO: get home data
   const homeData = await getWordpressPageData<any>({ searchParams: { namePage: 'Home' } });
   console.log(homeData);
 

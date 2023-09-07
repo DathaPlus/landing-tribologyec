@@ -10,13 +10,15 @@ export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]
     const category = await getCategoryFromName(filter?.category);
 
     const response = await fetch(
-      `${process.env.TRIBOLOGY_BACKEND}/wp-json/wc/v3/products?per_page=${perPage}&page=${page}${
+      `${
+        process.env.TRIBOLOGY_BACKEND_URL
+      }/wp-json/wc/v3/products?per_page=${perPage}&page=${page}${
         category ? `&category=${category.id}` : ''
       }`,
       {
         method: 'GET',
         headers: {
-          Authorization: process.env.TOKEN_BACKEND || '',
+          Authorization: process.env.TOKEN_BACKEND_PRODUCTS || '',
           Accept: '*/*',
         },
         next,

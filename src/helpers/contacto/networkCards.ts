@@ -11,9 +11,7 @@ export const CarouselNetworkCardsProps: Omit<
   pagination: {
     clickable: true,
     renderBullet: (index: number, className: any) => {
-      return (
-        '<span class="' + className + '" style="background-color: #CCA09E !important;"></span>'
-      );
+      return '<span class="' + className + ' swiper-carrousel-dots-color"></span>';
     },
   },
   breakpoints: {

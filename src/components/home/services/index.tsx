@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Icon } from '@dathaplus/storybook';
-import {IServicesHomeSection} from "@interfaces/home";
+import { IServicesHomeSection } from '@interfaces/home';
 
 export const Services = (params: IServicesHomeSection) => {
   return (
@@ -18,7 +18,7 @@ export const Services = (params: IServicesHomeSection) => {
             <li key={idx}>
               {icon && <Icon {...icon} />}
               <strong>{title}</strong>
-              <span>{description?.join(" ")}</span>
+              <span>{description?.join(' ')}</span>
             </li>
           ))}
         </ul>

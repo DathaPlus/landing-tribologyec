@@ -1,5 +1,4 @@
 'use client';
-import { initialValuesContact } from '@data/contact';
 import { Button, useLayoutWidth } from '@dathaplus/storybook';
 import { ContactSchema } from '@validation/index';
 import { Form, Formik } from 'formik';
@@ -12,6 +11,7 @@ export const Contacts = () => {
 
   return (
     <section
+      id="form-contact-us-section"
       className="contact"
       style={{
         backgroundImage: `url('/img/${width < 500 ? 'contact_bg-mobile.png' : 'contact_bg.png'}')`,
@@ -29,7 +29,11 @@ export const Contacts = () => {
         </div>
 
         <Formik
-          initialValues={initialValuesContact}
+          initialValues={{
+            name: '',
+            message: '',
+            phone: '',
+          }}
           validationSchema={ContactSchema}
           onSubmit={() => {}}
         >

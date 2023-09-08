@@ -19,7 +19,7 @@ export interface IServicesHomeSection {
   mision?: {
     title: string;
     description: string;
-  },
+  };
   carrousel?: IHomeServices[];
 }
 

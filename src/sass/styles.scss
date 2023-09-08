@@ -1,0 +1,10 @@
+@import 'mixin';
+@import 'theme';
+@import 'components/index';
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}

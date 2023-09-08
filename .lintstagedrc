@@ -1,4 +1,0 @@
-{
-  "./**/*.{ts,js,json,yml,yaml}": ["eslint --fix", "prettier --write --config ./.prettierrc"],
-  "*.md": "prettier --list-different"
-}

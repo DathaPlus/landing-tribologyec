@@ -1,105 +1,34 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 🚀 Quick start
+## Getting Started
 
-1.  **Create a Gatsby site.**
+First, run the development server:
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
-    
-2.  **Default Configuration.**
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-    In the following prompts, choose TypeScript as your preferred language and none styling solution. 
-    If you’ve never heard of vanilla-extract before (as a CSS styling solution 😉), you can think of it as “CSS modules in TypeScript”
-    which enables you to write type-safe CSS that gets build to static CSS. Here’s how your questionnaire should look like:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-    ```shell
-    What would you like to call your site?
-    ✔ · Getting Started with TypeScript in Gatsby
-    What would you like to name the folder where your site will be created?
-    ✔ github/ getting-started-with-type-script-in-gatsby
-    ✔ Will you be using JavaScript or TypeScript?
-    · TypeScript
-    ✔ Will you be using a CMS?
-    · No (or I'll add it later)
-    ✔ Would you like to install a styling system?
-    · No (or I'll add it later)
-    ✔ Would you like to install additional features with other plugins?No items were selected
-    ```
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-3. **gatsby-config.ts**
+## Learn More
 
-    The set up process already created a gatsby-config.ts for you. You can use it like you’re used to with gatsby-config.js
-    with the difference that the syntax changed from CommonJS to ES6. The config in your project should look like this:
+To learn more about Next.js, take a look at the following resources:
 
-    ```ts
-   //gatsby-config.ts
-    import type { GatsbyConfig } from "gatsby";
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-    const config: GatsbyConfig = {
-      siteMetadata: {
-        title: `Getting Started with TypeScript in Gatsby`,
-        siteUrl: `https://www.yourdomain.tld`
-      },
-      plugins: ["gatsby-plugin-vanilla-extract"]
-    };
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-    export default config;
-    ```
+## Deploy on Vercel
 
-4. **Start developing.**
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    npm run develop
-    ```
-
-5. **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-6. **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
-
-## Authors
-* **Datha+ Dev Team**
-* **Anthony Tacuri** - *Initial work* - [github](https://github.com/ant121)
-
-## Acknowledgments
-
-> "*When something is important enough, you do it even if the odds are not with you*". - Elon Musk.
->
-> Cuando algo es lo suficientemente importante, lo haces incluso si las probabilidades de que salga bien no te acompañan
-
-Copyright (c) 2022 Datha+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

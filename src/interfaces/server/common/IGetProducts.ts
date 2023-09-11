@@ -1,8 +1,8 @@
-export interface IGetProducts  {
-    next?: NextFetchRequestConfig;
-    page?: number;
-    perPage?: number;
-    filter?: {
-        category?: string;
-    }
+export interface IGetProducts {
+  next?: NextFetchRequestConfig;
+  page?: number;
+  perPage?: number;
+  filter?: {
+    category?: string;
+  };
 }

@@ -4,22 +4,24 @@ import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
 import Trayectory from '@components/home/trayectory';
 import { Contacts, Navbar } from '@components/index';
-import {getProducts} from "@server/common/getProducts";
-import {getHomePage} from "@server/home/getHomePage";
+import { getProducts } from '@server/common/getProducts';
+import { getWordpressPageData } from '@server/common/getWordpressPageData';
 
 export default async function Home() {
-  const products = await getProducts({ filter: {category: "Herramientas"} });
-  const homeData = await getHomePage();
+  const products = await getProducts({ filter: { category: 'Herramientas' } });
+  //TODO: get home data
+  const homeData = await getWordpressPageData<any>({ searchParams: { namePage: 'Home' } });
+  console.log(homeData);
 
   return (
     <main>
       <Bar />
       <Navbar />
-      <Hero {...homeData?.heroBanner}/>
-      <Services {...homeData?.ourServices}/>
+      <Hero />
+      <Services />
       <OurProjects />
-      <Products products={products}/>
-      <Trayectory {...homeData?.trayectory}/>
+      <Products products={products} />
+      <Trayectory />
       <Contacts />
       <Footer />
     </main>

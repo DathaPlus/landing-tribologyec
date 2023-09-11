@@ -5,4 +5,5 @@ export * from './Bar';
 export * from './footer';
 export * from './navbar';
 export * from './services/ourServices/card';
+export * from './blog';
 export * from './cards';

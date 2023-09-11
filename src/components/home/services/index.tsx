@@ -1,16 +1,15 @@
 'use client';
-import React , {useState} from 'react';
-import {allServices} from '@data/home/services';
-import {IServicesHomeSection} from "@interfaces/home";
-import {GridService} from "@components/home/services/gridService";
-import {Carousel} from "@dathaplus/storybook";
-import {Navigation, Pagination} from "swiper";
+import React, { useState } from 'react';
+import { allServices } from '@data/home/services';
+import { IServicesHomeSection } from '@interfaces/home';
+import { GridService } from '@components/home/services/gridService';
+import { Carousel } from '@dathaplus/storybook';
+import { Navigation, Pagination } from 'swiper';
 
 export const Services = (params: IServicesHomeSection) => {
   const [activeSlide, setActiveSlide] = useState({
     active: 0,
     quantitySlide: 0,
-
   });
   return (
     <section className="home_services">
@@ -25,25 +24,26 @@ export const Services = (params: IServicesHomeSection) => {
           <Carousel
             autoHeight
             pagination
-            navigation={
-              {
-                prevEl: '#product_arrow_left',
-                nextEl: '#product_arrow_right',
-              }
-            }
+            navigation={{
+              prevEl: '#product_arrow_left',
+              nextEl: '#product_arrow_right',
+            }}
             Element={GridService}
-            data={allServices({className: {
-              left: activeSlide.active === 0 ? 'arrow_carousel_left-disabled' : '',
-                  right: activeSlide.active === activeSlide.quantitySlide - 1 ? 'arrow_carousel_right-disabled' : '',
-                },
+            data={allServices({
+              className: {
+                left: activeSlide.active === 0 ? 'arrow_carousel_left-disabled' : '',
+                right:
+                  activeSlide.active === activeSlide.quantitySlide - 1
+                    ? 'arrow_carousel_right-disabled'
+                    : '',
               },
-              )}
+            })}
             modules={[Pagination, Navigation]}
             slidesPerView={1}
-
             id={String(5954)}
-
-            onSlideChange={(e) => setActiveSlide({active: e.activeIndex, quantitySlide: e.slides.length})}
+            onSlideChange={(e) =>
+              setActiveSlide({ active: e.activeIndex, quantitySlide: e.slides.length })
+            }
           />
         </div>
 

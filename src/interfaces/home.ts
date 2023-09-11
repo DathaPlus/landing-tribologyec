@@ -1,7 +1,6 @@
 import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
 
 import { ILink } from './link';
-import {IArrowsCarousel} from "@interfaces/common";
 
 export interface IHomeData {
   heroBanner: IHeroBannerHome;
@@ -58,7 +57,7 @@ export interface IHomeServicesProd {
   className?: {
     left?: string;
     right?: string;
-  }
+  };
 }
 
 export interface ICardServiceProd {

@@ -3,4 +3,4 @@ export interface IArrowsCarousel {
   id: string;
   position?: number;
   className?: string;
-};
+}

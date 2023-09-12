@@ -4,10 +4,9 @@ import { Carousel, Icon, SwiperModules } from '@dathaplus/storybook';
 import { CarouselProductsProps, viewAllProductsProps } from '@helpers/home';
 import React, { FC } from 'react';
 import { Card } from './card';
-import {ICardProduct} from "@interfaces/home";
+import { ICardProduct } from '@interfaces/home';
 
-export const Products: FC<{products: ICardProduct[]}> = ({products  }) => {
-
+export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => {
   return (
     <div className="home__products">
       <div className="home__products_wrapper">

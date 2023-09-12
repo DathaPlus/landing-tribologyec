@@ -22,7 +22,7 @@ export const ProductList = () => {
     const { value } = e.currentTarget as HTMLInputElement;
     setSearchTerm(value);
   };
-
+  
   const PERPAGE = 6;
 
   useEffect(() => {

@@ -2,7 +2,7 @@
 import { trayectoryLogos } from '@data/home/trayectory';
 import { useLayoutWidth } from '@dathaplus/storybook';
 import React from 'react';
-import {ITrajectoryHomeSection} from "@interfaces/home";
+import { ITrajectoryHomeSection } from '@interfaces/home';
 
 const Trayectory = (params: ITrajectoryHomeSection) => {
   const screenWidth = useLayoutWidth();
@@ -19,9 +19,7 @@ const Trayectory = (params: ITrajectoryHomeSection) => {
             <h3>AÑOS</h3>
           </div>
           <div className="description__trayectory">
-            <p>
-              {params?.description}
-            </p>
+            <p>{params?.description}</p>
           </div>
         </div>
         {screenWidth > 900 && (

@@ -45,3 +45,14 @@ export interface ICardProduct extends Omit<ICardProject, 'title'> {
   category: string;
   description: string;
 }
+
+export interface WCPagination {
+  totalPages?: number;
+  totalProducts?: number;
+}
+
+
+export type GetPromiseProductsResponse = {
+  products:ICardProduct[] ;
+  pagination: WCPagination; 
+}

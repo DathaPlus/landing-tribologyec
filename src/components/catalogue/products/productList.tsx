@@ -1,47 +1,13 @@
 'use client';
-import React, { ChangeEvent, FormEvent, HTMLAttributes, useState, useEffect } from 'react';
+import React from 'react';
 import { TextInput } from '@dathaplus/storybook';
 import Image from 'next/image';
-import { getProducts } from '@server/common/getProducts';
-import { ICardProduct } from '@interfaces/home';
-import { useDebounce } from '@hooks/useDebounce';
 import { ArrowsCarousel } from '@components/common';
+import { useProductCatalogueList } from '@components/hooks/useProductCatalogueList';
 
 export const ProductList = () => {
-  const [filter, setFilter] = useState<ICardProduct[]>([]);
-  const [page, setPage] = useState<number>(1);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const category = useDebounce(searchTerm, 500);
-
-  const handleFilterProducts = (
-    e: FormEvent<HTMLAttributes<HTMLInputElement>> | ChangeEvent<HTMLInputElement>,
-  ) => {
-    e.preventDefault();
-    if (loading) return;
-    const { value } = e.currentTarget as HTMLInputElement;
-    setSearchTerm(value);
-  };
-  
-  const PERPAGE = 6;
-
-  useEffect(() => {
-    setLoading(true);
-    getProducts({ page, perPage: PERPAGE, filter: { category } })
-      .then(setFilter)
-      .then(() => setLoading(false))
-      .catch((err) => console.error(err));
-  }, [page, category]);
-
-  const handleNextPage = () => {
-    setPage((prev) =>
-      filter.length !== 0 && !loading && filter.length >= PERPAGE ? prev + 1 : prev,
-    );
-  };
-
-  const handlePrevPage = () => {
-    setPage((prev) => (prev > 1 && !loading ? prev - 1 : 1));
-  };
+  const { filter, handleFilterProducts, handleNextPage, handlePrevPage, loading, page } =
+    useProductCatalogueList(6);
 
   return (
     <div className="catalogue-products">
@@ -51,27 +17,29 @@ export const ProductList = () => {
       </p>
 
       <div className="catalogue-products__list">
-        <TextInput
-          onChange={handleFilterProducts}
-          placeholder="Filtra el área que buscas"
-          size="wide"
-          colorStyle="secondary"
-          disabled={true}
-          icons={{
-            right: {
-              name: 'search',
-              svg: {
-                color: 'gray',
+        {filter?.products?.length > 0 && (
+          <TextInput
+            onChange={handleFilterProducts}
+            placeholder="Filtra el área que buscas"
+            size="wide"
+            colorStyle="secondary"
+            disabled={true}
+            icons={{
+              right: {
+                name: 'search',
+                svg: {
+                  color: 'gray',
+                },
               },
-            },
-          }}
-        />
+            }}
+          />
+        )}
 
         {loading ? (
           <div className="catalogue-products__no-items">Cargando...</div>
-        ) : filter?.length ? (
+        ) : filter?.products?.length ? (
           <div className="catalogue-products__list-items">
-            {filter?.map((product, idx) => (
+            {filter?.products?.map((product, idx) => (
               <a
                 key={`${idx}_${new Date().getTime()}`}
                 className="item"
@@ -89,7 +57,7 @@ export const ProductList = () => {
           <div className="catalogue-products__no-items">No hay productos</div>
         )}
 
-        {!loading && (
+        {!loading && filter.pagination.totalPages != 1 && (
           <div style={{ display: 'flex', gap: '1em', justifyContent: 'center' }}>
             <span onClick={handlePrevPage}>
               <ArrowsCarousel type="left" relative positionH={0} top={0} />

@@ -1,9 +1,11 @@
-import { ICardProduct } from '@interfaces/home';
+import { GetPromiseProductsResponse } from '@interfaces/home';
 import { IGetProducts } from '@interfaces/server/common/IGetProducts';
 import { getCategoriesProducts } from '@server/common/getCategoriesProducts';
 import { ICategory } from '@interfaces/server/common/IGetCategoriesProducts';
 
-export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]> => {
+
+export const getProducts = async (params?: IGetProducts): Promise<GetPromiseProductsResponse> => {
+
   try {
     const { next, page = 1, perPage = 10, filter } = params || {};
 
@@ -29,15 +31,25 @@ export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]
 
     const data = await response.json();
 
-    return data.map((product: any) => ({
-      description: product.name,
-      category: product.categories?.[0]?.name || 'No category',
-      img: product.images?.[0]?.src || '',
-    }));
+
+    return {
+      products: data.map((product: any) => ({
+        description: product.name,
+        category: product.categories?.[0]?.name || 'No category',
+        img: product.images?.[0]?.src || '',
+      })),
+      pagination: {
+        totalPages: Number(response.headers.get('X-WP-TotalPages') ?? 1),
+        totalProducts: Number(response.headers.get('X-WP-Total') ?? 1),
+      }
+     }
   } catch (e) {
     console.error('Error in getProducts: ', e);
 
-    return [];
+    return {
+      products: [],
+      pagination: {}
+    }
   }
 };
 

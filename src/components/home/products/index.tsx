@@ -6,7 +6,7 @@ import React, { FC } from 'react';
 import { Card } from './card';
 import { ICardProduct } from '@interfaces/home';
 
-export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => {
+export const Products: FC<{ products?: ICardProduct[] }> = ({ products }) => {
   return (
     <div className="home__products">
       <div className="home__products_wrapper">
@@ -14,13 +14,13 @@ export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => {
 
         <div className="products__list">
           <ul>
-            <Carousel
+            {products && <Carousel
               {...CarouselProductsProps}
               data={products}
               Element={Card}
               modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
             />
-
+}
             <div className="products__arrow_wrapper_left" id="product_arrow_left">
               <Icon name="arrow-left-circle" />
             </div>

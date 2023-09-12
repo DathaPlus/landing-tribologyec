@@ -2,11 +2,13 @@
 import { Button, useLayoutWidth } from '@dathaplus/storybook';
 import { ContactSchema } from '@validation/index';
 import { Form, Formik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Field from './field';
+import { sendEmail } from '@server/common/sendEmail';
 
 export const Contacts = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const width = useLayoutWidth();
 
   return (
@@ -35,7 +37,15 @@ export const Contacts = () => {
             phone: '',
           }}
           validationSchema={ContactSchema}
-          onSubmit={() => {}}
+          onSubmit={async (values) => {
+            setLoading(true);
+            await sendEmail({
+              to: 'anthony@dathaplus.com',
+              subject: 'Contacto desde la web',
+              html: `<p>${JSON.stringify(values)}</p>`,
+            });
+            setLoading(false);
+          }}
         >
           <Form className="contact__form">
             <div className="contact__wrapper-input">
@@ -47,9 +57,9 @@ export const Contacts = () => {
                 name="message"
                 type="textarea"
                 icon="message-circle"
-                placeholder="Déjanos sun mensaje"
+                placeholder="Déjanos un mensaje"
               />
-              <Button type="submit" size="normal" style="primary">
+              <Button type="submit" size="normal" style="primary" disabled={loading}>
                 Enviar
               </Button>
             </div>

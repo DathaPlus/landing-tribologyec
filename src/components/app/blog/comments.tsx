@@ -1,37 +1,52 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { CommentCard } from '@components/cards';
-import commentImage from '@assets/img/blog/comment-image.png';
-import commentImageMobile from '@assets/img/blog/comment-image-mobile.png';
-import {Button} from "@dathaplus/storybook";
+import { Button } from '@dathaplus/storybook';
+import Image from 'next/image';
+import grayOutlinedSearch from '@assets/img/icons/gray-outlined-search.svg';
+import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
+import { ICommentCard } from '@interfaces/cards/ICommentCard';
+import { useFormik } from 'formik';
+import { getWordpressPosts } from '@server/common/getWordpressPosts';
 
-export const Comments = () => {
-  const comments: any[] = [];
-
-  for (let i = 0; i < 9; i++) {
-    comments.push({
-      image: {
-        desktop: commentImage.src,
-        mobile: commentImageMobile.src,
-      },
-      title: 'El Papel Vital de Tribologyec en la Industria',
-      description:
-        'El personal es el capital más importante de una empresa o negocio de cualquier tipo. ¡Descubre aquí como lograrlo con éxito!',
-    });
-  }
+export const Comments = ({ blogs }: { blogs?: IWordpressPageData<ICommentCard>[] }) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [comments, setComments] = useState<IWordpressPageData<ICommentCard>[]>(blogs || []);
+  const { handleSubmit, values, handleChange } = useFormik({
+    initialValues: {
+      search: '',
+    },
+    onSubmit: async (values) => {
+      setLoading(true);
+      const blogData = await getWordpressPosts<ICommentCard>({ ...values });
+      setComments(blogData || []);
+      setLoading(false);
+    },
+  });
 
   return (
     <div className="comments-cards">
-      <div className="comments-cards__input-container">
-        <input placeholder="Te ayudamos con tu busqueda" />
-      </div>
-      <div className="comments-cards__container">
-        {comments.map((comment, index) => (
-          <CommentCard {...comment} key={index} />
-        ))}
-      </div>
-      <Button type="button" size="normal" style="primary"  >
-          <span style={{padding: "0 4em"}}>Leer más</span>
+      <form onSubmit={handleSubmit} className="comments-cards__input-container">
+        <input
+          name="search"
+          value={values.search}
+          onChange={handleChange}
+          placeholder="Te ayudamos con tu busqueda"
+        />
+        <button>
+          <Image src={grayOutlinedSearch.src} alt="search-icon" width={23} height={27} />
+        </button>
+      </form>
+      {loading ? <h1>Cargando datos ...</h1> : null}
+      {!loading && !comments.length ? (
+        <h1>Sin datos</h1>
+      ) : (
+        <div className="comments-cards__container">
+          {comments?.map((comment, index) => <CommentCard {...(comment.acf as any)} key={index} />)}
+        </div>
+      )}
+      <Button type="button" size="normal" style="primary">
+        <span style={{ padding: '0 4em' }}>Leer más</span>
       </Button>
     </div>
   );

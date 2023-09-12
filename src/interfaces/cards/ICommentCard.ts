@@ -1,10 +1,10 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 export interface ICommentCard {
-  image: {
+  images: {
     desktop: StaticImport | string;
     mobile: StaticImport | string;
   };
   title: string;
-  description: string;
+  shortDescription: string;
 }

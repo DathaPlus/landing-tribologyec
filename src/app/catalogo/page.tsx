@@ -1,10 +1,11 @@
 import React from 'react'
-import {Bar, Navbar, Hero, CatalogueList, ProductList, Contacts, Footer} from '@components/index';
+import {Bar, Navbar, Hero, CatalogueList, Contacts, Footer, ProductList} from '@components/index';
 import { getCataloguePage } from '@server/catalogue/getCataloguePage';
 
 export default async function CataloguePage(){
-
+  
   const data = await getCataloguePage();
+  
 
   return (
     <main >
@@ -12,7 +13,7 @@ export default async function CataloguePage(){
       <Navbar />
       <Hero {...data?.heroBanner}/>
       <CatalogueList />
-      <ProductList products={data?.products}/>
+      <ProductList/>
       <Contacts />
       <Footer />
     </main>

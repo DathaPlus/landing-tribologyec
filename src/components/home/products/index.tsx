@@ -6,7 +6,7 @@ import React, { FC } from 'react';
 import { Card } from './card';
 import {ICardProduct} from "@interfaces/home";
 
-export const Products: FC<{products: ICardProduct[]}> =  ({products  }) => {
+export const Products: FC<{products: ICardProduct[]}> = ({products  }) => {
 
   return (
     <div className="home__products">

@@ -1,16 +1,25 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Dispatch, useState } from 'react';
 import { allServices } from '@data/home/services';
-import { IServicesHomeSection } from '@interfaces/home';
+import {IHomeServices, IServicesHomeSection} from '@interfaces/home';
 import { GridService } from '@components/home/services/gridService';
 import { Carousel } from '@dathaplus/storybook';
 import { Navigation, Pagination } from 'swiper';
 
+type TActiveSlide = {
+  active: number;
+  quantitySlide: number;
+};
+
 export const Services = (params: IServicesHomeSection) => {
-  const [activeSlide, setActiveSlide] = useState({
+  const [activeSlide, setActiveSlide]: [
+    TActiveSlide,
+    Dispatch<React.SetStateAction<TActiveSlide>>,
+  ] = useState<TActiveSlide>({
     active: 0,
     quantitySlide: 0,
   });
+
   return (
     <section className="home_services">
       <img src="/img/services_bg.png" alt="services" />
@@ -29,15 +38,18 @@ export const Services = (params: IServicesHomeSection) => {
               nextEl: '#product_arrow_right',
             }}
             Element={GridService}
-            data={allServices({
-              className: {
-                left: activeSlide.active === 0 ? 'arrow_carousel_left-disabled' : '',
-                right:
-                  activeSlide.active === activeSlide.quantitySlide - 1
-                    ? 'arrow_carousel_right-disabled'
-                    : '',
+            data={allServices(
+              {
+                className: {
+                  left: activeSlide.active === 0 ? 'arrow_carousel_left-disabled' : '',
+                  right:
+                    activeSlide.active === activeSlide.quantitySlide - 1
+                      ? 'arrow_carousel_right-disabled'
+                      : '',
+                },
               },
-            })}
+              params.carrousel,
+            )}
             modules={[Pagination, Navigation]}
             slidesPerView={1}
             id={String(5954)}
@@ -48,9 +60,9 @@ export const Services = (params: IServicesHomeSection) => {
         </div>
 
         <div className="services__wrapper_testimonial">
-          <h5 className="services__wrapper_testimonial__mission">{params?.mision?.title}</h5>
+          <h5 className="services__wrapper_testimonial__mission">{params?.mission?.title}</h5>
           <p className="services__wrapper_testimonial__mission-description">
-            {params?.mision?.description}
+            {params?.mission?.description}
           </p>
         </div>
       </div>

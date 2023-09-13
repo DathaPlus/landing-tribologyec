@@ -1,107 +1,36 @@
-import {
-  ICardServiceProd,
-  IHomeServicesProd,
-  IServiceTestimonial,
-} from '@interfaces/home';
+import { ICardServiceProd, IHomeServices, IHomeServicesProd } from '@interfaces/home';
+import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
 
-export const listServices: ICardServiceProd[] = [
+export const allServices = (
   {
-    icon: {
-      name: 'star',
-      size: 30,
-      svg: {
-        stroke: '#fff',
-      },
-    },
-    title: 'Servicios Post: Venta',
-    desc: 'Mantenimiento y reparaciones para todas las herramientas de par torsional de las marcas que representamos. Alquiler de herramientas de torque desde 500 – 700.',
+    className,
+  }: {
+    className?: IHomeServicesProd['className'];
   },
-  {
-    icon: {
-      name: 'play',
-      size: 30,
-      svg: {
-        stroke: '#fff',
-      },
-    },
-    title: 'Servicio de Medición de Longación en pernos',
-    desc: 'Herramientas de torque desde 500 hasta 20000.',
-  },
-  {
-    icon: {
-      name: 'settings',
-      size: 30,
-      svg: {
-        stroke: '#fff',
-      },
-    },
-    title: 'Entrenamiento',
-    desc: 'Para pernos desde 6 [mm] de diámetro y hasta 15 [m] de largo',
-  },
-  {
-    icon: {
-      name: 'shield',
-      size: 30,
-      svg: {
-        stroke: '#fff',
-      },
-    },
-    title: 'Servicios de aplicación de torque',
-    desc: 'Diseño y fabricación de herramientas, accesorios, reacciones especiales.',
-  },
-];
+  services: IHomeServices[] = [],
+): IHomeServicesProd[] => {
+  let products: ICardServiceProd[] = [];
+  const gridProducts: IHomeServicesProd[] = [];
 
-export const allServices = ({
-  className,
-}: {
-  className?: IHomeServicesProd['className'];
-}): IHomeServicesProd[] => [
-  {
-    product: listServices,
-    className,
-  },
-  {
-    product: listServices,
-    className,
-  },
-  {
-    product: listServices,
-    className,
-  },
-  {
-    product: listServices,
-    className,
-  },
-  {
-    product: listServices,
-    className,
-  },
-];
+  services.forEach((ele, index: number) => {
+    products.push({
+      ...ele,
+      icon: {
+        name: ele.icon,
+        size: 30,
+        svg: {
+          stroke: '#fff',
+        },
+      } as IIcon,
+    });
 
-export const serviceTestimonial: IServiceTestimonial[] = [
-  {
-    name: 'juan perez',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'adriana smith',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'andres garcia',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'mia lopez',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'Luke Lambert',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-];
+    if (products.length === 4) {
+      gridProducts.push({ product: products, className });
+      products = [];
+    }
+
+    if (index === services.length - 1) gridProducts.push({ product: products, className });
+  });
+
+  return gridProducts;
+};

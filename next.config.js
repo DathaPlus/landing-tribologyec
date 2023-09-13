@@ -2,6 +2,14 @@
 const path = require('path');
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'adminwp.tribologyec.com',
+      },
+    ],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, '/src/sass/styles')],
   },

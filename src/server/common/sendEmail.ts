@@ -3,7 +3,7 @@ import { ISendEmail } from '@interfaces/server/common/ISendEmail';
 export const sendEmail = async (data: ISendEmail): Promise<void> => {
   try {
     const response = await fetch(
-      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wp/v2/send-mail`,
+      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wp/v2/send-email`,
       {
         method: 'POST',
         headers: {

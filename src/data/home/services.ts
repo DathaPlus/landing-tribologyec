@@ -1,29 +1,36 @@
-import { IServiceTestimonial } from '@interfaces/home';
+import { ICardServiceProd, IHomeServices, IHomeServicesProd } from '@interfaces/home';
+import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
 
-export const serviceTestimonial: IServiceTestimonial[] = [
+export const allServices = (
   {
-    name: 'juan perez',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
+    className,
+  }: {
+    className?: IHomeServicesProd['className'];
   },
-  {
-    name: 'adriana smith',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'andres garcia',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'mia lopez',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-  {
-    name: 'Luke Lambert',
-    message:
-      'Son una empresa excelente, reseña de mínimo 5 líneas con opiniones fuertes y convincentes. Y lo suficientemente largas para que puedan llenar el espacio adecuado.',
-  },
-];
+  services: IHomeServices[] = [],
+): IHomeServicesProd[] => {
+  let products: ICardServiceProd[] = [];
+  const gridProducts: IHomeServicesProd[] = [];
+
+  services.forEach((ele, index: number) => {
+    products.push({
+      ...ele,
+      icon: {
+        name: ele.icon,
+        size: 30,
+        svg: {
+          stroke: '#fff',
+        },
+      } as IIcon,
+    });
+
+    if (products.length === 4) {
+      gridProducts.push({ product: products, className });
+      products = [];
+    }
+
+    if (index === services.length - 1) gridProducts.push({ product: products, className });
+  });
+
+  return gridProducts;
+};

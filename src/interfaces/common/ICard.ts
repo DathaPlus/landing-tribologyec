@@ -1,6 +1,6 @@
 import { ILink } from '@interfaces/link';
 
-export interface ICardServices {
+export interface ICard {
   img?: string;
   title?: string;
   description?: string;

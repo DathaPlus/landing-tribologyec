@@ -5,13 +5,12 @@
 
   @media (max-width: 800px) {
     padding: 4.5vw;
-
   }
 }
 
 .title_center_solutions {
   margin: 0;
-  font-size: 3.8vw;
+  font-size: 40px;
   line-height: 1.25em;
   padding: 0 0 0.6em;
   font-family: var(--font-antonio), sans-serif;
@@ -38,7 +37,7 @@
     color: hsl(var(--a));
   }
 
-@media (min-width: 800px) {
+  @media (min-width: 800px) {
     display: none;
   }
 }
@@ -60,7 +59,7 @@
     border-radius: 77.8082px;
     color: white;
     padding: 5px 30px;
-    font-size: 1.5vw;
+    font-size: 16px;
 
     @media (max-width: 800px) {
       font-size: 3vw;
@@ -88,7 +87,7 @@
 }
 
 .solutions_subtitle {
-  font-size: 2vw;
+  font-size: 32px;
   line-height: 1em;
   margin: 0 0 1.8em;
 
@@ -98,14 +97,13 @@
 }
 
 .solutions_description {
-  font-size: 1.6vw;
+  font-size: 20px;
   line-height: 1.7em;
 
   @media (max-width: 800px) {
     font-size: 3.5vw;
   }
 }
-
 
 .container_image_center_solutions {
   position: absolute;

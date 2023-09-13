@@ -5,6 +5,6 @@ type DOM = DOMAttributes<AnchorHTMLAttributes<HTMLAnchorElement>> &
 
 export interface ILink extends Partial<Pick<DOM, 'href' | 'children'>> {
   type?: 'internal' | 'external';
-  internalProps?: Omit<DOM, 'href' | 'href' | 'children'>;
-  externalProps?: Omit<DOM, 'href' | 'href' | 'children'>;
+  internalProps?: Omit<DOM, 'href' | 'children'>;
+  externalProps?: Omit<DOM, 'href' | 'children'>;
 }

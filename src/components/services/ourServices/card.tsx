@@ -1,7 +1,7 @@
-import { ICardServices } from '@interfaces/services';
 import React, { FC } from 'react';
+import { ICard } from '@interfaces/common/ICard';
 
-export const Card: FC<ICardServices> = ({ title, img, description }) => {
+export const Card: FC<ICard> = ({ title, img, description }) => {
   return (
     <li className="services__card">
       <div className="gradient" />

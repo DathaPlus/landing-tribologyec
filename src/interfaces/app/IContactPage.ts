@@ -1,7 +1,7 @@
+import { IHeroBanner } from '@interfaces/common/IHeroBanner';
+
 export interface IContactPage extends IContactAssessor {
-  heroBanner?: {
-    title?: string;
-  };
+  heroBanner?: IHeroBanner;
   assessor?: IContactAssessor;
   socialNetworks?: {
     title?: string;

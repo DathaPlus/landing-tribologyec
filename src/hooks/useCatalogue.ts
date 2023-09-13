@@ -26,7 +26,6 @@ export const useCatalogue = (elements?: ICatalogueItem[]) => {
   }, []);
 
   const createElements = useCallback((numberElements: number) => {
-
     const carousel = (parentCarousel.current as HTMLDivElement).firstElementChild as HTMLElement;
     const wrapper = carousel.firstElementChild as HTMLElement;
     const m = ElementsBySlide(elements, numberElements);
@@ -52,12 +51,12 @@ export const useCatalogue = (elements?: ICatalogueItem[]) => {
   }, []);
 
   const breakpointCarouselT = ({ matches }: { matches: boolean }, breakpoint: TBreakpoint) => {
-    const xsq = breakpoint === "xs" && !matches;
-    const smq = breakpoint === "sm" && matches;
-    const mmq = breakpoint === "md" && matches;
-    const lmq = breakpoint === "lg" && matches;
-    const xmq = breakpoint === "xl" && matches;
-  
+    const xsq = breakpoint === 'xs' && !matches;
+    const smq = breakpoint === 'sm' && matches;
+    const mmq = breakpoint === 'md' && matches;
+    const lmq = breakpoint === 'lg' && matches;
+    const xmq = breakpoint === 'xl' && matches;
+
     if (xsq) {
       createElements(3);
     } else if (smq) {
@@ -73,11 +72,11 @@ export const useCatalogue = (elements?: ICatalogueItem[]) => {
 
   useEffect(() => {
     const mq = (query: BREAKPOINTS, rangeQuery?: BREAKPOINTS) =>
-    window?.matchMedia(
-      rangeQuery
-        ? `(min-width: ${query}px) and (max-width: ${rangeQuery}px)`
-        : `(min-width: ${query}px)`,
-    );
+      window?.matchMedia(
+        rangeQuery
+          ? `(min-width: ${query}px) and (max-width: ${rangeQuery}px)`
+          : `(min-width: ${query}px)`,
+      );
 
     const xs = mq(BREAKPOINTS.xs);
     const sm = mq(BREAKPOINTS.xs, BREAKPOINTS.sm);
@@ -93,11 +92,11 @@ export const useCatalogue = (elements?: ICatalogueItem[]) => {
       { size: xl, breakPoint: 'xl' },
     ];
 
-      breakPointsClients.forEach(({ size, breakPoint }) => {
-        breakpointCarouselT(size, breakPoint);
-        size.addEventListener('change', (e) => breakpointCarouselT(e, breakPoint));
-      });
-  },[])
+    breakPointsClients.forEach(({ size, breakPoint }) => {
+      breakpointCarouselT(size, breakPoint);
+      size.addEventListener('change', (e) => breakpointCarouselT(e, breakPoint));
+    });
+  }, []);
 
   return { ElementsBySlide, breakpointCarouselT, parentCarousel };
 };

@@ -2,7 +2,6 @@ import { ICatalogueData } from '@interfaces/catalogue';
 
 export const getCataloguePage = async (): Promise<ICatalogueData | undefined> => {
   try {
-  
     return {
       heroBanner: {
         bgImg: 'bg_catalogue.png',

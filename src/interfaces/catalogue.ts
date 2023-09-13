@@ -1,7 +1,7 @@
-import { IHeroBanner } from './common';
+import { IHeroBannerHome } from '@interfaces/home';
 
 export interface ICatalogueData {
-  heroBanner: IHeroBanner;
+  heroBanner: IHeroBannerHome;
   products?: ICatalogueProduct[];
 }
 

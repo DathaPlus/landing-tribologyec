@@ -47,17 +47,6 @@ export interface ICardProduct extends Omit<ICard, 'title'> {
   description: string;
 }
 
-export interface WCPagination {
-  totalPages?: number;
-  totalProducts?: number;
-}
-
-
-export type GetPromiseProductsResponse = {
-  products:ICardProduct[] ;
-  pagination: WCPagination;
-}
-
 export interface IHomeServicesProd {
   product: ICardServiceProd[];
   className?: {

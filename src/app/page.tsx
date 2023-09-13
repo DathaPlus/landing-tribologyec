@@ -6,10 +6,13 @@ import Trajectory from '@components/home/trayectory';
 import { Contacts, Navbar } from '@components/index';
 import { getProducts } from '@server/common/getProducts';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
-import { ICardProduct, IHomeServerPage } from '@interfaces/home';
+import { IHomeServerPage } from '@interfaces/home';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
+import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
 export default async function Home(): Promise<React.JSX.Element> {
-  const { products } = await getProducts({ filter: { category: 'Herramientas' } });
+  const { products }: IGetPromiseProductsResponse = await getProducts({
+    filter: { category: 'Herramientas' },
+  });
   const homeData: IWordpressPageData<IHomeServerPage> | undefined = await getWordpressPageData<any>(
     { searchParams: { namePage: 'Home' } },
   );

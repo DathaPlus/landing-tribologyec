@@ -31,7 +31,6 @@
       "@assets/*": ["public/*"],
       "@validation/*": ["src/validation/*"],
       "@server/*": ["src/server/*"],
-      "@hooks/*": ["src/hooks/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

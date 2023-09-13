@@ -1,17 +1,27 @@
 import { useDebounce } from '@hooks/useDebounce';
-import { GetPromiseProductsResponse } from '@interfaces/home';
 import { getProducts } from '@server/common/getProducts';
-import { useState, useEffect, FormEvent, HTMLAttributes, ChangeEvent } from 'react';
+import {
+  useState,
+  useEffect,
+  FormEvent,
+  HTMLAttributes,
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+} from 'react';
+import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
 
 export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
-  const [filter, setFilter] = useState<GetPromiseProductsResponse>({
-    products: [],
-    pagination: { totalPages: 0, totalProducts: 0 },
-  });
-  const [page, setPage] = useState<number>(1);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const category = useDebounce(searchTerm, 500);
+  const [filter, setFilter]: [IGetPromiseProductsResponse, Dispatch<IGetPromiseProductsResponse>] =
+    useState<IGetPromiseProductsResponse>({
+      products: [],
+      pagination: { totalPages: 0, totalProducts: 0 },
+    });
+  const [page, setPage]: [number, Dispatch<number>] = useState<number>(1);
+  const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
+    useState<boolean>(false);
+  const [searchTerm, setSearchTerm]: [string, Dispatch<string>] = useState('');
+  const category: string = useDebounce(searchTerm, 500);
 
   const handleFilterProducts = (
     e: FormEvent<HTMLAttributes<HTMLInputElement>> | ChangeEvent<HTMLInputElement>,
@@ -22,7 +32,6 @@ export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
     setSearchTerm(value);
   };
 
-
   useEffect(() => {
     setLoading(true);
     getProducts({ page, perPage: PRODUCTS_PER_PAGE, filter: { category } })
@@ -31,7 +40,7 @@ export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
       .catch((err) => console.error(err));
   }, [page, category]);
 
-  const handleNextPage = () => {
+  const handleNextPage = (): void => {
     setPage((prev) =>
       filter.products.length !== 0 &&
       !loading &&

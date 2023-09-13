@@ -17,7 +17,8 @@ export const OurServices = (params: IOurServices) => (
           {...CarouselPropsServices}
           data={params.services || []}
           Element={Card}
-          modules={[SwiperModules.Pagination]} />
+          modules={[SwiperModules.Pagination]}
+        />
       </ul>
     </div>
   </div>

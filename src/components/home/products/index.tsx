@@ -13,13 +13,14 @@ export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => (
 
       <div className="products__list">
         <ul>
-          {products && <Carousel
+          {products && (
+            <Carousel
               {...CarouselProductsProps}
               data={products}
               Element={Card}
               modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
             />
-          }
+          )}
 
           <div className="products__arrow_wrapper_left" id="product_arrow_left">
             <Icon name="arrow-left-circle" />

@@ -2,9 +2,10 @@ import { SSTConfig } from 'sst';
 import { NextjsSite } from 'sst/constructs';
 import { SsrDomainProps } from 'sst/constructs/SsrSite';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { ConfigOptions } from 'sst/project';
 
 export default {
-  config(_input) {
+  config(_input): Promise<ConfigOptions> | ConfigOptions {
     return {
       name: 'landing-tribologyec',
       region: 'us-east-1',
@@ -24,7 +25,7 @@ export default {
         },
       };
 
-      const site = new NextjsSite(stack, 'site', {
+      const site: NextjsSite = new NextjsSite(stack, 'site', {
         edge: true,
         customDomain: aws_domain_certificate,
       });

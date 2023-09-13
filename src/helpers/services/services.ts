@@ -1,10 +1,8 @@
-import { listCardsServices } from '@data/services/services';
 import { ICarousel } from '@dathaplus/storybook';
-import { ICardProject } from '@interfaces/home';
 import { ILink } from '@interfaces/link';
+import { ICard } from '@interfaces/common/ICard';
 
-export const CarouselPropsServices: Omit<ICarousel<ICardProject>, 'Element' | 'modules'> = {
-  data: listCardsServices,
+export const CarouselPropsServices: Omit<ICarousel<ICard>, 'Element' | 'modules' | 'data'> = {
   slidesPerView: 'auto',
   spaceBetween: 10,
   slidesPerGroup: 1,

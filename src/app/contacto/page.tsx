@@ -8,11 +8,13 @@ import { Assessor, Networks } from '@components/app';
 import contactHeroBanner from '@assets/img/contact_hero_bg.png';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IContactPage } from '@interfaces/app/IContactPage';
+import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
 
 const ContactPage = async () => {
-  const contactData = await getWordpressPageData<IContactPage>({
-    searchParams: { namePage: 'Contacto' },
-  });
+  const contactData: IWordpressPageData<IContactPage> | undefined =
+    await getWordpressPageData<IContactPage>({
+      searchParams: { namePage: 'Contacto' },
+    });
 
   return (
     <main>

@@ -1,22 +1,30 @@
 import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
+import { IHeroBanner } from '@interfaces/common/IHeroBanner';
+import { ISection } from '@interfaces/common/ISection';
+import { ICard } from '@interfaces/common/ICard';
 
-import { ILink } from './link';
-import { IHeroBanner } from './common/index';
+export interface IHomeServerPage {
+  heroBanner?: IHeroBannerHome;
+  mission?: IMission;
+  services?: IHomeServices[];
+  trajectory?: ITrajectoryHomeSection;
+  projects?: ISection[];
+}
 
-export interface IHomeData {
-  heroBanner: IHeroBanner;
-  ourServices: IServicesHomeSection;
-  trayectory: ITrajectoryHomeSection;
+export interface IHeroBannerHome extends IHeroBanner {
+  welcome?: string;
+  bgImg?: string;
+}
+
+export interface IMission {
+  title: string;
+  description: string;
 }
 
 export interface IServicesHomeSection {
-  mision?: {
-    title: string;
-    description: string;
-  };
+  mission?: IMission;
   carrousel?: IHomeServices[];
 }
-
 export interface ITrajectoryHomeSection {
   title?: string;
   description?: string;
@@ -24,7 +32,7 @@ export interface ITrajectoryHomeSection {
 }
 
 export interface IHomeServices {
-  icon?: IIcon;
+  icon?: IIcon | string;
   title?: string;
   description?: string[];
 }
@@ -34,14 +42,7 @@ export interface IServiceTestimonial {
   message: string;
 }
 
-export interface ICardProject {
-  img?: string;
-  title?: string;
-  description?: string;
-  link?: ILink;
-}
-
-export interface ICardProduct extends Omit<ICardProject, 'title'> {
+export interface ICardProduct extends Omit<ICard, 'title'> {
   category: string;
   description: string;
 }
@@ -54,5 +55,19 @@ export interface WCPagination {
 
 export type GetPromiseProductsResponse = {
   products:ICardProduct[] ;
-  pagination: WCPagination; 
+  pagination: WCPagination;
+}
+
+export interface IHomeServicesProd {
+  product: ICardServiceProd[];
+  className?: {
+    left?: string;
+    right?: string;
+  };
+}
+
+export interface ICardServiceProd {
+  icon?: IIcon;
+  title?: string;
+  desc?: string;
 }

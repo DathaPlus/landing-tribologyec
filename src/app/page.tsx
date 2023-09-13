@@ -2,26 +2,28 @@ import React from 'react';
 import { Hero, OurProjects, Products, Services } from '@components/home';
 import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
-import Trayectory from '@components/home/trayectory';
+import Trajectory from '@components/home/trayectory';
 import { Contacts, Navbar } from '@components/index';
 import { getProducts } from '@server/common/getProducts';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
-
-export default async function Home() {
+import { ICardProduct, IHomeServerPage } from '@interfaces/home';
+import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
+export default async function Home(): Promise<React.JSX.Element> {
   const { products } = await getProducts({ filter: { category: 'Herramientas' } });
-  //TODO: get home data
-  const homeData = await getWordpressPageData<any>({ searchParams: { namePage: 'Home' } });
-  console.log(homeData);
+  const homeData: IWordpressPageData<IHomeServerPage> | undefined = await getWordpressPageData<any>(
+    { searchParams: { namePage: 'Home' } },
+  );
 
   return (
     <main>
       <Bar />
       <Navbar />
-      <Hero />
-      <Services />
+      <Hero {...homeData?.acf?.heroBanner} />
+      <Services mission={homeData?.acf.mission} carrousel={homeData?.acf?.services} />
+      {/* TODO: Obtener los datos desde el admin de Wordpress */}
       <OurProjects />
       <Products products={products} />
-      <Trayectory />
+      <Trajectory {...homeData?.acf?.trajectory} />
       <Contacts />
       <Footer />
     </main>

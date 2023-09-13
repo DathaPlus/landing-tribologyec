@@ -1,7 +1,7 @@
 'use client';
 import React, { Dispatch, useState } from 'react';
 import { allServices } from '@data/home/services';
-import {IHomeServices, IServicesHomeSection} from '@interfaces/home';
+import { IServicesHomeSection } from '@interfaces/home';
 import { GridService } from '@components/home/services/gridService';
 import { Carousel } from '@dathaplus/storybook';
 import { Navigation, Pagination } from 'swiper';

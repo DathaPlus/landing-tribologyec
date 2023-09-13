@@ -1,20 +1,18 @@
 import { IIcon } from '@dathaplus/storybook/dist/interfaces/base/icon';
-
-import { ILink } from './link';
+import { IHeroBanner } from '@interfaces/common/IHeroBanner';
+import { ISection } from '@interfaces/common/ISection';
+import { ICard } from '@interfaces/common/ICard';
 
 export interface IHomeServerPage {
   heroBanner?: IHeroBannerHome;
   mission?: IMission;
   services?: IHomeServices[];
   trajectory?: ITrajectoryHomeSection;
-  projects?: object;
+  projects?: ISection[];
 }
 
-export interface IHeroBannerHome {
-  title?: string;
-  subtitle?: string;
+export interface IHeroBannerHome extends IHeroBanner {
   welcome?: string;
-  description?: string;
 }
 
 export interface IMission {
@@ -43,14 +41,7 @@ export interface IServiceTestimonial {
   message: string;
 }
 
-export interface ICardProject {
-  img?: string;
-  title?: string;
-  description?: string;
-  link?: ILink;
-}
-
-export interface ICardProduct extends Omit<ICardProject, 'title'> {
+export interface ICardProduct extends Omit<ICard, 'title'> {
   category: string;
   description: string;
 }

@@ -30,7 +30,7 @@
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["public/*"],
       "@validation/*": ["src/validation/*"],
-      "@server/*": ["src/server/*"]
+      "@server/*": ["src/server/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

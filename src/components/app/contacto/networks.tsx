@@ -1,9 +1,8 @@
 'use client';
 import React, { Fragment } from 'react';
-import { Carousel } from '@dathaplus/storybook';
+import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { NetworkCard } from '@components/cards';
 import { contactPageIcons } from '@data/contacto';
-import { Navigation, Pagination } from 'swiper';
 import { CarouselNetworkCardsProps } from '@helpers/contacto';
 import { IContactPage } from '@interfaces/app/IContactPage';
 import gsap from 'gsap';
@@ -48,7 +47,7 @@ export const Networks = ({ socialNetworks }: Pick<IContactPage, 'socialNetworks'
                   },
             })) || []
           }
-          modules={[Pagination, Navigation]}
+          modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
         />
       </div>
     </div>

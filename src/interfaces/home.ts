@@ -13,6 +13,7 @@ export interface IHomeServerPage {
 
 export interface IHeroBannerHome extends IHeroBanner {
   welcome?: string;
+  bgImg?: string;
 }
 
 export interface IMission {

@@ -6,13 +6,14 @@ import { IArrowsCarousel } from '@interfaces/common';
 export const ArrowsCarousel = ({
   type = 'left',
   id,
-  position = 30,
-  className,
+  positionH: position = 30,
+  relative = false,
+  top = '50%',
 }: IArrowsCarousel) => (
   <div
-    className={`arrow_carousel arrow_carousel_${type} ${className ? className : ''}`}
+    className={`arrow_carousel arrow_carousel_${type}}`}
     id={id}
-    style={{ [type]: position }}
+    style={{ [type]: position, position: relative ? 'relative' : 'absolute', top }}
   >
     <Icon name={`arrow-${type}-circle`} />
   </div>

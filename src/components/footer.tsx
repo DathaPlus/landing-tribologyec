@@ -28,7 +28,7 @@ export const Footer = () => (
         <span className="footer__title">Servicios</span>
         <ul>
           <li>
-            <a href="#">Servicios</a>
+            <a href="/servicios">Servicios</a>
           </li>
           <li>
             <a href="#">Proyectos</a>
@@ -40,7 +40,7 @@ export const Footer = () => (
         <span className="footer__title">Productos</span>
         <ul>
           <li>
-            <a href="#">Productos</a>
+            <a href="/catalogo">Productos</a>
           </li>
           <li>
             <a href="#">Herramientas</a>

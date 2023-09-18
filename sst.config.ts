@@ -1,5 +1,5 @@
 import { SSTConfig } from 'sst';
-import { NextjsSite } from 'sst/constructs';
+import { App, NextjsSite } from 'sst/constructs';
 import { SsrDomainProps } from 'sst/constructs/SsrSite';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 
@@ -7,15 +7,16 @@ export default {
   config(_input) {
     return {
       name: 'landing-tribologyec',
-      region: 'us-east-1',
+      region: 'us-east-2',
     };
   },
-  stacks(app) {
-    app.stack(function Site({ stack }) {
+  stacks(app: App) {
+    app.stack(function ({ stack }): void {
       const aws_domain_certificate: SsrDomainProps = {
         isExternalDomain: true,
-        domainName: 'www2.tribologyec.com',
+        domainName: 'www3.tribologyec.com',
         cdk: {
+          // @ts-ignore
           certificate: Certificate.fromCertificateArn(
             stack,
             'tribologyec_AWS_Certificate',
@@ -24,8 +25,8 @@ export default {
         },
       };
 
-      const site = new NextjsSite(stack, 'site', {
-        edge: true,
+      const site: NextjsSite = new NextjsSite(stack, 'site', {
+        // edge: true,
         customDomain: aws_domain_certificate,
       });
 

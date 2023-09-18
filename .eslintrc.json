@@ -23,6 +23,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier", "simple-import-sort"],
+  "ignorePatterns": ["*.config.ts"],
   "rules": {
     "camelcase": "error",
     "no-duplicate-imports": "error",

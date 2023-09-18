@@ -17,7 +17,7 @@ export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
       products: [],
       pagination: { totalPages: 0, totalProducts: 0 },
     });
-  const [page, setPage]: [number, Dispatch<number>] = useState<number>(1);
+  const [page, setPage]: [number, Dispatch<SetStateAction<number>>] = useState<number>(1);
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
     useState<boolean>(false);
   const [searchTerm, setSearchTerm]: [string, Dispatch<string>] = useState('');
@@ -41,7 +41,7 @@ export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
   }, [page, category]);
 
   const handleNextPage = (): void => {
-    setPage((prev) =>
+    setPage((prev: number): number =>
       filter.products.length !== 0 &&
       !loading &&
       filter.products.length >= PRODUCTS_PER_PAGE &&

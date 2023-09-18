@@ -1,8 +1,6 @@
 import { SSTConfig } from 'sst';
 import { App, NextjsSite } from 'sst/constructs';
-import { SsrDomainProps } from 'sst/constructs/SsrSite';
 import { ConfigOptions } from 'sst/project';
-import {Certificate, ICertificate} from "aws-cdk-lib/aws-certificatemanager";
 
 export default {
   config(_input): Promise<ConfigOptions> | ConfigOptions {
@@ -13,19 +11,22 @@ export default {
   },
   stacks(app: App) {
     app.stack(({ stack }): void => {
-      const aws_domain_certificate: SsrDomainProps = {
+      /*      const aws_domain_certificate: SsrDomainProps = {
         isExternalDomain: true,
         domainName: 'www2.tribologyec.com',
         cdk: {
           // @ts-ignore
           certificate: Certificate.fromCertificateArn(stack, "", "") as ICertificate
         },
-      };
+      };*/
 
-      const site: NextjsSite = new NextjsSite(stack, 'site', {
-        // edge: true,
-        // customDomain: aws_domain_certificate,
-      });
+      const site: NextjsSite = new NextjsSite(
+        stack,
+        'site' /*{
+        edge: true,
+        customDomain: aws_domain_certificate,
+      }*/,
+      );
 
       stack.addOutputs({
         SiteUrl: site.url,

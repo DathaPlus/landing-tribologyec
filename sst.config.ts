@@ -17,7 +17,11 @@ export default {
         domainName: 'www3.tribologyec.com',
         cdk: {
           // @ts-ignore
-          certificate: Certificate.fromCertificateArn(stack, '', ''),
+          certificate: Certificate.fromCertificateArn(
+            stack,
+            'tribologyec_AWS_Certificate',
+            'arn:aws:acm:us-east-1:136597708042:certificate/ae3fc89a-529b-418f-8608-58b6428fc6de',
+          ),
         },
       };
 

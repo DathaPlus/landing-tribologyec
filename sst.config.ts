@@ -2,10 +2,9 @@ import { SSTConfig } from 'sst';
 import { App, NextjsSite } from 'sst/constructs';
 import { SsrDomainProps } from 'sst/constructs/SsrSite';
 import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
-import { ConfigOptions } from 'sst/project';
 
 export default {
-  config(_input): Promise<ConfigOptions> | ConfigOptions {
+  config(_input) {
     return {
       name: 'landing-tribologyec',
       region: 'us-east-1',

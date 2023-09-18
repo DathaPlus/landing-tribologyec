@@ -28,7 +28,7 @@ export default {
       };
 
       const site: NextjsSite = new NextjsSite(stack, 'site', {
-        edge: true,
+        // edge: true,
         customDomain: aws_domain_certificate,
       });
 

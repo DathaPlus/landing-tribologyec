@@ -4,7 +4,7 @@ import { useLayoutWidth } from '@dathaplus/storybook';
 import React from 'react';
 import { ITrajectoryHomeSection } from '@interfaces/home';
 
-const Trayectory = (params: ITrajectoryHomeSection) => {
+const Trajectory = (params: ITrajectoryHomeSection) => {
   const screenWidth = useLayoutWidth();
 
   return (
@@ -41,4 +41,4 @@ const Trayectory = (params: ITrajectoryHomeSection) => {
   );
 };
 
-export default Trayectory;
+export default Trajectory;

@@ -51,7 +51,7 @@ export const Navbar = () => {
             <a href="/servicios">Servicios</a>
           </li>
           <li>
-            <a href="#">Productos</a>
+            <a href="/catalogo">Productos</a>
           </li>
           <li>
             <a href="/contacto">Contacto</a>

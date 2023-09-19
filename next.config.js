@@ -2,6 +2,14 @@
 const path = require('path');
 
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'adminwp.tribologyec.com',
+      },
+    ],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, '/src/sass/styles')],
   },
@@ -13,6 +21,15 @@ const nextConfig = {
     TOKEN_WOOCOMMERCE_BACKEND:
       'Basic Y2tfMzQ0ZGEwMDM4YzVmMzkyZjJmMGEzNjViM2M5ZWVjYmI3ODc1MmE0Zjpjc19iNDkwNDYxYjY1MDA0Yjg1Nzk2NThlNDkwMzM1OTU0M2FmZmM3MzY4',
     TOKEN_WORDPRESS_BACKEND: 'Basic YmFja2VuZE1hbmFnZXI6MExXQiBybWU4IFgyTWcgYktRbyB6dU5FIHB1SjQ=',
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'adminwp.tribologyec.com',
+        port: '',
+      },
+    ],
   },
 };
 

@@ -1,8 +1,8 @@
 import { LinkCustom } from '@components/link';
-import { ICardProject } from '@interfaces/home';
 import React, { FC } from 'react';
+import { ICard } from '@interfaces/common/ICard';
 
-export const Card: FC<ICardProject> = ({ title, img, link, description }) => {
+export const Card: FC<ICard> = ({ title, img, link, description }) => {
   return (
     <li className="projects__card">
       <LinkCustom {...link}>

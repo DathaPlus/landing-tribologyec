@@ -1,9 +1,9 @@
 import { listCardsProject } from '@data/home/project';
 import { ICarousel } from '@dathaplus/storybook';
-import { ICardProject } from '@interfaces/home';
 import { ILink } from '@interfaces/link';
+import { ICard } from '@interfaces/common/ICard';
 
-export const CarouselProps: Omit<ICarousel<ICardProject>, 'Element' | 'modules'> = {
+export const CarouselProps: Omit<ICarousel<ICard>, 'Element' | 'modules'> = {
   data: listCardsProject,
   slidesPerView: 'auto',
   spaceBetween: 10,

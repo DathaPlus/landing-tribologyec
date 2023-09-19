@@ -1,4 +1,9 @@
 .home_services {
+  .swiper-pagination-bullets {
+    max-width: 600px;
+    margin-right: auto;
+  }
+
   img {
     display: none;
     object-fit: cover;
@@ -39,6 +44,10 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+
+    .arrow_carousel {
+      display: none;
+    }
 
     li {
       display: flex;
@@ -137,6 +146,7 @@
 
 @media screen and (min-width: 800px) {
   .home_services {
+
     .services__wrapper {
       position: relative;
       padding-top: 4rem;
@@ -187,8 +197,14 @@
     }
 
     .services__list-services {
-      margin: 7rem 0 2rem 0;
+      margin: 7rem 0 3rem 0;
       justify-content: flex-start;
+      position: relative;
+      padding-left: 20px;
+
+      .arrow_carousel {
+        display: block;
+      }
     }
 
     .services__wrapper_testimonial {

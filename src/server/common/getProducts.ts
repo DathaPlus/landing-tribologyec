@@ -1,13 +1,13 @@
-import { ICardProduct } from '@interfaces/home';
 import { IGetProducts } from '@interfaces/server/common/IGetProducts';
 import { getCategoriesProducts } from '@server/common/getCategoriesProducts';
 import { ICategory } from '@interfaces/server/common/IGetCategoriesProducts';
+import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
 
-export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]> => {
+export const getProducts = async (params?: IGetProducts): Promise<IGetPromiseProductsResponse> => {
   try {
     const { next, page = 1, perPage = 10, filter } = params || {};
 
-    const category = await getCategoryFromName(filter?.category);
+    const category: ICategory | undefined = await getCategoryFromName(filter?.category);
 
     const response = await fetch(
       `${
@@ -29,22 +29,31 @@ export const getProducts = async (params?: IGetProducts): Promise<ICardProduct[]
 
     const data = await response.json();
 
-    return data.map((product: any) => ({
-      description: product.name,
-      category: product.categories?.[0]?.name || 'No category',
-      img: product.images?.[0]?.src || '',
-    }));
+    return {
+      products: data.map((product: any) => ({
+        description: product.name,
+        category: product.categories?.[0]?.name || 'No category',
+        img: product.images?.[0]?.src || '',
+      })),
+      pagination: {
+        totalPages: Number(response.headers.get('X-WP-TotalPages') ?? 1),
+        totalProducts: Number(response.headers.get('X-WP-Total') ?? 1),
+      },
+    };
   } catch (e) {
     console.error('Error in getProducts: ', e);
 
-    return [];
+    return {
+      products: [],
+      pagination: {},
+    };
   }
 };
 
 const getCategoryFromName = async (name?: string): Promise<ICategory | undefined> => {
   if (!name) return undefined;
 
-  const categories = await getCategoriesProducts();
+  const categories: ICategory[] = await getCategoriesProducts();
 
   return categories.find((category) => category.name === name);
 };

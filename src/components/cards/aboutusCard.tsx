@@ -1,6 +1,6 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
-
 import { IAboutusCard } from '@interfaces/cards/IAboutusCard';
 
 export const AboutusCard = ({icon, title, description,information}:IAboutusCard) => {
@@ -22,5 +22,3 @@ export const AboutusCard = ({icon, title, description,information}:IAboutusCard)
     </div>
   );
 };
-
-export default AboutusCard;

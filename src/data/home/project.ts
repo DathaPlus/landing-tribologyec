@@ -1,6 +1,7 @@
-import { ICardProject } from '@interfaces/home';
+import { ICard } from '@interfaces/common/ICard';
 
-export const listCardsProject: ICardProject[] = [
+// TODO: Eliminar esta clase y agregar los datos en el admin de Wordpress :-)
+export const listCardsProject: ICard[] = [
   {
     img: '/img/projects/project_1.png',
     title: 'proyecto 1',

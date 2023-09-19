@@ -1,4 +1,4 @@
-.container_solutions {
+.container_solutions_aboutus {
   padding: 6vw;
   width: 100%;
   position: relative;
@@ -43,14 +43,15 @@
   }
 }
 
-.container_solutions_description {
-  padding: 3em;
-  background-color: rgba(75, 79, 88, 0.8);
-  max-width: 45vw;
-  margin-bottom: 2vw;
+.container_solutions_description_aboutus {
+  padding: 4em;
+  background-color: #80110C;
+  max-width: 728px;
+  height: auto;
+  margin-left: 15%;
 
   p {
-    max-width: 35vw;
+    max-width: 728px;
   }
 
   button {
@@ -87,19 +88,21 @@
   }
 }
 
-.solutions_subtitle {
+.solutions_subtitle_aboutus {
   font-size: 2vw;
   line-height: 1em;
   margin: 0 0 1.8em;
+  text-align: center;
 
   @media (max-width: 800px) {
     font-size: 4vw;
   }
 }
 
-.solutions_description {
+.solutions_description_aboutus {
   font-size: 1.6vw;
   line-height: 1.7em;
+  text-align: justify;
 
   @media (max-width: 800px) {
     font-size: 3.5vw;

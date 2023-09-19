@@ -1,25 +1,23 @@
 import React from 'react';
-import { Hero, SolutionsCenter } from '@components/aboutus';
+import { AboutusCarousel, SolutionsCenter } from '@components/aboutus';
 import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
-import { Contacts, Navbar } from '@components/index';
-import { Products } from '@components/aboutus/products';
-import {getProducts} from "@server/common/getProducts";
+import { Contacts,  Navbar } from '@components/index';
 import KnowUs from '@components/aboutus/knowus';
+import { Hero } from '@components/base';
+import AboutusBackground from '@assets/img/services_hero_bg.png';
 
-
-const products = await getProducts({ filter: {category: "Herramientas"} });
-
-const ServicesPage = () => {
+const ServicesPage = async () => {
+  
   
   return (
     <main>
       <Bar />
       <Navbar />
-      <Hero />
+      <Hero title= "Nosotros" image={AboutusBackground.src} subtitle="Profesionales experimentados"/>
       <SolutionsCenter />
       <KnowUs />
-      <Products products={products}/>
+      <AboutusCarousel />
       <Contacts />
       <Footer />
     </main>

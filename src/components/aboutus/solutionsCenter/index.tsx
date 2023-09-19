@@ -6,7 +6,7 @@ import project5Mobile from '@assets/img/projects/project_5_mobile.png';
 
 export const SolutionsCenter = () => {
   return (
-    <div className="container_solutions">
+    <div className="container_solutions_aboutus">
       <p className="title_center_solutions">
         CENTRO DE <br />
         <span>SOLUCIONES</span>
@@ -23,8 +23,7 @@ export const SolutionsCenter = () => {
         </p>
       </div>
       <div className="container_image_center_solutions_aboutus">
-        <Image id="project5" src={project5} alt="project5" />
-        <Image id="project5Mobile" src={project5Mobile} alt="project5" />
+        <Image id="project5" src={project5Mobile} alt="project5" />
       </div>
     </div>
   );

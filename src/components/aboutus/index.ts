@@ -1,4 +1,5 @@
-export * from '../aboutus/hero';
 export * from '../aboutus/solutionsCenter';
-export * from '../services/ourServices';
+export * from '../aboutus/knowus';
+export * from '../aboutus/carousel';
+
 

@@ -1,9 +1,9 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import { IAboutusCard } from '@interfaces/cards/IAboutusCard';
+import { IGoalsAboutus } from '@interfaces/app/IAboutusPage';
 
-export const AboutusCard = ({icon, title, description,information}:IAboutusCard) => {
+export const AboutusCard = ({icon, title, description,information}:IGoalsAboutus) => {
   return (
     <div className="card_aboutus_container">
       <div className="card_aboutus">

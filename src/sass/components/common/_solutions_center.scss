@@ -27,11 +27,12 @@
 
 .title_center_solutions_mobile {
   margin: 0;
-  font-size: 100px;
+  font-size: 55px;
   line-height: 1.25em;
+  margin-bottom: 20px;
   padding: 0 0 0.6em;
   font-family: var(--font-antonio), sans-serif;
-  letter-spacing: 0.4em;
+  letter-spacing: 1.3em;
 
   span {
     color: hsl(var(--a));
@@ -45,11 +46,12 @@
 .container_solutions_description {
   padding: 3em;
   background-color: rgba(75, 79, 88, 0.8);
-  max-width: 650px;
+  max-width: 700px;
   margin-bottom: 20px;
 
   p {
     max-width: 500px;
+    font-size: 20px;
   }
 
   button {
@@ -57,7 +59,7 @@
     background-color: hsl(var(--p));
     border: none;
     border-radius: 77.8082px;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 5px 30px;
     font-size: 16px;
 
@@ -76,14 +78,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 120px 76px 76px;
-    margin: 480px 76px 0;
+    padding: 120px 26px 76px;
+    margin: 480px 0 0;
 
     p {
       max-width: 100%;
       text-align: center;
     }
   }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 180px 16px 76px;
+    margin: 480px 15px 0;
+
+    p {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
 }
 
 .solutions_subtitle {
@@ -93,6 +111,9 @@
 
   @media (max-width: 800px) {
     font-size: 35px;
+  }
+  @media (max-width: 600px) {
+    font-size: 26px;
   }
 }
 
@@ -112,7 +133,7 @@
   top: 16vw;
   right: 0;
   bottom: 0;
-  width: 650px;
+  width: 620px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
   #project5Mobile {
@@ -123,8 +144,8 @@
   @media (max-width: 800px) {
     width: 92%;
     top: 80px;
-    left: unset;
-    right: unset;
+    left: 0px;
+    right: 0px;
     bottom: unset;
 
     #project5Mobile {
@@ -135,25 +156,47 @@
       display: none;
     }
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    top: 80px;
+    object-fit: cover;
+    left: 0px;
+    right: 0px;
+    bottom: unset;
+
+    #project5Mobile {
+      display: unset;
+    }
+
+    #project5 {
+      display: none;
+    }
+  }
+
 }
 
 .container_solutions_aboutus {
-  padding: 50px;
   width: 100%;
-  position: relative;
+  display: flex;
+  justify-content: center; // Esto centrará horizontalmente el contenido.
+  align-items: center; // Esto centrará verticalmente el contenido.
+
+  padding: 40px; // Puedes ajustar esto según sea necesario.
 
   @media (max-width: 800px) {
     padding: 40px;
+  }
 
+  @media (max-width: 600px) {
+    padding: 0px;
   }
 }
 
 .container_solutions_description_aboutus {
-  padding: 4em;
+  padding: 2em;
   background-color: #80110C;
   max-width: 728px;
-  height: auto;
-  margin-left: 15%;
 
   p {
     max-width: 728px;
@@ -164,6 +207,21 @@
   }
 
   @media (max-width: 800px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 35px 35px;
+    margin: 20px 35px 0;
+
+    p {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
     max-width: 100%;
     display: flex;
     flex-direction: column;

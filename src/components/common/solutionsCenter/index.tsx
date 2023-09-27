@@ -19,6 +19,7 @@ export const SolutionsCenter: React.FC<ISolutionsCenter> = (
       </p>
       <p className="solutions_subtitle">{parameters?.subtitle}</p>
       <p className="solutions_description">{parameters?.description}</p>
+      {parameters?.buttonText && <button>{parameters?.buttonText}</button>}
     </div>
     <div className="container_image_center_solutions">
       <Image id="project5" src={project5Mobile} alt="project5" />

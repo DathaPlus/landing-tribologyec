@@ -1,8 +1,8 @@
 import { ICarousel } from '@dathaplus/storybook';
-import { IAboutusCard } from '@interfaces/cards/IAboutusCard';
+import { IGoalsAboutus } from '@interfaces/app/IAboutusPage';
 
 export const CarouselAboutusCardsProps: Omit<
-  ICarousel<IAboutusCard>,
+  ICarousel<IGoalsAboutus>,
   'Element' | 'modules' | 'data'
 > = {
   slidesPerView: 1,

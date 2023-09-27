@@ -32,7 +32,13 @@ export const Services = (params: IServicesHomeSection) => {
         <div className="services__list_service">
           <Carousel
             autoHeight
-            pagination
+            pagination={{
+              clickable: true,
+              renderBullet: (index: number, className: any) =>
+                '<span class="' +
+                className +
+                ' swiper-carrousel-dots-color"></span>',
+            }}
             navigation={{
               prevEl: '#product_arrow_left',
               nextEl: '#product_arrow_right',

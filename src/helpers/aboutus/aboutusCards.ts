@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 import { ICarousel } from '@dathaplus/storybook';
 import { IGoalsAboutus } from '@interfaces/app/IAboutusPage';
 
 export const CarouselAboutusCardsProps: Omit<
   ICarousel<IGoalsAboutus>,
   'Element' | 'modules' | 'data'
-=======
-import { ICarousel } from "@dathaplus/storybook";
-import { ICard } from "@interfaces/common/ICard";
-
-export const CarouselAboutusCardsProps: Omit<
-  ICarousel<ICard>,
-  "Element" | "modules" | "data"
->>>>>>> 335d5f980b085b1fa3ee1f8b5f31a7c9316a23cb
 > = {
   slidesPerView: 1,
   spaceBetween: 10,

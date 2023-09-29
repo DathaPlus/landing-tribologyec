@@ -1,13 +1,17 @@
 import { ICarousel } from '@dathaplus/storybook';
 import { IAboutusCard } from '@interfaces/cards/IAboutusCard';
+import { NavigationOptions } from 'swiper/types/modules/navigation';
 
-export const CarouselAboutusCardsProps: Omit<
+export const CarouselAboutusCardsProps = (navigation:NavigationOptions): Omit<
   ICarousel<IAboutusCard>,
   'Element' | 'modules' | 'data'
-> = {
+> => ({
+  id: 'aboutus__container__carrousel',
+  loop: true,
   slidesPerView: 1,
   spaceBetween: 10,
   slidesPerGroup: 1,
+  navigation,
   pagination: {
     clickable: true,
     renderBullet: (index: number, className: any) => {
@@ -29,4 +33,4 @@ export const CarouselAboutusCardsProps: Omit<
     },
   },
   className: 'aboutus__container__carrousel-swiper',
-};
+});

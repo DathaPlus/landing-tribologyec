@@ -1,18 +1,17 @@
 import { ICarousel } from '@dathaplus/storybook';
 import { IGoalsAboutus } from '@interfaces/app/IAboutusPage';
+import { NavigationOptions } from 'swiper/types/modules/navigation';
 
-export const CarouselAboutusCardsProps: Omit<
+export const CarouselAboutusCardsProps = (navigation:NavigationOptions): Omit<
   ICarousel<IGoalsAboutus>,
   'Element' | 'modules' | 'data'
-> = {
+> => ({
+  id: 'aboutus__container__carrousel',
+  loop: true,
   slidesPerView: 1,
   spaceBetween: 10,
   slidesPerGroup: 1,
-  navigation: {
-  nextEl : '#product_arrow_right',
-  prevEl: '#aboutus_arrow_left'
-  },
-  loop: true,
+  navigation,
   pagination: {
     clickable: true,
     renderBullet: (index: number, className: any) => {
@@ -35,5 +34,5 @@ export const CarouselAboutusCardsProps: Omit<
       slidesPerView: 3,
     },
   },
-  className: "aboutus__container__carrousel-swiper",
-};
+  className: 'aboutus__container__carrousel-swiper',
+});

@@ -8,6 +8,10 @@ export const CarouselAboutusCardsProps: Omit<
   slidesPerView: 1,
   spaceBetween: 10,
   slidesPerGroup: 1,
+  navigation: {
+  nextEl : '#product_arrow_right',
+  prevEl: '#aboutus_arrow_left'
+  },
   loop: true,
   pagination: {
     clickable: true,

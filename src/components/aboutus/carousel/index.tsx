@@ -25,6 +25,7 @@ export const AboutusCarousel = ({ carouselAboutus }: Pick<IAboutusPage, 'carouse
           }
           modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
         />
+        
         <div className="aboutus__arrow_wrapper_left" id="aboutus_arrow_left">
           <Icon name="arrow-left-circle" />
         </div>

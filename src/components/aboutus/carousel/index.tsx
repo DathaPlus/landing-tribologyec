@@ -7,8 +7,6 @@ import { CarouselAboutusCardsProps } from '@helpers/aboutus';
 import { IAboutusPage } from '@interfaces/app/IAboutusPage';
 
 export const AboutusCarousel = ({carouselAboutus}: Pick<IAboutusPage, 'carouselAboutus'>) => {
-
-
   const PREV = 'aboutus_arrow_left';
   const NEXT = 'product_arrow_right';
 
@@ -16,6 +14,7 @@ export const AboutusCarousel = ({carouselAboutus}: Pick<IAboutusPage, 'carouselA
     <div className="aboutus__container">
       <div className="aboutus__container__carrousel">
         <Carousel
+          
           {...CarouselAboutusCardsProps({
             prevEl: `#${PREV}`,
             nextEl: `#${NEXT}`,
@@ -33,7 +32,6 @@ export const AboutusCarousel = ({carouselAboutus}: Pick<IAboutusPage, 'carouselA
           }
           modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
         />
-
         <div className="aboutus__arrow_wrapper_left" id={PREV}>
               <Icon name="arrow-left-circle" />
             </div>

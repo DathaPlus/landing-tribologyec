@@ -12,6 +12,7 @@ export const CarouselAboutusCardsProps = (navigation:NavigationOptions): Omit<
   spaceBetween: 10,
   slidesPerGroup: 1,
   navigation,
+
   pagination: {
     clickable: true,
     renderBullet: (index: number, className: any) => {
@@ -36,3 +37,4 @@ export const CarouselAboutusCardsProps = (navigation:NavigationOptions): Omit<
   },
   className: 'aboutus__container__carrousel-swiper',
 });
+

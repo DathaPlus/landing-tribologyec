@@ -1,5 +1,5 @@
 import React from 'react';
-import { SolutionsCenter, OurServices, OurCommitment } from '@components/services';
+import { OurServices, OurCommitment } from '@components/services';
 import { Hero } from '@components/base';
 import Bar from '@components/Bar';
 import servicesHeroBanner from '@assets/img/services_hero_bg.png';
@@ -9,6 +9,7 @@ import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageD
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IServicesPage } from '@interfaces/app/IServicesPage';
 import { ICard } from '@interfaces/common/ICard';
+import { SolutionsCenter } from '@components/common';
 
 const ServicesPage = async (): Promise<React.JSX.Element> => {
   const servicesData: IWordpressPageData<IServicesPage> | undefined =

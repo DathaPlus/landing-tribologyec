@@ -1,0 +1,48 @@
+name: Deploy Prod
+
+on:
+  pull_request:
+    branches:
+      - main
+      - release/*
+
+env:
+  REGION: us-east-2
+  STAGE: prod
+  AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+  AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+  NPM_REGISTRY: ${{ secrets.NPM_REGISTRY }}
+  NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
+
+jobs:
+  git-event:
+    name: Print git environment
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Printenv
+        run: printenv
+
+  publish:
+    name: publish site
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-region: ${{ env.REGION }}
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+      - name: registry npm add file
+        run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
+      - name: install dependencies
+        run: npm ci
+      - name: deploy
+        run: npx sst deploy --region ${{ env.REGION }} --stage ${{ env.STAGE }}

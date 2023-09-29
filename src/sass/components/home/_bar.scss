@@ -1,0 +1,51 @@
+.navbar {
+  background-color: #d7dae1;
+  gap: 1em;
+  font-family: var(--font-ubuntu);
+  font-weight: 400;
+  font-size: 9.75319px;
+  line-height: 11px;
+  text-transform: uppercase;
+  padding: 1em 0.5em;
+
+  &__wrapper {
+    max-width: 1366px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  &__left {
+    display: grid;
+    place-content: center;
+    margin: 0 0.5em;
+  }
+
+  &__right {
+    display: flex;
+    gap: 0.7em;
+    align-items: center;
+    margin: 0 1em;
+
+    &-link {
+      text-decoration: none;
+      color: #424B5A;
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      cursor: pointer;
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 2em;
+    font-size: 12px;
+
+    &__logo {
+      width: 150px;
+    }
+  }
+}

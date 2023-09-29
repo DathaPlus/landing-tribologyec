@@ -8,6 +8,7 @@ export const CarouselAboutusCardsProps: Omit<
   slidesPerView: 1,
   spaceBetween: 10,
   slidesPerGroup: 1,
+  loop: true,
   pagination: {
     clickable: true,
     renderBullet: (index: number, className: any) => {

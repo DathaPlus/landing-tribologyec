@@ -1,14 +1,15 @@
 import React from 'react';
-import { SolutionsCenter, OurServices, OurCommitment } from '@components/services';
+import { OurServices, OurCommitment } from '@components/services';
 import { Hero } from '@components/base';
 import Bar from '@components/Bar';
-import { Footer } from '@components/footer';
-import { Navbar } from '@components/index';
 import servicesHeroBanner from '@assets/img/services_hero_bg.png';
+import { Navbar } from '@components/navbar';
+import { Footer } from '@components/footer';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IServicesPage } from '@interfaces/app/IServicesPage';
 import { ICard } from '@interfaces/common/ICard';
+import { SolutionsCenter } from '@components/common';
 
 const ServicesPage = async (): Promise<React.JSX.Element> => {
   const servicesData: IWordpressPageData<IServicesPage> | undefined =

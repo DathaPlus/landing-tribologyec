@@ -1,8 +1,7 @@
 'use client';
-import { Carousel } from '@dathaplus/storybook';
+import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
-import { Pagination } from 'swiper';
 import { Card } from './card';
 import { IOurServices } from '@interfaces/app/IServicesPage';
 
@@ -18,7 +17,7 @@ export const OurServices = (params: IOurServices) => (
           {...CarouselPropsServices}
           data={params.services || []}
           Element={Card}
-          modules={[Pagination]}
+          modules={[SwiperModules.Pagination]}
         />
       </ul>
     </div>

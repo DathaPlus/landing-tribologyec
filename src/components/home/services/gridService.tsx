@@ -17,13 +17,13 @@ export const GridService: FC<IHomeServicesProd> = ({ product, className }: IHome
         className={className?.left}
         id={'product_arrow_left'}
         type="left"
-        position={0}
+        positionH={0}
       />
       <ArrowsCarousel
         className={className?.right}
         id={'product_arrow_right'}
         type="right"
-        position={170}
+        positionH={170}
       />
     </li>
   </ul>

@@ -7,4 +7,5 @@ export interface ICommentCard {
   };
   title: string;
   shortDescription: string;
+  redirection?: string;
 }

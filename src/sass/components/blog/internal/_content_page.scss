@@ -1,0 +1,37 @@
+.content_page{
+
+  &__container{
+    background-color: hsl(var(--p)) ;
+    width: 100%;
+    border-radius: 8px;
+    padding: 2em 3em;
+  }
+  &__title{
+    font-family: var(--font-antonio), sans-serif;
+    font-size: 33px;
+    line-height: 42.7px;
+    font-weight: 700;
+    color:hsl(var(--a));
+    padding-bottom: 0.5em;
+
+    @media (max-width: 1000px) {
+      font-family: var(--font-monserrat), sans-serif;
+      color:hsl(var(--b));
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+  &__subtitle{
+    font-family: var(--font-monserrat), sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 600;
+    color:hsl(var(--b));
+
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
+  }
+
+
+}

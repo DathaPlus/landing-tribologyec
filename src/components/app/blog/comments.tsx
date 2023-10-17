@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Fragment, useRef, useState } from 'react';
 import { CommentCard } from '@components/cards';
 import { Button } from '@dathaplus/storybook';
 import Image from 'next/image';
@@ -9,7 +9,11 @@ import { ICommentCard } from '@interfaces/cards/ICommentCard';
 import { useFormik } from 'formik';
 import { getWordpressPosts } from '@server/common/getWordpressPosts';
 
-export const Comments = ({ blogs }: { blogs?: IWordpressPageData<ICommentCard>[] }) => {
+export const Comments = ({ blogs = [] }: { blogs?: IWordpressPageData<ICommentCard>[] }) => {
+  const scrollRef = useRef({
+    page: 2,
+    end: blogs.length < 9,
+  });
   const [loading, setLoading] = useState<boolean>(false);
   const [comments, setComments] = useState<IWordpressPageData<ICommentCard>[]>(blogs || []);
   const { handleSubmit, values, handleChange } = useFormik({
@@ -42,12 +46,37 @@ export const Comments = ({ blogs }: { blogs?: IWordpressPageData<ICommentCard>[]
         <h1>Sin datos</h1>
       ) : (
         <div className="comments-cards__container">
-          {comments?.map((comment, index) => <CommentCard {...(comment.acf as any)} key={index} />)}
+          {comments?.map((comment, index) => (
+            <CommentCard
+              {...(comment.acf as any)}
+              key={index}
+              redirection={`/blog/${comment.slug}`}
+            />
+          ))}
         </div>
       )}
-      <Button type="button" size="normal" style="primary">
-        <span style={{ padding: '0 4em' }}>Leer más</span>
-      </Button>
+      {!scrollRef.current.end && !loading ? (
+        <Button
+          type="button"
+          size="normal"
+          style="primary"
+          onClick={async () => {
+            const blogData =
+              (await getWordpressPosts<ICommentCard>({
+                ...values,
+                page: scrollRef.current.page,
+                "per_page": 9,
+              })) || [];
+            setComments([...comments, ...blogData]);
+            scrollRef.current.page++;
+            if (blogData?.length < 9) scrollRef.current.end = true;
+          }}
+        >
+          <span style={{ padding: '0 4em' }}>Leer más</span>
+        </Button>
+      ) : (
+        <Fragment />
+      )}
     </div>
   );
 };

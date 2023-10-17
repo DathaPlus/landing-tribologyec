@@ -4,11 +4,12 @@ import { IGetWordpressPageDataParams } from '@interfaces/server/common/IGetWordp
 export const getWordpressPosts = async <ACF = object>(
   params?: IGetWordpressPageDataParams,
 ): Promise<IWordpressPageData<ACF>[] | undefined> => {
+  const url=new URL(`${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wp/v2/posts`)
+  const searchParams= new URLSearchParams(Object.entries(params??{}))
+  url.search=searchParams.toString()
   try {
     const response = await fetch(
-      `${process.env.BASE_PATH_WORDPRESS_BACKEND}/wp-json/wp/v2/posts${
-        params?.search ? `?search=${params?.search}` : ''
-      }`,
+      url,
       {
         method: 'GET',
         headers: {

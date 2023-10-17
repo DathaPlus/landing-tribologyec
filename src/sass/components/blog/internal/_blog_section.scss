@@ -1,0 +1,38 @@
+.blog_section {
+  &__container {
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-family: var(--font-antonio), sans-serif;
+    font-size: 28px;
+    line-height: 24.38px;
+    font-weight: 700;
+    color: hsl(var(--a));
+
+  }
+
+  &__content {
+    &__list {
+      margin-left: 1.5em;
+    }
+    &__image {
+      position: relative;
+      margin: 1em;
+      height: 300px;
+      width: 300px;
+      @media (max-width: 1000px) {
+        float: none;
+        width: 100%;
+        height: 40vh;
+        margin: 0;
+        &__right {
+          float: right;
+        }
+      }
+    }
+
+  }
+}

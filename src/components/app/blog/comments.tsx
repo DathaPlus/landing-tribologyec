@@ -65,7 +65,7 @@ export const Comments = ({ blogs = [] }: { blogs?: IWordpressPageData<ICommentCa
               (await getWordpressPosts<ICommentCard>({
                 ...values,
                 page: scrollRef.current.page,
-                perPage: 9,
+                "per_page": 9,
               })) || [];
             setComments([...comments, ...blogData]);
             scrollRef.current.page++;

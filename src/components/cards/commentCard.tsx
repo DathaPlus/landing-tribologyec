@@ -3,9 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import { ICommentCard } from '@interfaces/cards/ICommentCard';
 
-export const CommentCard = ({ title, shortDescription, images }: ICommentCard) => {
+export const CommentCard = ({ title, shortDescription, images, redirection }: ICommentCard) => {
   return (
-    <div className="comment-card">
+    <a className="comment-card" href={redirection} target="_blank" rel="noreferrer">
       <div className="comment-card__image-container">
         <Image
           className="comment-card__image-container__desktop"
@@ -25,6 +25,6 @@ export const CommentCard = ({ title, shortDescription, images }: ICommentCard) =
       </div>
       <p className="comment-card__title">{title}</p>
       <p className="comment-card__description">{shortDescription}</p>
-    </div>
+    </a>
   );
 };

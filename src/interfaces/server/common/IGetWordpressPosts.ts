@@ -3,4 +3,5 @@ export interface IGetWordpressPageDataParams {
   slug?:string;
   order?:string;
   per_page?:number;
+  page?: number;
 }

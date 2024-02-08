@@ -20,7 +20,7 @@ export default {
           certificate: Certificate.fromCertificateArn(
             stack,
             'tribologyec_AWS_Certificate',
-            'arn:aws:acm:us-east-2:242256376257:certificate/fc991100-c098-46bb-98c9-8558a802f17c',
+            'arn:aws:acm:us-east-1:242256376257:certificate/3869d4aa-9208-4bc7-8e48-3fb4c553dfc3',
           ),
         },
       };

@@ -37,10 +37,10 @@ export default {
             stack,
             "ExistingDistribution",
             {
-              distributionId: "E37KJ6EEOIGLYM",
-              domainName: "d9855tnqnv9vr.cloudfront.net"
-              // E34LRVBAGVE72Y
-              // d2auihfh7j1fox.cloudfront.net
+              /*distributionId: "E37KJ6EEOIGLYM",
+              domainName: "d9855tnqnv9vr.cloudfront.net"*/
+              distributionId: "E34LRVBAGVE72Y",
+              domainName: "d2auihfh7j1fox.cloudfront.net"
             },
           ),
         },

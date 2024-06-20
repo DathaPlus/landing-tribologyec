@@ -38,7 +38,9 @@ export default {
             "ExistingDistribution",
             {
               distributionId: "E37KJ6EEOIGLYM",
+              domainName: "d9855tnqnv9vr.cloudfront.net"
               // E34LRVBAGVE72Y
+              // d2auihfh7j1fox.cloudfront.net
             },
           ),
         },

@@ -31,7 +31,9 @@ export default {
         // edge: true,
         // customDomain: aws_domain_certificate,
         cdk: {
+          // @ts-ignore
           distribution: Distribution.fromDistributionAttributes(
+            // @ts-ignore
             stack,
             "ExistingDistribution",
             {

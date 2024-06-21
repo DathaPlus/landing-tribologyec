@@ -6,7 +6,7 @@ export default {
   config(_input) {
     return {
       name: 'landing-tribologyec',
-      region: 'us-east-2',
+      region: 'us-east-1',
     };
   },
   stacks(app: App) {

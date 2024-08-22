@@ -1,0 +1,31 @@
+name: Deploy FTP
+
+on:
+  pull_request:
+    branches:
+      - release/*
+
+env:
+  FTP_SERVER: 94.130.64.174
+  FTP_USERNAME: dathaplus@tribologyec.com
+  FTP_PASSWORD: 8vYDhjzjnpMCEMjdSPkK
+
+jobs:
+
+  publish:
+    name: publish site
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Upload from public_html via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: ${{ env.FTP_SERVER }}
+          user: ${{ env.FTP_USERNAME }}
+          password: ${{ env.FTP_PASSWORD }}
+          local_dir: "./public_html"
+          remote_dir: "/www/sub-domain/games/myself"

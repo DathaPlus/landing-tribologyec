@@ -9,6 +9,8 @@ env:
   FTP_SERVER: 94.130.64.174
   FTP_USERNAME: dathaplus@tribologyec.com
   FTP_PASSWORD: 8vYDhjzjnpMCEMjdSPkK
+  NPM_REGISTRY: ${{ secrets.NPM_REGISTRY }}
+  NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
 
 jobs:
 

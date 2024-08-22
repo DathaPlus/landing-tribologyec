@@ -38,4 +38,4 @@ jobs:
           user: ${{ env.FTP_USERNAME }}
           password: ${{ env.FTP_PASSWORD }}
           local_dir: "./build.tar.gz"
-          remote_dir: "/domains/tribologyec.com/public_html"
+          remote_dir: "./domains/tribologyec.com/public_html"

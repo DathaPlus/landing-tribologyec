@@ -31,6 +31,8 @@ jobs:
         run: npm run build
       - name: create files to transfer
         run: tar czvf build.tar.gz _next package.json
+      - name: print dir
+        run: ls
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:

@@ -21,11 +21,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: registry npm add file
+        run: printf "registry=https://${{ env.NPM_REGISTRY }}\n//${{ env.NPM_REGISTRY }}:_authToken=${{ env.NPM_REGISTRY_TOKEN }}\nalways-auth=true" >> ~/.npmrc | cat ~/.npmrc
+      - name: install dependencies
+        run: npm ci
+      - name: build
+        run: npm run build
+      - name: create files to transfer
+        run: tar czvf build.tar.gz _next package.json
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ env.FTP_SERVER }}
           user: ${{ env.FTP_USERNAME }}
           password: ${{ env.FTP_PASSWORD }}
-          local_dir: "./public_html"
-          remote_dir: "/www/sub-domain/games/myself"
+          local_dir: "./build.tar.gz"
+          remote_dir: "/domains/tribologyec.com/public_html"

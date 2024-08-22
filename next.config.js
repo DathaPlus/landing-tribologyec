@@ -2,6 +2,7 @@
 const path = require('path');
 
 const nextConfig = {
+  distDir: "_next",
   images: {
     remotePatterns: [
       {

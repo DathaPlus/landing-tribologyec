@@ -2,9 +2,9 @@
 import React from 'react';
 import { Carousel, Icon, SwiperModules } from '@dathaplus/storybook';
 import { AboutusCard } from '@components/cards';
-import { goalsPageIcons } from '@data/nosotros';
+import {carouselAbout, goalsPageIcons} from '@data/nosotros';
 import { CarouselAboutusCardsProps } from '@helpers/aboutus';
-import { IAboutusPage } from '@interfaces/app/IAboutusPage';
+import {IAboutusPage} from '@interfaces/app/IAboutusPage';
 
 export const AboutusCarousel = ({carouselAboutus}: Pick<IAboutusPage, 'carouselAboutus'>) => {
   const PREV = 'aboutus_arrow_left';
@@ -14,17 +14,14 @@ export const AboutusCarousel = ({carouselAboutus}: Pick<IAboutusPage, 'carouselA
     <div className="aboutus__container">
       <div className="aboutus__container__carrousel">
         <Carousel
-          
           {...CarouselAboutusCardsProps({
             prevEl: `#${PREV}`,
             nextEl: `#${NEXT}`,
           })}
           Element={AboutusCard}
           data={
-            carouselAboutus?.map((goal) => ({
-              icon: goalsPageIcons[
-                (goal.icon || 'whiteOutlinedPointer') as keyof typeof goalsPageIcons
-              ],
+            carouselAbout?.map((goal) => ({
+              icon: goal.icon,
               title: goal.title || '',
               description: goal.description || '',
               information: goal.information || '',

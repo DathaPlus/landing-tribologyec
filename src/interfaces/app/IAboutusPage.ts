@@ -1,6 +1,7 @@
 import { IHeroBanner } from '@interfaces/common/IHeroBanner';
 import { ISection } from '@interfaces/common/ISection';
 import { ISolutionsCenter } from '@interfaces/common/ISolutionsCenter';
+import {IIcon} from "@dathaplus/storybook/dist/interfaces/base/icon";
 
 export interface IAboutusPage extends IKnowus {
   heroBanner?: IHeroBanner;
@@ -17,7 +18,7 @@ export interface IKnowus {
 }
 
 export interface IGoalsAboutus {
-  icon: string;
+  icon: IIcon;
   title: string;
   description: string;
   information: string;

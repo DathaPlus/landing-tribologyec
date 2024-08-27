@@ -4,7 +4,7 @@ import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
 import { Contacts, Navbar } from '@components/index';
 import { Hero } from '@components/base';
-import AboutusBackground from '@assets/img/services_hero_bg.png';
+import AboutusBanner from '@assets/img/hero-bg/aboutus_banner.png';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
 import { IAboutusPage } from '@interfaces/app/IAboutusPage';
 import { SolutionsCenter } from '@components/common/solutionsCenter';
@@ -20,10 +20,10 @@ const AboutusPage = async () => {
     <main>
       <Bar />
       <Navbar />
-      <Hero {...aboutusData?.acf?.heroBanner} image={AboutusBackground.src} />
-      <SolutionsCenter {...aboutusData?.acf?.solutionsCenter} />
+      <Hero {...aboutusData?.acf?.heroBanner} image={AboutusBanner.src} />
       <KnowUs {...aboutusData?.acf?.knowUs} />
       <AboutusCarousel carouselAboutus={aboutusData?.acf.carouselAboutus} />
+      <SolutionsCenter {...aboutusData?.acf?.solutionsCenter} />
       <Contacts />
       <Footer />
     </main>

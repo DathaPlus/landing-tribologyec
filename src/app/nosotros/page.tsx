@@ -22,7 +22,7 @@ const AboutusPage = async () => {
       <Navbar />
       <Hero {...aboutusData?.acf?.heroBanner} image={AboutusBanner.src} />
       <KnowUs {...aboutusData?.acf?.knowUs} />
-      <AboutusCarousel carouselAboutus={aboutusData?.acf.carouselAboutus} />
+      <AboutusCarousel />
       <SolutionsCenter {...aboutusData?.acf?.solutionsCenter} />
       <Contacts />
       <Footer />

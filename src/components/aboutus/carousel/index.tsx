@@ -2,11 +2,10 @@
 import React from 'react';
 import { Carousel, Icon, SwiperModules } from '@dathaplus/storybook';
 import { AboutusCard } from '@components/cards';
-import {carouselAbout, goalsPageIcons} from '@data/nosotros';
+import {carouselAbout} from '@data/nosotros';
 import { CarouselAboutusCardsProps } from '@helpers/aboutus';
-import {IAboutusPage} from '@interfaces/app/IAboutusPage';
 
-export const AboutusCarousel = ({carouselAboutus}: Pick<IAboutusPage, 'carouselAboutus'>) => {
+export const AboutusCarousel = () => {
   const PREV = 'aboutus_arrow_left';
   const NEXT = 'product_arrow_right';
 

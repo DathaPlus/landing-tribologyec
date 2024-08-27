@@ -127,7 +127,7 @@
     align-items: center;
     justify-content: center;
     padding: 180px 16px 76px;
-    margin: 480px 15px 0;
+    margin: 320px 15px 0;
 
     p {
       text-align: center;
@@ -210,10 +210,10 @@
   position: absolute;
   z-index: -1;
   object-fit: cover;
-  top: 16vw;
+  top: 6vw;
   right: 0;
   bottom: 0;
-  width: 620px;
+  //width: 620px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
   #project5Mobile {

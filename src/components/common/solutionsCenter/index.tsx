@@ -5,7 +5,7 @@ import project5Mobile from '@assets/img/projects/project_5_mobile.png';
 import { ISolutionsCenter } from '@interfaces/common/ISolutionsCenter';
 
 export const SolutionsCenter: React.FC<ISolutionsCenter> = (
-  parameters: ISolutionsCenter,
+  
 ): React.JSX.Element => (
   <div className="container_solutions">
     <div className="title_center_solutions">
@@ -17,8 +17,8 @@ export const SolutionsCenter: React.FC<ISolutionsCenter> = (
         CENTRO DE <br />
         <span>SOLUCIONES</span>
       </div>      
-      <p className="solutions_description">{parameters?.description}</p>
-      {parameters?.buttonText && <button>{parameters?.buttonText}</button>}
+      <p className="solutions_description"></p>
+      
     </div>
     <div className="container_image_center_solutions">
       <Image id="project5" src={project5Mobile} alt="project5" />

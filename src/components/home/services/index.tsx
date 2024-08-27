@@ -1,6 +1,5 @@
 'use client';
-import React, { Dispatch, useState } from 'react';
-import { IServicesHomeSection } from '@interfaces/home';
+import React, { Dispatch, useState } from 'react'
 import { GridService } from '@components/home/services/gridService';
 import { Carousel } from '@dathaplus/storybook';
 import { Navigation, Pagination } from 'swiper';
@@ -12,9 +11,7 @@ type TActiveSlide = {
 };
 
 
-
-
-export const Services = (params: IServicesHomeSection) => {
+export const Services = () => {
   const [activeSlide, setActiveSlide]: [
     TActiveSlide,
     Dispatch<React.SetStateAction<TActiveSlide>>,

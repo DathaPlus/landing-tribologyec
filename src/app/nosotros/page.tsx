@@ -4,20 +4,18 @@ import Bar from '@components/Bar';
 import { Footer } from '@components/footer';
 import { Contacts, Navbar } from '@components/index';
 import { Hero } from '@components/base';
-import AboutusBackground from '@assets/img/services_hero_bg.png';
+import AboutusBanner from '@assets/img/hero-bg/aboutus_banner.png';
 import { SolutionsCenter } from '@components/common/solutionsCenter';
 
 const AboutusPage = async () => {
-  
-
   return (
     <main>
       <Bar />
       <Navbar />
-      <Hero image={AboutusBackground.src} />
-      <SolutionsCenter  />
-      <KnowUs  />
-      <AboutusCarousel  />
+      <Hero image={AboutusBanner.src} />
+      <KnowUs />
+      <AboutusCarousel />
+      <SolutionsCenter />
       <Contacts />
       <Footer />
     </main>

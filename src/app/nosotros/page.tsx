@@ -8,7 +8,6 @@ import AboutusBanner from '@assets/img/hero-bg/aboutus_banner.png';
 import { SolutionsCenter } from '@components/common/solutionsCenter';
 
 const AboutusPage = async () => {
-
   return (
     <main>
       <Bar />

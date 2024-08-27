@@ -1,8 +1,7 @@
 'use client';
 import React from 'react';
-import { IKnowus } from '@interfaces/app/IAboutusPage';
 
-export const KnowUs: React.FC<IKnowus> = (): React.JSX.Element => {
+export const KnowUs = () => {
   return (
     <div className="container_solutions_aboutus">
       <div className="container_solutions_description_aboutus">

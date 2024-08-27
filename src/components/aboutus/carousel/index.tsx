@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Carousel, Icon, SwiperModules } from '@dathaplus/storybook';
+import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { AboutusCard } from '@components/cards';
 import {carouselAbout} from '@data/nosotros';
 import { CarouselAboutusCardsProps } from '@helpers/aboutus';
@@ -28,12 +28,12 @@ export const AboutusCarousel = () => {
           }
           modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
         />
-        <div className="aboutus__arrow_wrapper_left" id={PREV}>
+        {/*<div className="aboutus__arrow_wrapper_left" id={PREV}>
               <Icon name="arrow-left-circle" />
             </div>
             <div className="aboutus__arrow_wrapper_right" id={NEXT}>
               <Icon name="arrow-right-circle" />
-            </div>
+            </div>*/}
       </div>
     </div>
   );

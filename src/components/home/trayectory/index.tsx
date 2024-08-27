@@ -11,15 +11,15 @@ const Trajectory = (params: ITrajectoryHomeSection) => {
     <div className="home__trayectory">
       <div className="information__container">
         <div className="title__trayectory">
-          <h2>{params?.title}</h2>
+          <h2>TRAYECTORIA</h2>
         </div>
         <div className="content__trayectory">
           <div className="years__trayectory">
-            <h2>{params?.years}</h2>
+            <h2>07</h2>
             <h3>AÑOS</h3>
           </div>
           <div className="description__trayectory">
-            <p>{params?.description}</p>
+            <p>Somos una empresa que se adapta a las necesidades de cada cliente, integramos varios fabricantes para obtener el mejor producto dentro de la relación beneficio / costo, nuestro personal es entrenado y calificado para recomendar y solucionar problemas de empernado</p>
           </div>
         </div>
         {screenWidth > 900 && (

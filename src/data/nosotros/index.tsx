@@ -2,6 +2,7 @@ import whiteOutlinedPointer from '@assets/img/icons/white-outlined-pointer.svg';
 import whiteOutlinedHands from '@assets/img/icons/white-outlined-hands.svg';
 import whiteOutlinedStars from '@assets/img/icons/white-outlined-stars.svg';
 import {IGoalsAboutus} from "@interfaces/app/IAboutusPage";
+import {ISolutionsCenter} from "@interfaces/common/ISolutionsCenter";
 
 export const goalsPageIcons = {
   whiteOutlinedPointer: whiteOutlinedPointer,
@@ -35,3 +36,10 @@ export const carouselAbout: IGoalsAboutus[] = [
     information: "¡Nos reinventamos hacia el futuro!",
   }
 ];
+
+export const dataAboutus: ISolutionsCenter = {
+  title: "CENTRO DE SOLUCIONES",
+  description: "Proponemos soluciones integrales, no solo nos preocupamos de que los pernos queden bien apretados, sino también de los intereses de nuestros clientes a través de herramientas y procedimientos para cuidar de sus trabajadores e incrementar sus beneficios.",
+  imageDesktop: "/img/about_us/aboutus_solution_center_desktop.png",
+  imageMobile: "/img/about_us/aboutus_solution_center_mobile.png",
+}

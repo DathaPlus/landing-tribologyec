@@ -16,7 +16,7 @@ const AboutusPage = async () => {
       <Hero image={AboutusBanner.src} />
       <KnowUs />
       <AboutusCarousel />
-      <SolutionsCenter {...dataAboutus} />
+      <SolutionsCenter  {...dataAboutus} />
       <Contacts />
       <Footer />
     </main>

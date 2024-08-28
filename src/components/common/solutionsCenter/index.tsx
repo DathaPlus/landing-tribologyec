@@ -15,9 +15,14 @@ export const SolutionsCenter: React.FC<ISolutionsCenter> = (
       <div className="title_center_solutions_mobile">
         CENTRO DE <br />
         <span>SOLUCIONES</span>
-      </div>      
-      <p className="solutions_description">Proponemos soluciones integrales, no solo nos preocupamos de que los pernos queden bien apretados, sino también de los intereses de nuestros clientes a través de herramientas y procedimientos para cuidar de sus trabajadores e incrementar sus beneficios.</p>
-      {/*{parameters?.buttonText && <button>{parameters?.buttonText}</button>}*/}
+      </div>
+      {parameters?.subtitle && <h1 className='solutions_subtitle'>{parameters?.subtitle}</h1>}
+      <p className="solutions_description">{parameters?.description}</p>
+      {parameters?.buttonText && (
+        <a href="/contacto">
+          <button>{parameters?.buttonText}</button>
+        </a>
+      )}
     </div>
     <div className="container_image_center_solutions">
       <Image id="project5" src={parameters.imageDesktop} width={715} height={550} alt="project5" />

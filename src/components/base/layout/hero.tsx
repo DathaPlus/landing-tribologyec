@@ -1,11 +1,7 @@
 'use client';
 import React from 'react';
 import { IHero } from '@interfaces/base/layout/IHero';
-
-interface HeroProps extends IHero {
-  title?: string;
-  description?: string;
-}
+import {HeroProps} from '@interfaces/base/layout/HeroProps'
 
 export const Hero: React.FC<HeroProps> = ({
   image,

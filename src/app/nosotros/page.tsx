@@ -6,7 +6,7 @@ import { Contacts, Navbar } from '@components/index';
 import { Hero } from '@components/base';
 import AboutusBanner from '@assets/img/hero-bg/aboutus_banner.png';
 import { SolutionsCenter } from '@components/common/solutionsCenter';
-import {dataAboutus} from "@data/nosotros";
+import {dataAboutus,heroDataNosotros} from "@data/nosotros";
 
 const AboutusPage = async () => {
   return (
@@ -14,8 +14,7 @@ const AboutusPage = async () => {
       <Bar />
       <Navbar />
       <Hero image={AboutusBanner.src} 
-      title='Nosotros'
-      description='En Tribologyec, entendemos lo que pasa cuando un perno esta en servicio, los categorizamos de acuerdo con su función principal y sobre todas las cosas sabemos como instalarlo'
+       {...heroDataNosotros}
       />
       <KnowUs />
       <AboutusCarousel />

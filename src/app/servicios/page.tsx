@@ -2,7 +2,7 @@ import React from 'react';
 import { OurServices, OurCommitment } from '@components/services';
 import { Hero } from '@components/base';
 import Bar from '@components/Bar';
-import servicesHeroBanner from '@assets/img/services_hero_bg.png';
+import servicesHeroBanner from '@assets/servicios/herobaner_ser.png';
 import { Navbar } from '@components/navbar';
 import { Footer } from '@components/footer';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
@@ -11,6 +11,8 @@ import { IServicesPage } from '@interfaces/app/IServicesPage';
 import { ICard } from '@interfaces/common/ICard';
 import { SolutionsCenter } from '@components/common';
 import { Contacts } from '@components/contact';
+import { dataServices,heroDataservices } from '@data/servicios';
+
 
 const ServicesPage = async (): Promise<React.JSX.Element> => {
   const servicesData: IWordpressPageData<IServicesPage> | undefined =
@@ -23,10 +25,8 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
       <Bar />
       <Navbar />
       <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src} 
-      title='Servicios' 
-      description=' Servicios especializados de aprietes controlados por rotación de tuerca con herramientas de torque combinadas con sistemas de medición de elongación de pernos' 
-      />
-      <SolutionsCenter {...servicesData?.acf?.solutionsCenter} />
+      {...heroDataservices}/>
+      <SolutionsCenter  {...dataServices}/>
       <OurServices
         services={(servicesData?.acf?.ourServices || []).map((ele: ICard) => ({
           ...ele,
@@ -39,7 +39,7 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
             },
           },
         }))}
-      />
+        />
       <OurCommitment {...servicesData?.acf?.ourCommitment} />
       <Contacts />
       <Footer />

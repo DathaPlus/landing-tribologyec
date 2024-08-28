@@ -5,19 +5,22 @@ import { CarouselProductsProps, viewAllProductsProps } from '@helpers/home';
 import React, { FC } from 'react';
 import { Card } from './card';
 import { ICardProduct } from '@interfaces/home';
+import {productos } from './Cards'
+
+
 
 export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => (
   <div className="home__products">
     <div className="home__products_wrapper">
-      <h4>Productos</h4>
+      <h4>Marcas</h4>
 
       <div className="products__list">
         <ul>
           {products && (
             <Carousel
               {...CarouselProductsProps}
-              data={products}
-              Element={Card}
+              data={productos}
+              Element={Card}  
               modules={[SwiperModules.Pagination, SwiperModules.Navigation]}
             />
           )}

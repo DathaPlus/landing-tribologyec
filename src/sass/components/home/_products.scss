@@ -31,7 +31,7 @@
       position: relative;
       li {
         & > div {
-          height: 180.43px;
+          height: 160.43px;
           left: 15px;
           background-color: #fff;
           border-radius: 4px;
@@ -63,7 +63,7 @@
         }
 
         img {
-          max-width: 100px;
+          max-width: 100%;
           display: block;
           object-fit: contain;
         }

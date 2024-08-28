@@ -22,11 +22,11 @@ export default async function Home(): Promise<React.JSX.Element> {
       <Bar />
       <Navbar />
       <Hero {...homeData?.acf?.heroBanner} />
-      <Services mission={homeData?.acf.mission} carrousel={homeData?.acf?.services} />
+      <Services  />
       {/* TODO: Obtener los datos desde el admin de Wordpress */}
       <OurProjects />
       <Products products={products} />
-      <Trajectory {...homeData?.acf?.trajectory} />
+      <Trajectory  />
       <Contacts />
       <Footer />
     </main>

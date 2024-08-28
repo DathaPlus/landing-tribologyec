@@ -1,23 +1,23 @@
 'use client';
-import React, { Dispatch, useState } from 'react';
-import { allServices } from '@data/home/services';
-import { IServicesHomeSection } from '@interfaces/home';
+import React, { Dispatch, useState } from 'react'
 import { GridService } from '@components/home/services/gridService';
 import { Carousel } from '@dathaplus/storybook';
 import { Navigation, Pagination } from 'swiper';
+import {servicesData} from './servicesData'
 
 type TActiveSlide = {
   active: number;
   quantitySlide: number;
 };
 
-export const Services = (params: IServicesHomeSection) => {
+
+export const Services = () => {
   const [activeSlide, setActiveSlide]: [
     TActiveSlide,
     Dispatch<React.SetStateAction<TActiveSlide>>,
   ] = useState<TActiveSlide>({
     active: 0,
-    quantitySlide: 0,
+    quantitySlide: servicesData.length,  
   });
 
   return (
@@ -25,8 +25,8 @@ export const Services = (params: IServicesHomeSection) => {
       <img src="/img/services_bg.png" alt="services" />
       <div className="services__wrapper">
         <h2 className="services__title">
-          <span>Nuestros</span>
-          <span>Servicios</span>
+          <span>Quienes</span>
+          <span>Somos</span>
         </h2>
 
         <div className="services__list_service">
@@ -44,18 +44,16 @@ export const Services = (params: IServicesHomeSection) => {
               nextEl: '#product_arrow_right',
             }}
             Element={GridService}
-            data={allServices(
-              {
-                className: {
-                  left: activeSlide.active === 0 ? 'arrow_carousel_left-disabled' : '',
-                  right:
-                    activeSlide.active === activeSlide.quantitySlide - 1
-                      ? 'arrow_carousel_right-disabled'
-                      : '',
-                },
+            data={[{
+              product: servicesData,
+              className: {
+                left: activeSlide.active === 0 ? 'arrow_carousel_left-disabled' : '',
+                right:
+                  activeSlide.active === activeSlide.quantitySlide - 1
+                    ? 'arrow_carousel_right-disabled'
+                    : '',
               },
-              params.carrousel,
-            )}
+            }]}
             modules={[Pagination, Navigation]}
             slidesPerView={1}
             id={String(5954)}
@@ -66,9 +64,10 @@ export const Services = (params: IServicesHomeSection) => {
         </div>
 
         <div className="services__wrapper_testimonial">
-          <h5 className="services__wrapper_testimonial__mission">{params?.mission?.title}</h5>
+          <h5 className="services__wrapper_testimonial__mission">MISIÓN</h5>
           <p className="services__wrapper_testimonial__mission-description">
-            {params?.mission?.description}
+            Apoyamos a los departamentos de ingeniería y mantenimiento de las industrias del país,
+            comercializando bienes y servicios confiables en armonía con los objetivos técnicos y económicos de cada cliente.
           </p>
         </div>
       </div>

@@ -4,6 +4,8 @@ import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
 import { Card } from './card';
 import { IOurServices } from '@interfaces/app/IServicesPage';
+import {listCardsProject} from './servicios'
+
 
 export const OurServices = (params: IOurServices) => (
   <div className="services__ourServices">
@@ -15,7 +17,7 @@ export const OurServices = (params: IOurServices) => (
       <ul>
         <Carousel
           {...CarouselPropsServices}
-          data={params.services || []}
+          data={listCardsProject || []}
           Element={Card}
           modules={[SwiperModules.Pagination]}
         />

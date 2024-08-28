@@ -12,7 +12,10 @@ const AboutusPage = async () => {
     <main>
       <Bar />
       <Navbar />
-      <Hero image={AboutusBanner.src} />
+      <Hero image={AboutusBanner.src} 
+      title='Nosotros'
+      description='En Tribologyec, entendemos lo que pasa cuando un perno esta en servicio, los categorizamos de acuerdo con su función principal y sobre todas las cosas sabemos como instalarlo'
+      />
       <KnowUs />
       <AboutusCarousel />
       <SolutionsCenter />

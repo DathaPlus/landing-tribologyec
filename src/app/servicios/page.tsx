@@ -10,6 +10,7 @@ import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IServicesPage } from '@interfaces/app/IServicesPage';
 import { ICard } from '@interfaces/common/ICard';
 import { SolutionsCenter } from '@components/common';
+import { Contacts } from '@components/contact';
 
 const ServicesPage = async (): Promise<React.JSX.Element> => {
   const servicesData: IWordpressPageData<IServicesPage> | undefined =
@@ -21,7 +22,10 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
     <main>
       <Bar />
       <Navbar />
-      <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src} />
+      <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src} 
+      title='Servicios' 
+      description=' Servicios especializados de aprietes controlados por rotación de tuerca con herramientas de torque combinadas con sistemas de medición de elongación de pernos' 
+      />
       <SolutionsCenter {...servicesData?.acf?.solutionsCenter} />
       <OurServices
         services={(servicesData?.acf?.ourServices || []).map((ele: ICard) => ({
@@ -37,6 +41,7 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
         }))}
       />
       <OurCommitment {...servicesData?.acf?.ourCommitment} />
+      <Contacts />
       <Footer />
     </main>
   );

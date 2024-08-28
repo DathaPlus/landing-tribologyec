@@ -18,7 +18,7 @@ export const OurCommitment = (params: IOurCommitment) => {
         <p className="title">
           NUESTRO <span>COMPROMISO</span>
         </p>
-        <p className="description">{params.description}</p>
+        <p className="description">Somos profesionales experimentados dispuestos a generar soluciones eficientes de torque, cualquiera que sea el rubro de la industria. Te ayudamos a seleccionar la mejor herramienta para tu propósito, en rendimiento, presión, calidad y economía.</p>
       </div>
     </div>
   );

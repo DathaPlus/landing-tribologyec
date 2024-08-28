@@ -124,7 +124,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         .item {
-        max-width: calc((100% / 2) - .5em);}
+          max-width: calc((100% / 2) - .5em);}
       }
     }
   }
@@ -140,15 +140,15 @@
         max-width: calc((100% / 3) - 1em);
       }
 
-      &-items{ 
+      &-items{
         justify-content: flex-start;
         .item {
-        width: calc((100% / 3) - .9em);
+          width: calc((100% / 3) - .9em);
 
-        img {
-          max-width: 130px;
-        }
-      }}
+          img {
+            max-width: 130px;
+          }
+        }}
     }
   }
 }

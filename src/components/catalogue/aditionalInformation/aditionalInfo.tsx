@@ -1,7 +1,6 @@
 'use client';
 
 export const AditionalInfo = () => {
-
     return (
         <div className="additional-info">
             <h3 className="additional-info__title">Información adicional</h3>

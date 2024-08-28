@@ -9,6 +9,7 @@ import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IHomeServerPage } from '@interfaces/home';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
 import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
+import {dataHomeBannerInformation} from "@data/home/banner";
 export default async function Home(): Promise<React.JSX.Element> {
   const { products }: IGetPromiseProductsResponse = await getProducts({
     filter: { category: 'Herramientas' },
@@ -21,7 +22,7 @@ export default async function Home(): Promise<React.JSX.Element> {
     <main>
       <Bar />
       <Navbar />
-      <Hero {...homeData?.acf?.heroBanner} />
+      <Hero {...dataHomeBannerInformation} />
       <Services  />
       {/* TODO: Obtener los datos desde el admin de Wordpress */}
       <OurProjects />

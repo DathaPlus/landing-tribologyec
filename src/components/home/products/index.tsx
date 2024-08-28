@@ -7,8 +7,6 @@ import { Card } from './card';
 import { ICardProduct } from '@interfaces/home';
 import {productos } from './Cards'
 
-
-
 export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => (
   <div className="home__products">
     <div className="home__products_wrapper">

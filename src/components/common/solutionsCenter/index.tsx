@@ -16,6 +16,7 @@ export const SolutionsCenter: React.FC<ISolutionsCenter> = (
         CENTRO DE <br />
         <span>SOLUCIONES</span>
       </div>
+      {parameters?.subtitle && <p className="solutions_subtitle">{parameters?.subtitle}</p>}
       <p className="solutions_description">{parameters?.description}</p>
       {parameters?.buttonText && <button>{parameters?.buttonText}</button>}
     </div>

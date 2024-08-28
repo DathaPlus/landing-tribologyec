@@ -19,7 +19,7 @@ const AboutusPage = async () => {
       />
       <KnowUs />
       <AboutusCarousel />
-      <SolutionsCenter {...dataAboutus} />
+      <SolutionsCenter  {...dataAboutus} />
       <Contacts />
       <Footer />
     </main>

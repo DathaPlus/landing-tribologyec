@@ -1428,11 +1428,6 @@
     lru-cache "^6.0.0"
     tslib "^2.5.0"
 
-"@esbuild/linux-x64@0.18.13":
-  version "0.18.13"
-  resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@esbuild%2Flinux-x64/0.18.13"
-  integrity sha512-zTrIP0KzYP7O0+3ZnmzvUKgGtUvf4+piY8PIO3V8/GfmVd3ZyHJGz7Ht0np3P1wz+I8qJ4rjwJKqqEAbIEPngA==
-
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"
   resolved "https://dathaplus.bytesafe.dev/r/dathaplus/-/pull/@eslint-community%2Feslint-utils/4.4.0"

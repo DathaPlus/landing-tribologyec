@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { IHero } from '@interfaces/base/layout/IHero';
 import {HeroProps} from '@interfaces/base/layout/HeroProps'
 
 export const Hero: React.FC<HeroProps> = ({

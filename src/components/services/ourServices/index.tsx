@@ -3,11 +3,10 @@ import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
 import { Card } from './card';
-import { IOurServices } from '@interfaces/app/IServicesPage';
 import {listCardsProject} from './servicios'
 
 
-export const OurServices = (params: IOurServices) => (
+export const OurServices = () => (
   <div className="services__ourServices">
     <h3 className="services__title">
       <span>NUESTROS</span>

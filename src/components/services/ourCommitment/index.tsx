@@ -4,9 +4,9 @@ import Image from 'next/image';
 import commitment1 from '@assets/img/commitment/commitment_1.png';
 import commitment2 from '@assets/img/commitment/commitment_2.png';
 import commitment3 from '@assets/img/commitment/commitment_3.png';
-import { IOurCommitment } from '@interfaces/app/IServicesPage';
 
-export const OurCommitment = (params: IOurCommitment) => {
+
+export const OurCommitment = () => {
   return (
     <div className="services__ourCommitment">
       <div className="content">

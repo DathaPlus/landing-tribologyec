@@ -32,11 +32,11 @@
       content: '';
       position: absolute;
       top: -10px;
-      left: 50%; // Mover el inicio de la línea al centro del título
-      transform: translateX(-50%); // Centrar la línea en relación al título
+      left: 50%;
+      transform: translateX(-50%);
       height: 1px;
       background-color: #fff;
-      width: 100%; // Ancho de la línea, más ancho que el título
+      width: 100%;
     }
 
     @media screen and (max-width: 600px) {
@@ -45,13 +45,13 @@
 
       &::before {
         top: -5px;
-        width: 100%; // Ajuste para pantallas pequeñas
+        width: 100%;
       }
     }
 
     @media screen and (max-width: 400px) {
       &::before {
-        width: 100%; // Ajuste para pantallas muy pequeñas
+        width: 100%;
       }
     }
   }
@@ -77,17 +77,14 @@
     color: #fff;
     font-size: 14px;
 
+
     td {
       padding: 0.5em 1em;
-      border: 1px solid #555;
+      border: 1px solid #DDDDDD;
       word-wrap: break-word;
+
     }
 
-    tr {
-      &:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-    }
 
     @media screen and (max-width: 600px) {
       font-size: 12px;

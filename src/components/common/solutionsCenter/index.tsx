@@ -16,9 +16,13 @@ export const SolutionsCenter: React.FC<ISolutionsCenter> = (
         CENTRO DE <br />
         <span>SOLUCIONES</span>
       </div>
-      {parameters?.subtitle && <p className="solutions_subtitle">{parameters?.subtitle}</p>}
+      {parameters?.subtitle && <h1 className='solutions_subtitle'>{parameters?.subtitle}</h1>}
       <p className="solutions_description">{parameters?.description}</p>
-      {parameters?.buttonText && <button>{parameters?.buttonText}</button>}
+      {parameters?.buttonText && (
+        <a href="/contacto">
+          <button>{parameters?.buttonText}</button>
+        </a>
+      )}
     </div>
     <div className="container_image_center_solutions">
       <Image id="project5" src={parameters.imageDesktop} width={715} height={550} alt="project5" />

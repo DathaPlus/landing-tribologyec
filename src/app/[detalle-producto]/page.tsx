@@ -4,7 +4,8 @@ import { Footer } from '@components/footer';
 import { Navbar } from '@components/navbar';
 import { RelatedProducts } from "@components/catalogue/relatedProducts/relatedProducts";
 import { AditionalInfo } from "@components/catalogue/aditionalInformation/aditionalInfo";
-import Evotorque from '@assets/img/tools/03.png';
+import {formatSlug, getProductBySlug} from "@server/common/getProducts";
+
 
 export interface IProductImage {
     src: string;
@@ -23,25 +24,12 @@ export interface IProductDetails {
     images: IProductImage[];
 }
 
-const DetailProduct = async () => {
-    // const contactData: IWordpressPageData<IContactPage> | undefined =
-    //     await getWordpressPageData<IContactPage>({
-    //         searchParams: { namePage: 'Detalle Producto' },
-    //     });
+const DetailProduct = async ({ params }: { params: { slug: string } }) => {
+    const productDetails = getProductBySlug(formatSlug(params.slug));
 
-    const productDetails: IProductDetails = {
-        weight: "6.8 kg",
-        brand: "Norbar",
-        model: "EBT-80-2700",
-        capacity: "676-2700[Nm]",
-        certification: "Sí",
-        precision: "+/- 3%",
-        images: [
-            { src: Evotorque.src, alt: "Evotorque Image 1", width: 800, height: 600 },
-            { src: Evotorque.src, alt: "Evotorque Image 2", width: 800, height: 600 },
-            { src: Evotorque.src, alt: "Evotorque Image 3", width: 800, height: 600 }
-        ],
-    };
+    if (!productDetails) {
+        return <div>Producto no encontrado</div>;
+    }
 
     return (
         <main>
@@ -53,5 +41,6 @@ const DetailProduct = async () => {
         </main>
     );
 };
+
 
 export default DetailProduct;

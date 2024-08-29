@@ -1,13 +1,10 @@
 'use client';
-import { LinkCustom } from '@components/link';
 import { Carousel, Icon, SwiperModules } from '@dathaplus/storybook';
-import { CarouselProductsProps, viewAllProductsProps } from '@helpers/home';
+import { CarouselProductsProps } from '@helpers/home';
 import React, { FC } from 'react';
 import { Card } from './card';
 import { ICardProduct } from '@interfaces/home';
 import {productos } from './Cards'
-
-
 
 export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => (
   <div className="home__products">
@@ -34,14 +31,15 @@ export const Products: FC<{ products: ICardProduct[] }> = ({ products }) => (
         </ul>
       </div>
 
-      <div className="products__view-all">
+{/* TODO: AQUÍ ESTABA EL BTN DE VER TODOS
+  <div className="products__view-all">
         <LinkCustom {...viewAllProductsProps}>
           <span>ver todos</span>
           <span>
             <Icon name="arrow-right-circle" />
           </span>
         </LinkCustom>
-      </div>
+      </div>*/}
     </div>
   </div>
 );

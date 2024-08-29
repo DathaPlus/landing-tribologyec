@@ -6,24 +6,24 @@ export const listRelatedProducts: ICardProduct[] = [
         category:"HERRAMIENTAS",
         img: image1.src,
         link: {href: "https://www.google.com" },
-        description:"HOLIII"
+        description:"Llave de Torque PRO 650, Espiga 22"
     },
     {
-        category:"",
-        img: "",
+        category:"HERRAMIENTAS",
+        img: image1.src,
         link: {href: "https://www.google.com" },
-        description:""
+        description:"Llave de Torque PRO 650, ¾”"
     },
     {
-        category:"",
-        img: "",
+        category:"HERRAMIENTAS",
+        img: image1.src,
         link: {href: "https://www.google.com" },
-        description:""
+        description:"Llave de Torque 6R"
     },
     {
-        category:"",
-        img: "",
+        category:"Digital",
+        img: image1.src,
         link: {href: "https://www.google.com" },
-        description:""
+        description:"Llave de Torque 4AR, 3/4″"
     },
 ]

@@ -1,8 +1,7 @@
 'use client';
-import {listRelatedProducts} from "@components/catalogue/relatedProducts/listRelatedProducts";
+import { listRelatedProducts } from "@components/catalogue/relatedProducts/listRelatedProducts";
 
 export const RelatedProducts = () => {
-
     return (
         <div className="detail-products">
             <p className="detail-products__title">
@@ -17,7 +16,7 @@ export const RelatedProducts = () => {
                         <a key={index} href={product.link.href} className="item">
                             <img src={product.img} alt={product.description} />
                             <span>{product.category}</span>
-                            <span>{product.description}</span>
+                            <span className="item__description">{product.description}</span>
                         </a>
                     ))}
                 </div>

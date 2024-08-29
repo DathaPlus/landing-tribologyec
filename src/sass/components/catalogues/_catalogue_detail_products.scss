@@ -28,11 +28,9 @@
 
     &-items {
       display: flex;
-      flex-direction: column;
-      gap: 1em;
-      margin: 1em auto;
       flex-direction: row;
       flex-wrap: wrap;
+      gap: 1em;
       justify-content: space-between;
 
       .item {
@@ -56,6 +54,11 @@
           font-size: 11px;
         }
 
+        &__description {
+          font-weight: bold; // Aplicar negrita al span de la descripción
+          font-size: 15px !important;
+        }
+
         img {
           width: 100%;
           max-width: 130px;
@@ -66,8 +69,6 @@
       }
     }
   }
-
-
 
   @media screen and (min-width: 374px) {
     &__title {

@@ -4,34 +4,74 @@
   flex-direction: column;
   align-items: center;
 
+  &__title-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+
+    @media screen and (max-width: 600px) {
+      padding: 0 15px;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 0 10px;
+    }
+  }
+
   &__title {
     font-size: 24px;
     font-family: var(--font-antonio), sans-serif;
     color: #fff;
     margin-bottom: 1em;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: center;
-    width: 100%;
+    text-align: left;
+    position: relative;
+    padding-left: 10px;
 
     &::before {
       content: '';
       position: absolute;
-      top: 115%;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 600px;
-      width: 100%;
+      top: -10px;
+      left: 50%; // Mover el inicio de la línea al centro del título
+      transform: translateX(-50%); // Centrar la línea en relación al título
       height: 1px;
       background-color: #fff;
-      margin-top: 0.5em;
+      width: 100%; // Ancho de la línea, más ancho que el título
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+      padding-left: 10px;
+
+      &::before {
+        top: -5px;
+        width: 100%; // Ajuste para pantallas pequeñas
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      &::before {
+        width: 100%; // Ajuste para pantallas muy pequeñas
+      }
+    }
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1050px;
+    padding: 0 20px;
+
+    @media screen and (max-width: 600px) {
+      padding: 0 15px;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding: 0 10px;
     }
   }
 
   &__table {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
     border-collapse: collapse;
     font-family: var(--font-poppins), sans-serif;
     color: #fff;
@@ -40,11 +80,28 @@
     td {
       padding: 0.5em 1em;
       border: 1px solid #555;
+      word-wrap: break-word;
     }
 
     tr {
       &:nth-child(even) {
         background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+
+      td {
+        padding: 0.4em 0.8em;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 11px;
+
+      td {
+        padding: 0.3em 0.6em;
       }
     }
   }

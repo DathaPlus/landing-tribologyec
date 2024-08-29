@@ -24,11 +24,11 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
     <main>
       <Bar />
       <Navbar />
-      <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src} 
+      <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src}
       {...heroDataservices}/>
       <SolutionsCenter  {...dataServices}/>
       <OurServices
-       
+
         />
       <OurCommitment  />
       <Contacts />

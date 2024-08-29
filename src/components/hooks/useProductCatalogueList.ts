@@ -1,17 +1,15 @@
 import { useDebounce } from '@hooks/useDebounce';
-import { getProducts } from '@server/common/getProducts';
+import { CATEGORY_ENUM, getProducts } from '@server/common/getProducts';
 import {
   useState,
   useEffect,
-  FormEvent,
-  HTMLAttributes,
-  ChangeEvent,
   Dispatch,
   SetStateAction,
 } from 'react';
 import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
 
 export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
+  const DEFAULT_PRODUCT = CATEGORY_ENUM.MANUALES.toString();
   const [filter, setFilter]: [IGetPromiseProductsResponse, Dispatch<IGetPromiseProductsResponse>] =
     useState<IGetPromiseProductsResponse>({
       products: [],
@@ -20,15 +18,14 @@ export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
   const [page, setPage]: [number, Dispatch<SetStateAction<number>>] = useState<number>(1);
   const [loading, setLoading]: [boolean, Dispatch<SetStateAction<boolean>>] =
     useState<boolean>(false);
-  const [searchTerm, setSearchTerm]: [string, Dispatch<string>] = useState('');
+  const [searchTerm, setSearchTerm]: [string, Dispatch<string>] = useState(DEFAULT_PRODUCT);
   const category: string = useDebounce(searchTerm, 500);
 
   const handleFilterProducts = (
-    e: FormEvent<HTMLAttributes<HTMLInputElement>> | ChangeEvent<HTMLInputElement>,
+    value: string
   ) => {
-    e.preventDefault();
     if (loading) return;
-    const { value } = e.currentTarget as HTMLInputElement;
+    setPage(1);
     setSearchTerm(value);
   };
 

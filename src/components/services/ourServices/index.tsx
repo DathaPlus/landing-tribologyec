@@ -3,9 +3,7 @@ import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
 import { Card } from './card';
-
-import {listCardsProject} from './servicios'
-
+import { IOurServices } from '@interfaces/app/IServicesPage';
 
 export const OurServices = () => (
   <div className="services__ourServices">

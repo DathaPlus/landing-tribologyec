@@ -8,6 +8,7 @@ import { Footer } from '@components/footer';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IServicesPage } from '@interfaces/app/IServicesPage';
+import { ICard } from '@interfaces/common/ICard';
 import { SolutionsCenter } from '@components/common';
 import { Contacts } from '@components/contact';
 import { dataServices,heroDataservices } from '@data/servicios';
@@ -27,10 +28,19 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
       {...heroDataservices}/>
       <SolutionsCenter  {...dataServices}/>
       <OurServices
-      
-        />
-      <OurCommitment  />
-      <Contacts />
+        services={(servicesData?.acf?.ourServices || []).map((ele: ICard) => ({
+          ...ele,
+          link: {
+            href: ele.link as string,
+            type: 'external',
+            externalProps: {
+              target: '_blank',
+              rel: 'noreferrer',
+            },
+          },
+        }))}
+      />
+      <OurCommitment {...servicesData?.acf?.ourCommitment} />
       <Footer />
     </main>
   );

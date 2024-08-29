@@ -3,7 +3,6 @@ import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
 import { Card } from './card';
-
 import {listCardsProject} from './servicios'
 
 

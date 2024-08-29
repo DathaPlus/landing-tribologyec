@@ -23,6 +23,7 @@ const DetailProduct = async () => {
         <main>
             <Bar />
             <Navbar />
+            <Hero title={contactData?.acf?.heroBanner?.title || ''} image={contactHeroBanner.src} />
             <AditionalInfo/>
             <RelatedProducts/>
             <Footer />

@@ -5,7 +5,7 @@ import { Contacts } from '@components/contact';
 import { Navbar } from '@components/navbar';
 import { Hero } from '@components/base';
 import { Assessor, Networks } from '@components/app/contacto';
-import contactHeroBanner from '@assets/img/contact_hero_bg.png';
+import contactHeroBanner from '@assets/contacto/image.png';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IContactPage } from '@interfaces/app/IContactPage';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';

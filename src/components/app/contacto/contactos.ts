@@ -1,4 +1,3 @@
-import { Icon } from "@dathaplus/storybook";
 import { INetworkCard } from "@interfaces/cards/INetworkCard";
 import email from 'public/icon/email.png'
 import whasap from 'public/icon/whasap.png'

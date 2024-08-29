@@ -21,8 +21,8 @@ const ContactPage = async () => {
       <Bar />
       <Navbar />
       <Hero title={contactData?.acf?.heroBanner?.title || ''} image={contactHeroBanner.src} />
-      <Assessor assessor={contactData?.acf?.assessor} />
-      <Networks socialNetworks={contactData?.acf?.socialNetworks} />
+      <Assessor  />
+      <Networks />
       <Contacts />
       <Footer />
     </main>

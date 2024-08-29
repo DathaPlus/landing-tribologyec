@@ -20,7 +20,7 @@ const ContactPage = async () => {
     <main>
       <Bar />
       <Navbar />
-      <Hero title={contactData?.acf?.heroBanner?.title || ''} image={contactHeroBanner.src} />
+      <Hero title={contactData?.acf?.heroBanner?.title || 'Contacto'} image={contactHeroBanner.src} />
       <Assessor  />
       <Networks />
       <Contacts />

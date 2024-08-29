@@ -3,7 +3,7 @@ import React from 'react';
 interface Props {
   categories: string[];
   onChange: (value: string) => void;
-  defaultSelected: string;
+  defaultSelected?: string;
 }
 
 const Search = ({ categories, onChange, defaultSelected }: Props) =>

@@ -3,20 +3,18 @@ import React from 'react';
 interface Props {
   categories: string[];
   onChange: (value: string) => void;
+  defaultSelected: string;
 }
 
-const Search = ({ categories, onChange }: Props) =>
+const Search = ({ categories, onChange, defaultSelected }: Props) =>
   (
     <div style={{ position: 'relative', width: '300px' }}>
       <select
         className='search'
         onChange={(e) => onChange(e.target.value)}
       >
-        <option value="" disabled selected>
-          Filtra el área que buscas
-        </option>
         {categories.map((category, index) => (
-          <option key={index} value={category}>
+          <option key={index} value={category} defaultValue={defaultSelected}>
             {category}
           </option>
         ))}

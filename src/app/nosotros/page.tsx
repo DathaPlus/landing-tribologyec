@@ -6,14 +6,16 @@ import { Contacts, Navbar } from '@components/index';
 import { Hero } from '@components/base';
 import AboutusBanner from '@assets/img/hero-bg/aboutus_banner.png';
 import { SolutionsCenter } from '@components/common/solutionsCenter';
-import {dataAboutus} from "@data/nosotros";
+import {dataAboutus,heroDataNosotros} from "@data/nosotros";
 
 const AboutusPage = async () => {
   return (
     <main>
       <Bar />
       <Navbar />
-      <Hero image={AboutusBanner.src} />
+      <Hero image={AboutusBanner.src} 
+       {...heroDataNosotros}
+      />
       <KnowUs />
       <AboutusCarousel />
       <SolutionsCenter  {...dataAboutus} />

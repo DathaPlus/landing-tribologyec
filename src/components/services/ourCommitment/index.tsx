@@ -4,9 +4,9 @@ import Image from 'next/image';
 import commitment1 from '@assets/img/commitment/commitment_1.png';
 import commitment2 from '@assets/img/commitment/commitment_2.png';
 import commitment3 from '@assets/img/commitment/commitment_3.png';
-import { IOurCommitment } from '@interfaces/app/IServicesPage';
 
-export const OurCommitment = (params: IOurCommitment) => {
+
+export const OurCommitment = () => {
   return (
     <div className="services__ourCommitment">
       <div className="content">
@@ -18,7 +18,7 @@ export const OurCommitment = (params: IOurCommitment) => {
         <p className="title">
           NUESTRO <span>COMPROMISO</span>
         </p>
-        <p className="description">{params.description}</p>
+        <p className="description">Somos profesionales experimentados dispuestos a generar soluciones eficientes de torque, cualquiera que sea el rubro de la industria. Te ayudamos a seleccionar la mejor herramienta para tu propósito, en rendimiento, presión, calidad y economía.</p>
       </div>
     </div>
   );

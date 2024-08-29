@@ -3,6 +3,8 @@ import whiteOutlinedHands from '@assets/img/icons/white-outlined-hands.svg';
 import whiteOutlinedStars from '@assets/img/icons/white-outlined-stars.svg';
 import {IGoalsAboutus} from "@interfaces/app/IAboutusPage";
 import {ISolutionsCenter} from "@interfaces/common/ISolutionsCenter";
+import { HeroProps } from '@interfaces/base/layout/HeroProps';
+
 
 export const goalsPageIcons = {
   whiteOutlinedPointer: whiteOutlinedPointer,
@@ -43,3 +45,13 @@ export const dataAboutus: ISolutionsCenter = {
   imageDesktop: "/img/about_us/aboutus_solution_center_desktop.png",
   imageMobile: "/img/about_us/aboutus_solution_center_mobile.png",
 }
+
+
+export const heroDataNosotros: HeroProps = {
+
+  title: "Nosotros",
+  description: "En Tribologyec, entendemos lo que pasa cuando un perno esta en servicio, los categorizamos de acuerdo con su función principal y sobre todas las cosas sabemos como instalarlo",
+
+  
+}
+

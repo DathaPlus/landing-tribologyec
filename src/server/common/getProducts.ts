@@ -140,7 +140,6 @@ export const getProductBySlug = (slug: string): IProductDetails | undefined => {
     return productFormattedSlug === formattedSlug;
   });
 
-
   if (product) {
     return {
       weight: "6.8 kg",

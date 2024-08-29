@@ -1,0 +1,368 @@
+.container_solutions {
+  padding: 105px;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 800px) {
+    padding: 60px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 5px;
+  }
+}
+
+.title_center_solutions {
+  margin: 0;
+  font-size: 55px;
+  line-height: 1.25em;
+  padding: 0 0 0.6em;
+  font-family: var(--font-antonio), sans-serif;
+  letter-spacing: 0.4em;
+
+  span {
+    color: hsl(var(--a));
+  }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.title_center_solutions_mobile {
+  margin: 0;
+  font-size: 55px;
+  line-height: 1.25em;
+  margin-bottom: 20px;
+  padding: 0 0 0.6em;
+  font-family: var(--font-antonio), sans-serif;
+  letter-spacing: 1.3em;
+
+  span {
+    color: hsl(var(--a));
+  }
+
+@media (min-width: 800px) {
+    display: none;
+  }
+
+  @media (max-width: 790px) {
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.50em;
+    letter-spacing: 0.9em;
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 0.9em;
+  }
+
+  @media (max-width: 400px) {
+    text-align: center;
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 0.75em;
+  }
+
+  @media (max-width: 300px) {
+    text-align: center;
+    font-size: 18px;
+    line-height: 35px;
+    letter-spacing: 0.9em;
+  }
+}
+
+.container_solutions_description {
+  padding: 3em;
+  background-color: rgba(75, 79, 88, 0.8);
+  max-width: 700px;
+  margin-bottom: 20px;
+
+  p {
+    max-width: 500px;
+    font-size: 20px;
+  }
+
+  button {
+    margin: 1.8em 0 0;
+    background-color: hsl(var(--p));
+    border: none;
+    border-radius: 77.8082px;
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    font-size: 16px;
+
+    @media (max-width: 800px) {
+      font-size: 20px;
+      padding: 5px 40px;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 26px 76px;
+    margin: 480px 0 0;
+
+    p {
+      max-width: 100%;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 180px 16px 76px;
+    margin: 320px 15px 0;
+
+    p {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 200px 0px 36px; 
+    
+
+    p {
+      text-align: center;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px 36px; 
+    
+
+    p {
+      text-align: center;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  @media (max-width: 300px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px 36px; 
+    
+
+    p {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+}
+
+.solutions_subtitle {
+  font-size: 32px;
+  line-height: 1em;
+  margin: 0 0 1.8em;
+
+  @media (max-width: 800px) {
+    font-size: 35px;
+  }
+  @media (max-width: 600px) {
+    font-size: 26px;
+  }
+}
+
+.solutions_description {
+  font-size: 25px;
+  line-height: 1.7em;
+
+  @media (max-width: 800px) {
+    font-size: 27px;
+  }
+}
+
+.container_image_center_solutions {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+  top: 6vw;
+  right: 0;
+  bottom: 0;
+  //width: 620px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+  #project5Mobile {
+    display: none;
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    bottom: unset;
+
+    #project5Mobile {
+      display: unset;
+    }
+
+    #project5 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    top: 80px;
+    object-fit: cover;
+    left: 0px;
+    right: 0px;
+    bottom: unset;
+
+    #project5Mobile {
+      display: unset;
+    }
+
+    #project5 {
+      display: none;
+    }
+  }
+
+}
+
+.container_solutions_aboutus {
+  width: 100%;
+  display: flex;
+  justify-content: center; // Esto centrará horizontalmente el contenido.
+  align-items: center; // Esto centrará verticalmente el contenido.
+
+  padding: 40px; // Puedes ajustar esto según sea necesario.
+
+  @media (max-width: 800px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0px;
+  }
+  @media (max-width: 500px) {
+    padding: 0px;
+  }
+}
+
+.container_solutions_description_aboutus {
+  padding: 2em;
+  background-color: #80110C;
+  max-width: 728px;
+
+  p {
+    max-width: 728px;
+  }
+
+  @media (max-width: 1150px) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 35px 35px;
+    margin: 20px 35px 0;
+
+    p {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 35px 35px;
+    margin: 20px 35px 0;
+
+    p {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 35px 35px;
+    margin: 20px 18px 0;
+
+    p {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.solutions_subtitle_aboutus {
+  font-size: 28px;
+  line-height: 1em;
+  margin: 0 0 1.8em;
+  text-align: center;
+
+  @media (max-width: 800px) {
+    font-size: 35px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 28px;
+  }
+}
+
+.solutions_description_aboutus {
+  font-size: 18px;
+  line-height: 1.7em;
+  text-align: justify;
+
+  @media (max-width: 800px) {
+    line-height: 25px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 500px) {
+    line-height: 25px;
+    font-size: 16px;
+  }
+}

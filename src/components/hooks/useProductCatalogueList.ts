@@ -3,9 +3,6 @@ import { getProducts } from '@server/common/getProducts';
 import {
   useState,
   useEffect,
-  FormEvent,
-  HTMLAttributes,
-  ChangeEvent,
   Dispatch,
   SetStateAction,
 } from 'react';
@@ -24,11 +21,10 @@ export const useProductCatalogueList = (PRODUCTS_PER_PAGE = 3) => {
   const category: string = useDebounce(searchTerm, 500);
 
   const handleFilterProducts = (
-    e: FormEvent<HTMLAttributes<HTMLInputElement>> | ChangeEvent<HTMLInputElement>,
+    value: string
   ) => {
-    e.preventDefault();
     if (loading) return;
-    const { value } = e.currentTarget as HTMLInputElement;
+    setPage(1);
     setSearchTerm(value);
   };
 

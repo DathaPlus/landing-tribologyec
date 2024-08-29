@@ -23,11 +23,11 @@ export default async function Home(): Promise<React.JSX.Element> {
       <Bar />
       <Navbar />
       <Hero {...dataHomeBannerInformation} />
-      <Services  />
+      <Services />
       {/* TODO: Obtener los datos desde el admin de Wordpress */}
       <OurProjects />
-      <Products products={products} />
-      <Trajectory  />
+      <Products products={[]} />
+      <Trajectory />
       <Contacts />
       <Footer />
     </main>

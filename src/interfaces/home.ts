@@ -47,14 +47,6 @@ export interface ICardProduct extends Omit<ICard, 'title'> {
   description: string;
 }
 
-const data: ICardProduct[] = [
-  {
-    category: "Manual",
-    description: "Martillo",
-    img: "/img/tools/0.1.png"
-  },
-]
-
 export interface IHomeServicesProd {
   product: ICardServiceProd[];
   className?: {

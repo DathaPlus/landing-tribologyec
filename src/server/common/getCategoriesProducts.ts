@@ -1,4 +1,5 @@
 import { ICategory } from '@interfaces/server/common/IGetCategoriesProducts';
+import { CATEGORY_ENUM } from '@server/common/getProducts';
 
 export const getCategoriesProducts = async (): Promise<ICategory[]> => {
   try {
@@ -28,3 +29,33 @@ export const getCategoriesProducts = async (): Promise<ICategory[]> => {
     return [];
   }
 };
+
+export const getLocalCategories = (): ICategory[] => CATEGORIES
+
+export const CATEGORIES: ICategory[] = [
+  {
+    id: 1,
+    name: "MANUALES",
+    slug: "MANUALES",
+  },
+  {
+    id: 2,
+    name: "ELECTRICAS",
+    slug: "ELECTRICAS",
+  },
+  {
+    id: 3,
+    name: CATEGORY_ENUM.JARDINERIA,
+    slug: "JARDINERIA",
+  },
+  {
+    id: 4,
+    name: CATEGORY_ENUM.MEDICION,
+    slug: "MEDICION",
+  },
+  {
+    id: 5,
+    name: CATEGORY_ENUM.CONSTRUCCION,
+    slug: "CONSTRUCCION",
+  },
+];

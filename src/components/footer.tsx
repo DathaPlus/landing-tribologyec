@@ -40,7 +40,7 @@ export const Footer = () => (
         <span className="footer__title">Productos</span>
         <ul>
           <li>
-            <a href="/catalogo">Productos</a>
+            <a href="/productos">Productos</a>
           </li>
           <li>
             <a href="#">Herramientas</a>
@@ -61,9 +61,11 @@ export const Footer = () => (
             <span>Av. De los Shirys N32-218 y Av. Eloy Alfaro Edificio Parque Central</span>
           </li>
         </ul>
-
-        <span className="footer__copyright">©2018 - Form | All right reserved</span>
       </section>
+    </div>
+    <div className="footer__copyright_container">
+      <a href={"/terminos-y-condiciones"} className="footer__copyright">Terms and conditions</a>
+      <span className="footer__copyright">©2018 - Form | All right reserved</span>
     </div>
   </footer>
 );

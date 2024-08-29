@@ -33,5 +33,6 @@ export const AditionalInfo = () => {
                 </tbody>
             </table>
         </div>
+
     );
 };

@@ -3,7 +3,7 @@
 import { Carousel, Icon } from '@dathaplus/storybook';
 import Image from 'next/image';
 import React from 'react';
-import {IProductDetails} from "../../../app/[detalle-producto]/page";
+import {IProductDetails} from "../../../app/productos/[slug]/page";
 import {carrouselImageProps} from "@helpers/products";
 
 

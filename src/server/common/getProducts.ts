@@ -1,9 +1,9 @@
 import { IGetProducts } from '@interfaces/server/common/IGetProducts';
 import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
-import {IProductDetails} from "../../app/[detalle-producto]/page";
+import {IProductDetails} from "../../app/productos/[slug]/page";
 
 export const formatSlug = (slug: string): string => {
-  return slug.toLowerCase().replace(/ /g, "_");
+  return slug.toLowerCase().replace(/ /g, "-").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
 export const getProducts = async (params?: IGetProducts): Promise<IGetPromiseProductsResponse> => {
@@ -40,7 +40,7 @@ export const getProducts = async (params?: IGetProducts): Promise<IGetPromisePro
     return {
       products: response.products.map((product: IRawProduct) => {
         const formattedSlug = formatSlug(product.slug);
-        console.log("Generated href slug:", formattedSlug);
+
 
         return {
           description: product.name,
@@ -135,10 +135,8 @@ interface IRawProduct {
 
 export const getProductBySlug = (slug: string): IProductDetails | undefined => {
   const formattedSlug = formatSlug(slug);
-  console.log("Formatted search slug:", formattedSlug);
   const product = RAW_PRODUCTS.find((product) => {
     const productFormattedSlug = formatSlug(product.slug);
-    console.log("Comparing with product slug:", productFormattedSlug);
     return productFormattedSlug === formattedSlug;
   });
 

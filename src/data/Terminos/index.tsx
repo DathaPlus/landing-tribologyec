@@ -30,5 +30,5 @@ Tribologyque Se Reserva El Derecho De Modificar Estos Términos Y Condiciones En
 
 
 
-buttonText:"Hola Mundo"
+
 };

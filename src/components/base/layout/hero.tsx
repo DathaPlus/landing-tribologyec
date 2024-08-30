@@ -2,7 +2,7 @@
 import React from 'react';
 import {HeroProps} from '@interfaces/base/layout/HeroProps'
 
-export const Hero = ({ image, style }: IHero) => (
+export const Hero = ({ image, style }: HeroProps) => (
   <div className="hero" style={{ backgroundImage: `url(${image})`, height: style?.height, backgroundColor: "#4B4F58" }}>
     <div className="hero__content" style={style}>
       <h1 className="hero__title">NOSOTROS</h1>

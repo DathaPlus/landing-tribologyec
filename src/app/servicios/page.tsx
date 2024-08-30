@@ -26,21 +26,11 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
       <Navbar />
       <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src} 
       {...heroDataservices}/>
-      <SolutionsCenter  {...dataServices}/>
+      <SolutionsCenter  />
       <OurServices
-        services={(servicesData?.acf?.ourServices || []).map((ele: ICard) => ({
-          ...ele,
-          link: {
-            href: ele.link as string,
-            type: 'external',
-            externalProps: {
-              target: '_blank',
-              rel: 'noreferrer',
-            },
-          },
-        }))}
+     
       />
-      <OurCommitment {...servicesData?.acf?.ourCommitment} />
+      <OurCommitment  />
       <Footer />
     </main>
   );

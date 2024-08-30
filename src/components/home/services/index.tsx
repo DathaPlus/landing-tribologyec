@@ -22,7 +22,7 @@ export const Services = () => {
 
   return (
     <section className="home_services">
-      <img src="/img/services_bg.png" alt="services" />
+      <img src="/img/image.png" alt="services" />
       <div className="services__wrapper">
         <h2 className="services__title">
           <span>Quienes</span>

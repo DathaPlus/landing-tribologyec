@@ -15,5 +15,7 @@ export interface IServicesPage {
 export interface IOurCommitment extends Omit<ISection, 'subtitle' | 'title'> {}
 
 export interface IOurServices {
+  title?:string;
+  subtitle?:string;
   services?: ICard[];
 }

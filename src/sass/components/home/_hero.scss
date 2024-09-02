@@ -62,6 +62,7 @@
     height: 100vh;
 
     &__content {
+      padding-block-start: 90px;
       left: unset;
       max-width: unset;
       top: -10%;
@@ -71,6 +72,7 @@
     }
 
     &__title {
+      
       padding-block-end: 20px;
       letter-spacing: 30px;
       font-size: 64px;
@@ -94,6 +96,7 @@
       display: block;
       max-width: 600px;
       text-align: justify;
+      white-space: pre-wrap;
     }
   }
 }

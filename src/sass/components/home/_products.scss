@@ -33,8 +33,6 @@
         & > div {
           height: 160.43px;
           left: 15px;
-          background-color: #fff;
-          border-radius: 4px;
           display: grid;
           place-content: center;
         }
@@ -63,6 +61,7 @@
         }
 
         img {
+          border-radius: 4px;
           max-width: 100%;
           display: block;
           object-fit: contain;

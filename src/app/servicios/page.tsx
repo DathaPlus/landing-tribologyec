@@ -8,10 +8,8 @@ import { Footer } from '@components/footer';
 import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageData';
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IServicesPage } from '@interfaces/app/IServicesPage';
-
 import { SolutionsCenter } from '@components/common';
-import { Contacts } from '@components/contact';
-import { dataServices,heroDataservices } from '@data/servicios';
+import {carouselServiceData, heroDataservices} from '@data/servicios';
 
 
 const ServicesPage = async (): Promise<React.JSX.Element> => {
@@ -26,12 +24,10 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
       <Navbar />
       <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src}
       {...heroDataservices}/>
-      <SolutionsCenter  {...dataServices}/>
-      <OurServices
-
+      <SolutionsCenter  />
+      <OurServices {...carouselServiceData}
         />
       <OurCommitment  />
-      <Contacts />
       <Footer />
     </main>
   );

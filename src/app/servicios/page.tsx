@@ -9,7 +9,7 @@ import { IWordpressPageData } from '@interfaces/server/common/IGetWordpressPageD
 import { getWordpressPageData } from '@server/common/getWordpressPageData';
 import { IServicesPage } from '@interfaces/app/IServicesPage';
 import { SolutionsCenter } from '@components/common';
-import { heroDataservices } from '@data/servicios';
+import {carouselServiceData, heroDataservices} from '@data/servicios';
 
 
 const ServicesPage = async (): Promise<React.JSX.Element> => {
@@ -25,8 +25,7 @@ const ServicesPage = async (): Promise<React.JSX.Element> => {
       <Hero {...servicesData?.acf?.heroBanner} image={servicesHeroBanner.src}
       {...heroDataservices}/>
       <SolutionsCenter  />
-      <OurServices
-       
+      <OurServices {...carouselServiceData}
         />
       <OurCommitment  />
       <Footer />

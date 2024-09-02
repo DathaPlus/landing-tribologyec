@@ -3,19 +3,20 @@ import { Carousel, SwiperModules } from '@dathaplus/storybook';
 import { CarouselPropsServices } from '@helpers/services';
 import React from 'react';
 import { Card } from './card';
-import { listCardsProject } from './servicios';
+import { IOurServices } from '@interfaces/app/IServicesPage';
+import { ICard } from '@interfaces/common/ICard';
 
-export const OurServices = () => (
+export const OurServices = ({ services, title, subtitle }: IOurServices) => (
   <div className="services__ourServices">
     <h3 className="services__title">
-      <span>NUESTROS</span>
-      <strong>SERVICIOS</strong>
+      <span>{title}</span>
+      <strong>{subtitle}</strong>
     </h3>
     <div className="services__list">
       <ul>
         <Carousel
           {...CarouselPropsServices}
-          data={listCardsProject }
+          data={services as ICard[]}
           Element={Card}
           modules={[SwiperModules.Pagination]}
         />

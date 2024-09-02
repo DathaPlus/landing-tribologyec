@@ -48,24 +48,32 @@ export const Footer = () => (
         </ul>
       </section>
 
+
+
       <section>
         <span className="footer__title">Contacto</span>
         <ul>
           <li>
-            <a href="telf:+59323823894">+593 238 238 94</a>
+            <a href="https://wa.me/59323823894" target="_blank" rel="noopener noreferrer">+593 238 238 94</a>
           </li>
+          <li>
+            <a href="https://wa.me/593993645779" target="_blank" rel="noopener noreferrer">+593 9936 45779</a>
+          </li>
+
           <li>
             <a href="mailto:ventas@tribologyec.com">ventas@tribologyec.com</a>
           </li>
           <li>
-            <span>Av. De los Shirys N32-218 y Av. Eloy Alfaro Edificio Parque Central</span>
+            <a href="https://www.google.com/maps?q=Av.+De+los+Shirys+N32-218+y+Av.+Eloy+Alfaro+Edificio+Parque+Central" target="_blank" rel="noopener noreferrer">
+              Av. De los Shirys N32-218 y Av. Eloy Alfaro Edificio Parque Central
+            </a>
           </li>
         </ul>
       </section>
     </div>
     <div className="footer__copyright_container">
       <a href={"/terminos-y-condiciones"} className="footer__copyright">Terms and conditions</a>
-      <span className="footer__copyright">©2018 - Form | All right reserved</span>
+      <span className="footer__copyright">©2024 - Form | All rights reserved</span>
     </div>
   </footer>
 );

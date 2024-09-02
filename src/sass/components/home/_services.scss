@@ -56,14 +56,14 @@
       align-items: center;
       flex-direction: column;
       gap: 0.5rem;
-      padding: 1em;
+     
       & > strong {
         display: block;
         text-align: center;
       }
       & > span {
         display: block;
-        text-align: start;
+        text-align: center;
       }
     }
   }

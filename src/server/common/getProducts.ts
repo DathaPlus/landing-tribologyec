@@ -1,9 +1,15 @@
 import { IGetProducts } from '@interfaces/server/common/IGetProducts';
 import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
+import {IProductDetails} from "../../app/productos/[slug]/page";
+
+export const formatSlug = (slug: string): string => {
+  return slug.toLowerCase().replace(/ /g, "-").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+};
 
 export const getProducts = async (params?: IGetProducts): Promise<IGetPromiseProductsResponse> => {
   try {
     const { page = 1, perPage = 10, filter } = params || {};
+
     // const category: ICategory | undefined = await getCategoryFromName(params?.filter?.category);
 
 /*    const response = await fetch(
@@ -32,14 +38,19 @@ export const getProducts = async (params?: IGetProducts): Promise<IGetPromisePro
     const response: IPaginationProducts = getLocalProducts(perPage, page, filter?.category);
 
     return {
-      products: response.products.map((product: IRawProduct) => ({
-        description: product.name,
-        category: product.categories?.[0]?.name || 'No category',
-        img: product.images?.[0]?.src || '',
-        link: {
-          href: product.slug.replace(/ /g, "_")
-        },
-      })),
+      products: response.products.map((product: IRawProduct) => {
+        const formattedSlug = formatSlug(product.slug);
+
+
+        return {
+          description: product.name,
+          category: product.categories?.[0]?.name || 'No category',
+          img: product.images?.[0]?.src || '',
+          link: {
+            href: formattedSlug,
+          },
+        };
+      }),
       // TODO: cuando se consume desde Woocommerce se debe tomar en cuenta la paginación
       // pagination: {
       //   totalPages: Number(response.headers.get('X-WP-TotalPages') ?? 1),
@@ -120,6 +131,36 @@ interface IRawProduct {
 
   return categories.find((category) => category.name === name);
 };*/
+
+
+export const getProductBySlug = (slug: string): IProductDetails | undefined => {
+  const formattedSlug = formatSlug(slug);
+  const product = RAW_PRODUCTS.find((product) => {
+    const productFormattedSlug = formatSlug(product.slug);
+    return productFormattedSlug === formattedSlug;
+  });
+
+  if (product) {
+    return {
+      weight: "6.8 kg",
+      brand: "Norbar",
+      model: product.name,
+      capacity: "676-2700[Nm]",
+      certification: "Sí",
+      precision: "+/- 3%",
+      images: product.images.map(image => ({
+        src: image.src,
+        alt: product.name,
+        width: 800,
+        height: 600,
+      })),
+    };
+  }
+
+  return undefined;
+};
+
+
 
 const RAW_PRODUCTS: IRawProduct[] = [
   {

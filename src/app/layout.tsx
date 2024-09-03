@@ -48,14 +48,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       // @ts-ignore
       theme="tribologyec"
     >
-    <Script
-        type="text/javascript"
-        id="hs-script-loader"
-        async
-        defer
-        src="//js.hs-scripts.com/47264134.js"
-    />
       <body>{children}</body>
+      <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js.hs-scripts.com/47264134.js"
+          strategy="beforeInteractive"
+      />
     </html>
   );
 }

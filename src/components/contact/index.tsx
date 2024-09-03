@@ -23,7 +23,7 @@ export const Contacts = () => {
         <div className="contact__title">
           <p>
             {' '}
-            Habla con un <b>experto(prueba)</b>{' '}
+            Habla con un <b>experto</b>{' '}
           </p>
           <p>
             ¿Tienes un proyecto en mente? <b>Nosotros</b> te asesoramos

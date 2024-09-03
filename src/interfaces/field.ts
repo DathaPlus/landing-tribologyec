@@ -3,6 +3,7 @@ export interface ICustomField {
   placeholder?: string;
   type?: 'input' | 'textarea';
   icon?: string;
+  inputType?:string;
 }
 
 export interface IInitValuesForm {

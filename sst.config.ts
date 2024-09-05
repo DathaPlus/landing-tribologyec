@@ -18,7 +18,7 @@ export default {
 
       const aws_domain_certificate: SsrDomainProps = {
         isExternalDomain: true,
-        domainName: "tribologyec.com",
+        domainName: "www.tribologyec.com",
         cdk: {
           // @ts-ignore
           certificate: Certificate.fromCertificateArn(

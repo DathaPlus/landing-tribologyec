@@ -44,7 +44,7 @@ const TerminosYCondiciones = () => (
       <li>Si Es Requerido Por Ley O En Respuesta A Solicitudes Legales De Las Autoridades Gubernamentales.</li>
       <li>Para Proteger Los Derechos, Propiedad O Seguridad De Tribologyec, Nuestros Usuarios O El Público.</li>
     </ul>
-    <p>6. Derechos Del Usuario</p>
+    <p>6. Derechos Del Usuario </p>
     <p>Usted Tiene Derecho A Acceder, Corregir, Actualizar O Solicitar La Eliminación De Sus Datos Personales En
       Cualquier Momento. Si Desea Ejercer Alguno De Estos Derechos, Por Favor Contáctenos A Través De La Información
       Proporcionada En Nuestra Página Web.</p>

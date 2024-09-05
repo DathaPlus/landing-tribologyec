@@ -34,6 +34,8 @@
       align-items: center;
       gap: 0.7em;
       cursor: pointer;
+      position: relative; 
+      z-index: 2; 
     }
   }
 }

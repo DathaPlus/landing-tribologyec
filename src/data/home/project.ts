@@ -3,7 +3,7 @@ import { ICard } from '@interfaces/common/ICard';
 // TODO: Eliminar esta clase y agregar los datos en el admin de Wordpress :-)
 export const listCardsProject: ICard[] = [
   {
-    img: '/img/projects/project_1.png',
+    img: '/img/projects/project_1.1.png',
     title: 'SISTEMAS ERGONOMICOS',
     description:
       'Soluciones ergonómicas, combinamos herramientas con brazos de manipulación, el peso de las herramientas ya no es un problema',
@@ -59,7 +59,7 @@ export const listCardsProject: ICard[] = [
     },
   },
   {
-    img: '/img/projects/project_5.png',
+    img: '/img/projects/project_5.1.png',
     title: 'PIPE TORQUE WRENCH',
     description:
       'Llaves de Torque para Tuberías Roscadas Con control de torque, evite dañar los hilos de las roscas, apretando con control de torque',

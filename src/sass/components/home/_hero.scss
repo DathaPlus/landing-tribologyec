@@ -69,6 +69,10 @@
       right: 5%;
       align-items: end;
       width: 100%;
+      left: auto; 
+      max-width: 100%; 
+      position: relative; 
+      z-index: 1; 
     }
 
     &__title {

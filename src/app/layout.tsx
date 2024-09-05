@@ -5,6 +5,7 @@ import '../../node_modules/@dathaplus/storybook/dist/themes.css';
 import '../../node_modules/@dathaplus/storybook/dist/style.css';
 import '../../node_modules/swiper/swiper-bundle.css';
 import '../sass/styles.scss';
+import Script from "next/script";
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -48,6 +49,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       theme="tribologyec"
     >
       <body>{children}</body>
+      <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js.hs-scripts.com/47264134.js"
+          strategy="beforeInteractive"
+      />
     </html>
   );
 }

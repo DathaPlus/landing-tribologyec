@@ -5,7 +5,7 @@ import { Form, Formik } from 'formik';
 import React, { useState } from 'react';
 
 import Field from './field';
-import { sendEmail } from '@server/common/sendEmail';
+// import { sendEmail } from '@server/common/sendEmail';
 
 export const Contacts = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -34,23 +34,23 @@ export const Contacts = () => {
           initialValues={{
             name: '',
             message: '',
-            phone: '',
+            email: '',
           }}
           validationSchema={ContactSchema}
-          onSubmit={async (values) => {
+          onSubmit={async () => {
             setLoading(true);
-            await sendEmail({
-              to: 'anthony@dathaplus.com',
-              subject: 'Contacto desde la web',
-              html: `<p>${JSON.stringify(values)}</p>`,
-            });
+            // await sendEmail({
+            //   to: 'anthony@dathaplus.com',
+            //   subject: 'Contacto desde la web',
+            //   html: `<p>${JSON.stringify(values)}</p>`,
+            // });
             setLoading(false);
           }}
         >
           <Form className="contact__form">
             <div className="contact__wrapper-input">
               <Field name="name" icon="user" placeholder="Nombre y Apellido" />
-              <Field name="phone" icon="smartphone" placeholder="Número de teléfono" />
+              <Field inputType="email" name="email" icon="smartphone" placeholder="Correo electrónico" />
             </div>
             <div className="contact__wrapper-message">
               <Field

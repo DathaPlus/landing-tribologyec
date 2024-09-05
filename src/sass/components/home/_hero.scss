@@ -62,7 +62,10 @@
     height: 100vh;
 
     &__content {
-      top: 38%;
+      padding-block-start: 90px;
+      left: unset;
+      max-width: unset;
+      top: -10%;
       right: 5%;
       align-items: end;
       width: 100%;
@@ -73,6 +76,7 @@
     }
 
     &__title {
+      
       padding-block-end: 20px;
       letter-spacing: 30px;
       font-size: 64px;
@@ -96,6 +100,7 @@
       display: block;
       max-width: 600px;
       text-align: justify;
+      white-space: pre-wrap;
     }
   }
 }

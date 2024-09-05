@@ -3,13 +3,19 @@ import { Field, FieldProps } from 'formik';
 import { Icon } from '@dathaplus/storybook';
 import React, { FC } from 'react';
 
-export const FieldCustom: FC<ICustomField> = ({ name, placeholder, type = 'input', icon }) => (
+export const FieldCustom: FC<ICustomField> = ({
+  name,
+  placeholder,
+  type = 'input',
+  icon,
+  inputType,
+}) => (
   <Field name={name}>
     {({ field }: FieldProps) => (
       <>
         {type === 'input' ? (
           <div className="wrapper_input">
-            <input placeholder={placeholder} {...field} />
+            <input type={inputType} placeholder={placeholder} {...field} />
             {icon && <Icon name={icon} />}
           </div>
         ) : (

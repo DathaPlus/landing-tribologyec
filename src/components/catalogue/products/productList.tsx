@@ -5,6 +5,7 @@ import { useProductCatalogueList } from '@components/hooks/useProductCatalogueLi
 import Search from '@components/catalogue/search';
 import { ArrowsCarousel } from '@components/common';
 import { getLocalCategories } from '@server/common/getCategoriesProducts';
+import Link from "next/link";
 
 export const ProductList = () => {
   const { filter, handleFilterProducts, handleNextPage, handlePrevPage, loading, page } =
@@ -27,17 +28,17 @@ export const ProductList = () => {
           <div className="catalogue-products__list-items">
             {filter?.products?.map((product, idx) =>
               (
-                <a
+                <Link
                   key={`${idx}_${new Date().getTime()}`}
                   className="item"
                   href={'productos/' + product.link?.href}
-                  target="_blank"
+                  target="_self"
                   rel="noreferrer"
                 >
                   <span>{product.category}</span>
                   <Image width={100} height={100} src={product.img!} alt={`product_${idx}`} />
                   <span>{product.description}</span>
-                </a>
+                </Link>
               ))}
           </div>
         ) : (

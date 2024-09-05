@@ -16,10 +16,12 @@ const ContactPage = async () => {
   return (
     <main>
       <Bar />
+       
       <Navbar />
       {/*<Hero   title={contactData?.acf?.heroBanner?.title || ''} image={contactHeroBanner.src} />*/}
       <Hero{...contactHeroData} />
       <Assessor  />
+     
       <Networks />
       <Contacts />
       <Footer />

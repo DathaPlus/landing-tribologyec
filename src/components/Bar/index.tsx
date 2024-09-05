@@ -20,7 +20,11 @@ export const Bar = () => {
           </a>
         </div>
       </div>
+
+      
     </nav>
+ 
+   
   );
 };
 

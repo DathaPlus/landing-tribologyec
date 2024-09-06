@@ -63,7 +63,7 @@
       }
       & > span {
         display: block;
-        text-align: center;
+        text-align: justify;
       }
     }
   }
@@ -78,6 +78,7 @@
     font-size: 18px;
     font-family: var(--font-montserrat), sans-serif;
     margin-top: 15px;
+    text-align: justify;
   }
 
   .services__wrapper_testimonial {
@@ -200,7 +201,7 @@
       margin: 7rem 0 3rem 0;
       justify-content: flex-start;
       position: relative;
-      padding-left: 20px;
+      padding-left: 12px;
 
       .arrow_carousel {
         display: block;

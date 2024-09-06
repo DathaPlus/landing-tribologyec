@@ -18,10 +18,8 @@ export const OurProjects = () => (
 
     <div className="projects__view-all">
       <LinkCustom {...viewAllProps}>
-        <span>ver todos</span>
-        <span>
-          <Icon name="arrow-right-circle" />
-        </span>
+      
+     
       </LinkCustom>
     </div>
   </div>

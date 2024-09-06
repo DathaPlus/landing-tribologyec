@@ -23,6 +23,8 @@ export const heroDataservices: HeroProps = {
     'Servicios especializados de aprietes controlados por rotación de tuerca con herramientas de torque combinadas con sistemas de medición de elongación de pernos',
 };
 
+
+
 export const carouselServiceData: IOurServices = {
   title: 'NUESTROS',
   subtitle: 'SERVICIOS',

@@ -14,7 +14,7 @@ export default {
     app.stack(function ({ stack }): void {
 
       const arnCertificate =
-          "arn:aws:acm:us-east-1:136597708042:certificate/04e14c48-fab8-4198-baa7-81abc8854067";
+          "arn:aws:acm:us-east-1:136597708042:certificate/d4e08816-9553-4a6c-ae50-e0a9962391b8";
 
       const aws_domain_certificate: SsrDomainProps = {
         isExternalDomain: true,

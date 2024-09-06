@@ -3,8 +3,8 @@ import servicios1 from 'public/servicios/about_us/aboutus_solution_center_deskto
 import servicios2 from 'public/servicios/about_us/aboutus_solution_center_mobile.png';
 import { HeroProps } from '@interfaces/base/layout/HeroProps';
 import capacitacion from '@assets/servicios/Capacitacion.png';
-import auditoria from '@assets/servicios/Auditoria.png';
-import calibracion from '@assets/servicios/calibracion.png';
+import auditoria from '@assets/servicios/Auditoria.webp';
+import calibracion from '@assets/servicios/calibracion_servicios.webp';
 import { IOurServices } from '@interfaces/app/IServicesPage';
 
 export const dataServices: ISolutionsCenter = {

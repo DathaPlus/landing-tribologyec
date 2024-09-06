@@ -3,7 +3,7 @@ import redOutlinedWhatsapp from '@assets/img/icons/red-outlined-whatsapp.svg';
 import redOutlinedCall from '@assets/img/icons/red-outlined-call.svg';
 import redOutlinedPaper from '@assets/img/icons/red-outlined-paper.svg';
 import {HeroProps} from "@interfaces/base/layout/HeroProps";
-import contactHeroBanner from "@assets/contacto/image.png";
+import contactHeroBanner from "@assets/contacto/Contacto_1.webp";
 
 export const contactPageIcons = {
   redOutlinedMail: redOutlinedMail,

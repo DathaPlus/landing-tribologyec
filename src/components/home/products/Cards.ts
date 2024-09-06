@@ -1,12 +1,13 @@
 import { ICardProduct } from '@interfaces/home'; 
-import image1 from 'public/marcas/image1.png'
-import image2 from 'public/marcas/image2.png'
-import image3 from 'public/marcas/image3.png'
-import image4 from 'public/marcas/image4.png'
-import image5 from 'public/marcas/image5.png'
-import image6 from 'public/marcas/image6.png'
-import image7 from 'public/marcas/image7.png'
-import image8 from 'public/marcas/image8.png'
+import image1 from 'public/marcas/norbar_marca.webp'
+import image2 from 'public/marcas/fastorq_marca.webp'
+import image3 from 'public/marcas/herramientas_tone_marca.webp'
+import image4 from 'public/marcas/snap-on-industrial_marca.webp'
+import image5 from 'public/marcas/gedore_solutions_marca.webp'
+import image6 from 'public/marcas/impact_sockets_marca.webp'
+import image7 from 'public/marcas/durofix_marca.webp'
+import image8 from 'public/marcas/Sturtevant-Richmont_1_marca.webp'
+import image9 from 'public/marcas/superbolt-technology_marca.webp'
 
 export const productos: ICardProduct[] = [
   {
@@ -117,6 +118,20 @@ export const productos: ICardProduct[] = [
 
         target: "_blank",
         rel: "noopener noreferrer", 
+      },
+    },
+    description: "Catálogo de Productos",
+  },
+  {
+    category: "Superbolt Technology",
+    img: image9.src,
+    link: {
+      type: "external",
+      href: "",
+      externalProps:{
+
+        target: "_blank",
+        rel: "noopener noreferrer",
       },
     },
     description: "Catálogo de Productos",

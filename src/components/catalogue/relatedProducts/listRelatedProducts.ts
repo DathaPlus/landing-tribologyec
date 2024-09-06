@@ -1,5 +1,5 @@
 import {ICardProduct} from "@interfaces/home";
-import image1 from 'public/marcas/image1.png'
+import image1 from 'public/marcas/norbar_marca.webp'
 
 export const listRelatedProducts: ICardProduct[] = [
     {

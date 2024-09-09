@@ -7,7 +7,7 @@
   background-blend-mode: multiply;
   width: 100%;
   min-height: 60vh;
-
+  display: flex;
   &__wrapper {
     max-width: 1360px;
     position: relative;
@@ -105,6 +105,15 @@
       width: 185px !important;
       display: block;
       margin: auto;
+    }
+  }
+  &__success{
+    text-align: center;
+    font-weight: 300;
+    font-size: 43px;
+    font-family: var(--font-montserrat), sans-serif;
+    @media screen and (max-width: 786px){
+      font-size: 26px;
     }
   }
 }

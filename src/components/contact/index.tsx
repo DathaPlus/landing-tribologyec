@@ -8,7 +8,7 @@ import Field from './field';
 // import { sendEmail } from '@server/common/sendEmail';
 
 export const Contacts = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const width = useLayoutWidth();
 
   return (
@@ -39,34 +39,39 @@ export const Contacts = () => {
           }}
           validationSchema={ContactSchema}
           onSubmit={async () => {
-            setLoading(true);
-            // await sendEmail({
-            //   to: 'anthony@dathaplus.com',
-            //   subject: 'Contacto desde la web',
-            //   html: `<p>${JSON.stringify(values)}</p>`,
-            // });
-            setLoading(false);
+            setIsSuccess(true);
           }}
         >
           <Form className="contact__form">
-            <div className="contact__wrapper-input">
-              <Field name="name" icon="user" placeholder="Nombre y Apellido" />
-              <Field inputType="email" name="email" icon="mail" placeholder="Correo electrónico" />
-              <Field inputType="tel" name="phone" icon="smartphone" placeholder="Número de teléfono" />
+            {isSuccess ? (
+              <div className="contact__success">Formulario enviado, en breve un asesor se comunicará contigo</div>
+            ) : (
+              <>
+                <div className="contact__wrapper-input">
+                  <Field name="name" icon="user" placeholder="Nombre y Apellido" />
+                  <Field
+                    inputType="email"
+                    name="email"
+                    icon="mail"
+                    placeholder="Correo electrónico"
+              />
+                <Field inputType="tel" name="phone" icon="smartphone" placeholder="Número de teléfono" />
 
             </div>
             <div className="contact__wrapper-message">
-            
+
               <Field
                 name="message"
                 type="textarea"
                 icon="message-circle"
                 placeholder="Déjanos un mensaje"
               />
-              <Button type="submit" size="normal" style="primary" disabled={loading}>
-                Enviar
-              </Button>
-            </div>
+              <Button type="submit" size="normal" style="primary" >
+                    Enviar
+                  </Button>
+                </div>
+              </>
+            )}
           </Form>
         </Formik>
       </div>

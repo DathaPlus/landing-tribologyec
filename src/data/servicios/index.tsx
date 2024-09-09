@@ -12,7 +12,7 @@ export const dataServices: ISolutionsCenter = {
   subtitle: 'Asesoría y Soporte',
   description:
     'Estamos en capacidad de especializar técnicos en Diseño y Comportamiento de juntas empernadas, potenciamos las habilidades con herramientas, procedimientos y técnicas para eliminar fuentes de incertidumbre',
-  buttonText: 'Comtactanos',
+  buttonText: 'Contáctanos',
   imageDesktop: servicios1.src,
   imageMobile: servicios2.src,
 };

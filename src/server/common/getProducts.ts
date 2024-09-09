@@ -113,7 +113,7 @@ export enum CATEGORY_ENUM {
   CONSTRUCCION = "CONSTRUCCION",
 }
 
-interface IRawProduct {
+export interface IRawProduct {
   slug: string;
   name: string;
   categories: {

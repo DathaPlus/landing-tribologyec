@@ -23,9 +23,15 @@
 
   &__right {
     display: flex;
-    gap: 0.7em;
+    gap: 2.7em;
     align-items: center;
     margin: 0 1em;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 0.5em; 
+      align-items: flex-start; 
+   
+    }
 
     &-link {
       text-decoration: none;

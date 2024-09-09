@@ -54,7 +54,8 @@ export const Footer = () => (
         <span className="footer__title">Contacto</span>
         <ul>
           <li>
-            <a href="https://wa.me/59323823894" target="_blank" rel="noopener noreferrer">+593 238 238 94</a>
+            <a href="tel:+59323823894">+593 238 238 94</a>
+
           </li>
           <li>
             <a href="https://wa.me/593993645779" target="_blank" rel="noopener noreferrer">+593 9936 45779</a>

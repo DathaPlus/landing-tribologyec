@@ -35,6 +35,7 @@ export const Contacts = () => {
             name: '',
             message: '',
             email: '',
+            phone: '',
           }}
           validationSchema={ContactSchema}
           onSubmit={async () => {
@@ -50,9 +51,12 @@ export const Contacts = () => {
           <Form className="contact__form">
             <div className="contact__wrapper-input">
               <Field name="name" icon="user" placeholder="Nombre y Apellido" />
-              <Field inputType="email" name="email" icon="smartphone" placeholder="Correo electrónico" />
+              <Field inputType="email" name="email" icon="mail" placeholder="Correo electrónico" />
+              <Field inputType="tel" name="phone" icon="smartphone" placeholder="Número de teléfono" />
+
             </div>
             <div className="contact__wrapper-message">
+            
               <Field
                 name="message"
                 type="textarea"

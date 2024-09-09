@@ -10,21 +10,24 @@ export const Bar = () => {
           <img className="navbar__logo" src="/img/logos/logo.svg" alt="Logo" />
         </div>
         <div className="navbar__right">
-          <a className="navbar__right-link" href="mailto:info@tribologyec.com">
+          <a className="navbar__right-link" href="mailto:ventas@tribologyec.com">
             <Icon type="feather" name="mail" size={18} />
             <span>ventas@tribologyec.com</span>
           </a>
-          <a className="navbar__right-link" href="tel:+1-234-567-8900">
+
+          <a className="navbar__right-link" href="https://wa.me/593993645779" target="_blank" rel="noopener noreferrer">
             <Icon type="feather" name="phone" size={18} />
-            <span>+593 2382 3894 / +593 9936 45779</span>
+            <span>+593 9936 45779</span>
           </a>
+
+
         </div>
       </div>
 
-      
+
     </nav>
- 
-   
+
+
   );
 };
 

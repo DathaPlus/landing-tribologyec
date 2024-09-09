@@ -127,7 +127,7 @@ export const productos: ICardProduct[] = [
     img: image9.src,
     link: {
       type: "external",
-      href: "",
+      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EVMznzpTm0VDtMah2cup6lUBdKKViFSfkEdkPYThuZheCQ",
       externalProps:{
 
         target: "_blank",

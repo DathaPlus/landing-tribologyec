@@ -70,9 +70,9 @@
       align-items: end;
       width: 100%;
       left: auto; 
-      max-width: 100%; 
-     
-      z-index: 1; 
+      max-width: 100%;
+      z-index: 1;
+      padding-top: var(--hero-content-padding-top);
     }
 
     &__title {

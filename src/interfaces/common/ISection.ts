@@ -6,4 +6,5 @@ export interface ISection {
   description?: string;
   imageDesktop?: any;
   imageMobile?: any;
+  paddingTop?: any;
 }

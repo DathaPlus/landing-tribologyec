@@ -1,9 +1,13 @@
 import { IGetProducts } from '@interfaces/server/common/IGetProducts';
 import { IGetPromiseProductsResponse } from '@interfaces/server/common/IGetPromiseProductsResponse';
-import {IProductDetails} from "../../app/productos/[slug]/page";
+import { IProductDetails } from '../../app/productos/[slug]/page';
 
 export const formatSlug = (slug: string): string => {
-  return slug.toLowerCase().replace(/ /g, "-").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return slug
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
 };
 
 export const getProducts = async (params?: IGetProducts): Promise<IGetPromiseProductsResponse> => {
@@ -12,7 +16,7 @@ export const getProducts = async (params?: IGetProducts): Promise<IGetPromisePro
 
     // const category: ICategory | undefined = await getCategoryFromName(params?.filter?.category);
 
-/*    const response = await fetch(
+    /*    const response = await fetch(
       `${
         process.env.BASE_PATH_WORDPRESS_BACKEND
       }/wp-json/wc/v3/products?per_page=${perPage}&page=${page}${
@@ -23,9 +27,9 @@ export const getProducts = async (params?: IGetProducts): Promise<IGetPromisePro
         headers: {
           Authorization: process.env.TOKEN_WOOCOMMERCE_BACKEND || '',
           */
-          // TODO: descomentar el Accept
+    // TODO: descomentar el Accept
     // Accept: '*/*',
-/*
+    /*
         },
         next,
       },
@@ -40,7 +44,6 @@ export const getProducts = async (params?: IGetProducts): Promise<IGetPromisePro
     return {
       products: response.products.map((product: IRawProduct) => {
         const formattedSlug = formatSlug(product.slug);
-
 
         return {
           description: product.name,
@@ -74,10 +77,10 @@ export const getProducts = async (params?: IGetProducts): Promise<IGetPromisePro
 const getLocalProducts = (
   perPage: number,
   page: number,
-  category: string = CATEGORY_ENUM.MANUALES
+  category: string = CATEGORY_ENUM.MANUALES,
 ): IPaginationProducts => {
   const filteredProducts = RAW_PRODUCTS.filter((product) =>
-    product.categories.some((cat) => cat.name === category)
+    product.categories.some((cat) => cat.name === category),
   );
 
   const totalProducts = filteredProducts.length;
@@ -106,11 +109,11 @@ interface IPaginationProducts {
 }
 
 export enum CATEGORY_ENUM {
-  MANUALES = "MANUALES",
-  ELECTRICAS = "ELECTRICAS",
-  JARDINERIA = "JARDINERIA",
-  MEDICION = "MEDICION",
-  CONSTRUCCION = "CONSTRUCCION",
+  MANUALES = 'MANUALES',
+  ELECTRICAS = 'ELECTRICAS',
+  JARDINERIA = 'JARDINERIA',
+  MEDICION = 'MEDICION',
+  CONSTRUCCION = 'CONSTRUCCION',
 }
 
 export interface IRawProduct {
@@ -119,7 +122,7 @@ export interface IRawProduct {
   categories: {
     name: CATEGORY_ENUM;
   }[];
-  images: {src: string;}[]
+  images: { src: string }[];
 }
 
 /*const getCategoryFromName = async (name?: string): Promise<ICategory | undefined> => {
@@ -132,7 +135,6 @@ export interface IRawProduct {
   return categories.find((category) => category.name === name);
 };*/
 
-
 export const getProductBySlug = (slug: string): IProductDetails | undefined => {
   const formattedSlug = formatSlug(slug);
   const product = RAW_PRODUCTS.find((product) => {
@@ -142,13 +144,14 @@ export const getProductBySlug = (slug: string): IProductDetails | undefined => {
 
   if (product) {
     return {
-      weight: "6.8 kg",
-      brand: "Norbar",
+      categories: product.categories.map((category) => category.name),
+      weight: '6.8 kg',
+      brand: 'Norbar',
       model: product.name,
-      capacity: "676-2700[Nm]",
-      certification: "Sí",
-      precision: "+/- 3%",
-      images: product.images.map(image => ({
+      capacity: '676-2700[Nm]',
+      certification: 'Sí',
+      precision: '+/- 3%',
+      images: product.images.map((image) => ({
         src: image.src,
         alt: product.name,
         width: 800,
@@ -160,336 +163,334 @@ export const getProductBySlug = (slug: string): IProductDetails | undefined => {
   return undefined;
 };
 
-
-
-const RAW_PRODUCTS: IRawProduct[] = [
+export const RAW_PRODUCTS: IRawProduct[] = [
   {
-    slug: "Taladro Eléctrico",
-    name: "Taladro Eléctrico",
+    slug: 'Taladro Eléctrico',
+    name: 'Taladro Eléctrico',
     categories: [{ name: CATEGORY_ENUM.ELECTRICAS }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Amoladora Angular",
-    name: "Amoladora Angular",
+    slug: 'Amoladora Angular',
+    name: 'Amoladora Angular',
     categories: [{ name: CATEGORY_ENUM.ELECTRICAS }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Sierra Circular",
-    name: "Sierra Circular",
+    slug: 'Sierra Circular',
+    name: 'Sierra Circular',
     categories: [{ name: CATEGORY_ENUM.ELECTRICAS }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Lijadora Orbital",
-    name: "Lijadora Orbital",
+    slug: 'Lijadora Orbital',
+    name: 'Lijadora Orbital',
     categories: [{ name: CATEGORY_ENUM.ELECTRICAS }],
-    images: [{ src: "/img/tools/01.png" }],
-  },
-{
-    slug: "Martillo de Carpintero",
-    name: "Martillo de Carpintero",
-    categories: [{ name: CATEGORY_ENUM.MANUALES }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Destornillador de Precisión",
-    name: "Destornillador de Precisión",
+    slug: 'Martillo de Carpintero',
+    name: 'Martillo de Carpintero',
     categories: [{ name: CATEGORY_ENUM.MANUALES }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Alicate Universal",
-    name: "Alicate Universal",
+    slug: 'Destornillador de Precisión',
+    name: 'Destornillador de Precisión',
     categories: [{ name: CATEGORY_ENUM.MANUALES }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Llave Ajustable",
-    name: "Llave Ajustable",
+    slug: 'Alicate Universal',
+    name: 'Alicate Universal',
     categories: [{ name: CATEGORY_ENUM.MANUALES }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/04.png' }],
+  },
+  {
+    slug: 'Llave Ajustable',
+    name: 'Llave Ajustable',
+    categories: [{ name: CATEGORY_ENUM.MANUALES }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   // JARDINERÍA
   {
-    slug: "Pala de jardín",
-    name: "Pala de jardín",
+    slug: 'Pala de jardín',
+    name: 'Pala de jardín',
     categories: [{ name: CATEGORY_ENUM.JARDINERIA }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Rastrillo de hojas",
-    name: "Rastrillo de hojas",
+    slug: 'Rastrillo de hojas',
+    name: 'Rastrillo de hojas',
     categories: [{ name: CATEGORY_ENUM.JARDINERIA }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Tijeras de podar",
-    name: "Tijeras de podar",
+    slug: 'Tijeras de podar',
+    name: 'Tijeras de podar',
     categories: [{ name: CATEGORY_ENUM.JARDINERIA }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Manguera extensible",
-    name: "Manguera extensible",
+    slug: 'Manguera extensible',
+    name: 'Manguera extensible',
     categories: [{ name: CATEGORY_ENUM.JARDINERIA }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Aspersor de jardín",
-    name: "Aspersor de jardín",
+    slug: 'Aspersor de jardín',
+    name: 'Aspersor de jardín',
     categories: [{ name: CATEGORY_ENUM.JARDINERIA }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Rociador manual",
-    name: "Rociador manual",
+    slug: 'Rociador manual',
+    name: 'Rociador manual',
     categories: [{ name: CATEGORY_ENUM.JARDINERIA }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
 
   //CATEGORY_ENUM.MEDICION
   {
-    slug: "Cinta métrica de 30m",
-    name: "Cinta métrica de 30m",
+    slug: 'Cinta métrica de 30m',
+    name: 'Cinta métrica de 30m',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Calibrador Vernier",
-    name: "Calibrador Vernier",
+    slug: 'Calibrador Vernier',
+    name: 'Calibrador Vernier',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Nivel láser autonivelante",
-    name: "Nivel láser autonivelante",
+    slug: 'Nivel láser autonivelante',
+    name: 'Nivel láser autonivelante',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Termómetro infrarrojo",
-    name: "Termómetro infrarrojo",
+    slug: 'Termómetro infrarrojo',
+    name: 'Termómetro infrarrojo',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Medidor de humedad digital",
-    name: "Medidor de humedad digital",
+    slug: 'Medidor de humedad digital',
+    name: 'Medidor de humedad digital',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Distanciómetro láser",
-    name: "Distanciómetro láser",
+    slug: 'Distanciómetro láser',
+    name: 'Distanciómetro láser',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Micrómetro de exteriores",
-    name: "Micrómetro de exteriores",
+    slug: 'Micrómetro de exteriores',
+    name: 'Micrómetro de exteriores',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Multímetro digital",
-    name: "Multímetro digital",
+    slug: 'Multímetro digital',
+    name: 'Multímetro digital',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Transportador de ángulos",
-    name: "Transportador de ángulos",
+    slug: 'Transportador de ángulos',
+    name: 'Transportador de ángulos',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Manómetro digital",
-    name: "Manómetro digital",
+    slug: 'Manómetro digital',
+    name: 'Manómetro digital',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Cronómetro digital",
-    name: "Cronómetro digital",
+    slug: 'Cronómetro digital',
+    name: 'Cronómetro digital',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Medidor de ángulo digital",
-    name: "Medidor de ángulo digital",
+    slug: 'Medidor de ángulo digital',
+    name: 'Medidor de ángulo digital',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Medidor de espesores",
-    name: "Medidor de espesores",
+    slug: 'Medidor de espesores',
+    name: 'Medidor de espesores',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Odómetro manual",
-    name: "Odómetro manual",
+    slug: 'Odómetro manual',
+    name: 'Odómetro manual',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Medidor de niveles de sonido",
-    name: "Medidor de niveles de sonido",
+    slug: 'Medidor de niveles de sonido',
+    name: 'Medidor de niveles de sonido',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Anemómetro digital",
-    name: "Anemómetro digital",
+    slug: 'Anemómetro digital',
+    name: 'Anemómetro digital',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Medidor de distancia ultrasónico",
-    name: "Medidor de distancia ultrasónico",
+    slug: 'Medidor de distancia ultrasónico',
+    name: 'Medidor de distancia ultrasónico',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Calibrador de espesores",
-    name: "Calibrador de espesores",
+    slug: 'Calibrador de espesores',
+    name: 'Calibrador de espesores',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Reloj comparador",
-    name: "Reloj comparador",
+    slug: 'Reloj comparador',
+    name: 'Reloj comparador',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Medidor de luz",
-    name: "Medidor de luz",
+    slug: 'Medidor de luz',
+    name: 'Medidor de luz',
     categories: [{ name: CATEGORY_ENUM.MEDICION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
 
   // CONSTRUCCIÓN
   {
-    slug: "Nivel de burbuja",
-    name: "Nivel de burbuja",
+    slug: 'Nivel de burbuja',
+    name: 'Nivel de burbuja',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Pala de punta cuadrada",
-    name: "Pala de punta cuadrada",
+    slug: 'Pala de punta cuadrada',
+    name: 'Pala de punta cuadrada',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Carretilla de construcción",
-    name: "Carretilla de construcción",
+    slug: 'Carretilla de construcción',
+    name: 'Carretilla de construcción',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Cincel de albañil",
-    name: "Cincel de albañil",
+    slug: 'Cincel de albañil',
+    name: 'Cincel de albañil',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Escuadra de acero",
-    name: "Escuadra de acero",
+    slug: 'Escuadra de acero',
+    name: 'Escuadra de acero',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Nivel láser",
-    name: "Nivel láser",
+    slug: 'Nivel láser',
+    name: 'Nivel láser',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Corta ladrillos",
-    name: "Corta ladrillos",
+    slug: 'Corta ladrillos',
+    name: 'Corta ladrillos',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Espátula de construcción",
-    name: "Espátula de construcción",
+    slug: 'Espátula de construcción',
+    name: 'Espátula de construcción',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Regla de albañil",
-    name: "Regla de albañil",
+    slug: 'Regla de albañil',
+    name: 'Regla de albañil',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Pico de construcción",
-    name: "Pico de construcción",
+    slug: 'Pico de construcción',
+    name: 'Pico de construcción',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Mazo de albañil",
-    name: "Mazo de albañil",
+    slug: 'Mazo de albañil',
+    name: 'Mazo de albañil',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Llana dentada",
-    name: "Llana dentada",
+    slug: 'Llana dentada',
+    name: 'Llana dentada',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Talocha de esponja",
-    name: "Talocha de esponja",
+    slug: 'Talocha de esponja',
+    name: 'Talocha de esponja',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Cortador de cerámica",
-    name: "Cortador de cerámica",
+    slug: 'Cortador de cerámica',
+    name: 'Cortador de cerámica',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Cepillo de alambre",
-    name: "Cepillo de alambre",
+    slug: 'Cepillo de alambre',
+    name: 'Cepillo de alambre',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
   {
-    slug: "Alicate de albañil",
-    name: "Alicate de albañil",
+    slug: 'Alicate de albañil',
+    name: 'Alicate de albañil',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/01.png" }],
+    images: [{ src: '/img/tools/01.png' }],
   },
   {
-    slug: "Cubeta para mezcla",
-    name: "Cubeta para mezcla",
+    slug: 'Cubeta para mezcla',
+    name: 'Cubeta para mezcla',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/02.png" }],
+    images: [{ src: '/img/tools/02.png' }],
   },
   {
-    slug: "Cortadora de piedra",
-    name: "Cortadora de piedra",
+    slug: 'Cortadora de piedra',
+    name: 'Cortadora de piedra',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/03.png" }],
+    images: [{ src: '/img/tools/03.png' }],
   },
   {
-    slug: "Rasqueta de albañil",
-    name: "Rasqueta de albañil",
+    slug: 'Rasqueta de albañil',
+    name: 'Rasqueta de albañil',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/04.png" }],
+    images: [{ src: '/img/tools/04.png' }],
   },
   {
-    slug: "Cuerda de albañil",
-    name: "Cuerda de albañil",
+    slug: 'Cuerda de albañil',
+    name: 'Cuerda de albañil',
     categories: [{ name: CATEGORY_ENUM.CONSTRUCCION }],
-    images: [{ src: "/img/tools/05.png" }],
+    images: [{ src: '/img/tools/05.png' }],
   },
 ];

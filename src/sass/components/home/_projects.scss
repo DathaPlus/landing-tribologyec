@@ -30,6 +30,7 @@
         position: absolute;
         top: 0;
         object-fit: fill;
+        transition: all ease 500ms;
       }
 
       .projects__card__gradient {
@@ -107,7 +108,9 @@
         visibility: visible;
         transition: all 400ms ease-out;
       }
-
+      img{
+        filter:brightness(0.6);
+      }
     }
 
     &__view-all {

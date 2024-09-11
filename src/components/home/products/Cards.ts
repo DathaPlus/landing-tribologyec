@@ -15,11 +15,10 @@ export const productos: ICardProduct[] = [
     img: image1.src,
     link: {
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/Eep8cB8oL7pMq02Mw_E8vzoBSfcK9OgU2BdB02-riaIv6w",
+      href: "/files/Norbar_Catalogue_2024.pdf",
       externalProps: {
         target: "_blank",
         rel: "noopener noreferrer",
-        download: "Norbar_Catalogue_2024.pdf"
       }
     },
     description: "Catálogo de Productos"
@@ -30,7 +29,7 @@ export const productos: ICardProduct[] = [
     img: image2.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/ERx0B15plXpMpkuQS2S_tcYBQVHaJRLaVAC33gq4SWT1pA",
+      href: "/files/Fastorq_Catalogo_2022.pdf",
       externalProps:{
         target: "_blank",
         rel: "noopener noreferrer"
@@ -43,11 +42,10 @@ export const productos: ICardProduct[] = [
     img: image3.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EfhxmeDrYFNOk386zXW_xagBHMapQcowozhBITH8NOaOwg",
+      href: "/files/Catalogo_Herramientas_Tone.pdf",
       externalProps:{
         target: "_blank",
         rel: "noopener noreferrer",
-
     }
   },
     description: "Catálogo de Productos",
@@ -57,7 +55,7 @@ export const productos: ICardProduct[] = [
     img: image4.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EcgSx2JjalVLpYFNB9wtqT8BIOQk8GdZ7bT8giGjipMvpg",
+      href: "/files/Catalogo_Snapon_Español.pdf",
       externalProps:{
 
         target: "_blank",
@@ -71,7 +69,7 @@ export const productos: ICardProduct[] = [
     img: image5.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/ERLqzfTvUZ5OjNwmlz9r1OUBUHRnEyNe-jU_AyKCjSe2sQ",
+      href: "/files/Catálogo Gedore Torque Solutions 2018.pdf",
       externalProps:{
 
         target: "_blank",
@@ -85,7 +83,7 @@ export const productos: ICardProduct[] = [
     img: image6.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EbynnfnHlBpPhqpResAuJ6IBJPWWkyrp_l2S_dudai0Syw",
+      href: "/files/Catalogo_Momento_2020_Dados_Acc_Impacto.pdf",
       externalProps:{
 
         target: "_blank",
@@ -99,7 +97,7 @@ export const productos: ICardProduct[] = [
     img: image7.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EfcsUsJHtrlGq46mtEXt_JoBey4zhSO50EOsn0-xWJyRtA",
+      href: "/files/pro-assembly-catalog-es-2023-02.pdf",
       externalProps:{
 
         target: "_blank",
@@ -113,7 +111,7 @@ export const productos: ICardProduct[] = [
     img: image8.src, 
     link: { 
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EXzkS7iX2-lEueDmp_v_hOQB1G-cLpPQkcBLUypCG61oDQ",
+      href: "/files/2022 SR Digital Catalog.pdf",
       externalProps:{
 
         target: "_blank",
@@ -127,7 +125,7 @@ export const productos: ICardProduct[] = [
     img: image9.src,
     link: {
       type: "external",
-      href: "https://tribologyec-my.sharepoint.com/:b:/p/lmontalvan/EVMznzpTm0VDtMah2cup6lUBdKKViFSfkEdkPYThuZheCQ",
+      href: "/files/superbolt_full-range-brochure.pdf",
       externalProps:{
 
         target: "_blank",

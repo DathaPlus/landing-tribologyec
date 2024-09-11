@@ -25,7 +25,7 @@ export const carouselAbout: IGoalsAboutus[] = [
     icon: {
       name: "user-check"
     },
-    title: "Nuesrto compromiso",
+    title: "Nuestro compromiso",
     description: "Nos comprometemos a ofrecer bienes y servicios de la más alta calidad, diseñados para superar las expectativas de nuestros clientes. Aspiramos a ser un referente en excelencia, brindando soluciones tope de gama que reflejen nuestros valores.",
     information: "¡Cuidamos tu marca y la repotenciamos!",
   },

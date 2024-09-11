@@ -8,7 +8,7 @@ export const listCardsProject: ICard[] = [
     description:
       'Soluciones ergonómicas, combinamos herramientas con brazos de manipulación, el peso de las herramientas ya no es un problema',
     link: {
-      href: 'https://www.google.com.ec',
+      href: '#',
       type: 'external',
       externalProps: {
         target: '_blank',
@@ -22,7 +22,7 @@ export const listCardsProject: ICard[] = [
     description:
       'Multiplicador de Torque Compacto La seria HT de Norbar es la mejor herramienta de multiplicación, cabe en lugares confinados y su alta relación de multiplicación le permite al usuario desarrollar torques de hasta 7000 N.m con  apenas 56 N.m.',
     link: {
-      href: 'https://www.google.com.ec',
+      href: '#',
       type: 'external',
       externalProps: {
         target: '_blank',
@@ -36,7 +36,7 @@ export const listCardsProject: ICard[] = [
     description:
       'El invento con mayor innovación, simplifica el uso de herramientas de alto poder, un pequeño torque genera una fuerza increíble en el perno principal, con absoluto control de la elongación.',
     link: {
-      href: 'https://www.google.com.ec',
+      href: '#',
       type: 'external',
       externalProps: {
         target: '_blank',
@@ -50,7 +50,7 @@ export const listCardsProject: ICard[] = [
     description:
       'Medidor de Elongación de Pernos Sistema de medición de elongación de pernos único y exclusivo para pernos, permite el control de la energía potencial elástica acumulada en el perno con una desviación de +/-1%.',
     link: {
-      href: 'https://www.google.com.ec',
+      href: '#',
       type: 'external',
       externalProps: {
         target: '_blank',
@@ -67,7 +67,7 @@ export const listCardsProject: ICard[] = [
       href: 'https://www.google.com.ec',
       type: 'external',
       externalProps: {
-        target: '_blank',
+        target: '#',
         rel: 'noreferrer',
       },
     },

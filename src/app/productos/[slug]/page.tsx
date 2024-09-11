@@ -15,6 +15,7 @@ export interface IProductImage {
 }
 
 export interface IProductDetails {
+    categories:string[];
     weight: string;
     brand: string;
     model: string;
@@ -36,7 +37,7 @@ const DetailProduct = async ({ params }: { params: { slug: string } }) => {
             <Bar />
             <Navbar />
             <AditionalInfo details={productDetails} />
-            <RelatedProducts />
+            <RelatedProducts categories={productDetails.categories} />
             <Footer />
         </main>
     );
